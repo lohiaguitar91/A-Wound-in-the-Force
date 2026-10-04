@@ -194,7 +194,7 @@ export function applyPivots(atlas: Atlas, selected: readonly string[]): BranchRe
         kind: 'removed',
         date: e.date.start,
         title: `${e.name} no longer happens`,
-        detail: explicit ? st.reason : `Removed by propagation: ${st.reason}.`,
+        detail: explicit ? st.reason : `Removed by propagation: ${st.reason}`,
         pivot: st.pivot,
         eventId: id,
         systemId: e.location.system,
@@ -205,7 +205,7 @@ export function applyPivots(atlas: Atlas, selected: readonly string[]): BranchRe
         kind: 'added',
         date: e.date.start,
         title: e.name,
-        detail: e.latent ? `Speculative — ${st.reason}.` : `Speculative — ${e.basis ?? e.summary}`,
+        detail: e.latent ? `Speculative — ${st.reason}` : `Speculative — ${e.basis ?? e.summary}`,
         pivot: st.pivot,
         eventId: id,
         systemId: e.location.system,
@@ -216,7 +216,7 @@ export function applyPivots(atlas: Atlas, selected: readonly string[]): BranchRe
         kind: 'uncertain',
         date: e.date.start,
         title: `${e.name} becomes uncertain`,
-        detail: `Loosely connected: ${st.reason}.`,
+        detail: `Loosely connected: ${st.reason}`,
         pivot: st.pivot,
         eventId: id,
         systemId: e.location.system,
@@ -307,6 +307,7 @@ export function applyPivots(atlas: Atlas, selected: readonly string[]): BranchRe
     });
   }
 
+  for (const c of changes) c.detail = c.detail.trim().replace(/\.+$/, '') + '.';
   changes.sort((a, b) => a.date - b.date || a.title.localeCompare(b.title));
 
   const events = [...allEvents.values()]

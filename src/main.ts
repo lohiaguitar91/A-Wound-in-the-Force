@@ -1,4 +1,8 @@
 import './style.css';
+import { boot } from './app/app';
 
-// Entry point — wired up in src/app/app.ts once the engine and renderer exist.
-console.info('Galaxy Atlas booting');
+boot().catch((err) => {
+  console.error(err);
+  const el = document.getElementById('time-readout');
+  if (el) el.textContent = 'Something went wrong loading the atlas.';
+});

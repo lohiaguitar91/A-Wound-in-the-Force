@@ -266,8 +266,15 @@ export function validate(raw) {
     if (p.horizon < p.divergence.date) errors.push(`[pivot] ${p.id} horizon is before its divergence`);
     for (const key of ['remove', 'keep', 'uncertain']) {
       for (const ref of p.branch[key] ?? []) {
-        if (!events.has(ref.event)) errors.push(`[pivot] ${p.id}.${key} references unknown event "${ref.event}"`);
+        const ev = events.get(ref.event);
+        if (!ev) errors.push(`[pivot] ${p.id}.${key} references unknown event "${ref.event}"`);
+        else if (key !== 'keep' && normDate(ev.date).start < p.divergence.date - 0.01) {
+          errors.push(`[pivot] ${p.id}.${key} touches "${ref.event}" (${normDate(ev.date).start}), which predates the divergence (${p.divergence.date})`);
+        }
       }
+    }
+    for (const e of p.branch.add ?? []) {
+      if (normDate(e.date).start < p.divergence.date - 0.01) errors.push(`[pivot] ${p.id} adds "${e.id}" dated before the divergence`);
     }
     p.branch.territory.forEach((k, i) => {
       checkKeyframe(k, `pivot ${p.id} territory#${i}`);

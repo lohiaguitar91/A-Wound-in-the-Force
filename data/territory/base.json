@@ -1,100 +1,957 @@
 [
-  { "date": -36000, "note": "The Rakatan Infinite Empire enslaves Force-strong worlds", "source": "https://starwars.fandom.com/wiki/Infinite_Empire",
-    "control": { "rakatan-infinite-empire": ["lehon", "coruscant", "corellia", "duro", "kashyyyk", "tatooine", "dantooine", "honoghr", "manaan", "belsavis", "korriban"] } },
-  { "date": -25200, "note": "The Infinite Empire collapses; the Rakata retreat to Lehon", "source": "https://starwars.fandom.com/wiki/Infinite_Empire",
-    "suppress": ["rakatan-infinite-empire"], "control": { "rakatan-infinite-empire": ["lehon"] } },
-  { "date": -25053, "note": "The Galactic Republic is founded in the Core; the Hutts and the Tion stand apart", "source": "https://starwars.fandom.com/wiki/Galactic_Republic/Legends",
-    "control": { "galactic-republic": { "regions": ["core-worlds"], "systems": ["ossus"] }, "hutts": ["nal-hutta", "nar-shaddaa", "varl", "sleheyron", "kessel"], "tion-hegemony": ["desevro", "lianna", "raxus-prime"] } },
-  { "date": -23900, "note": "The Tion Cluster is absorbed after the Tionese War", "source": "https://starwars.fandom.com/wiki/Tionese_War",
-    "suppress": ["tion-hegemony"], "control": { "galactic-republic": ["desevro", "lianna", "raxus-prime"] } },
-  { "date": -20000, "note": "Great Manifest Period: the Colonies and Inner Rim are settled", "source": "https://starwars.fandom.com/wiki/Great_Manifest_Period",
-    "control": { "galactic-republic": { "regions": ["colonies"], "systems": ["thyferra", "yag-dhul", "denon", "bestine-iv", "taanab", "ambria"] } } },
-  { "date": -17000, "note": "The Expansion Region is settled; Lehon is forgotten", "source": "https://starwars.fandom.com/wiki/Expansion_Region",
-    "release": ["lehon"], "control": { "galactic-republic": { "regions": ["expansion-region"] } } },
-  { "date": -12000, "note": "The Republic reaches the Mid Rim", "source": "https://starwars.fandom.com/wiki/Mid_Rim",
-    "control": { "galactic-republic": ["ord-mantell", "lantillies", "cerea", "iridonia", "ithor", "bothawui", "malastare", "ruusan"] } },
-  { "date": -7000, "note": "Mandalore the First conquers Mandalore", "source": "https://starwars.fandom.com/wiki/Mandalore_the_First",
-    "control": { "mandalorians": ["mandalore"] } },
-  { "date": -6900, "note": "The Dark Jedi exiles found the Sith Empire on Korriban", "source": "https://starwars.fandom.com/wiki/Sith_Empire",
-    "control": { "old-sith-empire": ["korriban", "ziost", "khar-delba", "rhelg", "chhodos", "ashas-ree", "thule", "nathema", "dromund-kaas"] } },
-  { "date": -5010, "note": "Empress Teta unifies the Koros system", "source": "https://starwars.fandom.com/wiki/Unification_Wars_(Koros_system)",
-    "control": { "tetan-monarchy": ["empress-teta", "kirrek", "primus-goluud"] } },
-  { "date": -5000, "note": "Great Hyperspace War: the Sith land on Kirrek and reach Primus Goluud", "source": "https://starwars.fandom.com/wiki/Great_Hyperspace_War",
-    "control": { "old-sith-empire": ["kirrek", "primus-goluud"] } },
-  { "date": -4999.5, "note": "The Republic counter-invades and breaks the Sith Empire", "source": "https://starwars.fandom.com/wiki/Great_Hyperspace_War",
-    "suppress": ["old-sith-empire"], "control": { "tetan-monarchy": ["kirrek", "primus-goluud"], "galactic-republic": ["korriban", "ziost", "khar-delba", "rhelg", "chhodos", "ashas-ree", "thule"] } },
-  { "date": -4980, "note": "The Republic abandons the Sith worlds; the Sith Emperor founds his empire on Dromund Kaas", "source": "https://starwars.fandom.com/wiki/Sith_Empire_(Post%E2%80%93Great_Hyperspace_War)",
-    "release": ["korriban", "ziost", "khar-delba", "rhelg", "chhodos", "ashas-ree", "thule", "nathema"], "control": { "reconstituted-sith-empire": ["dromund-kaas"] } },
-  { "date": -4400, "note": "Freedon Nadd rules Onderon", "source": "https://starwars.fandom.com/wiki/Onderon/Legends",
-    "control": { "onderon-kingdom": ["onderon", "dxun"] } },
-  { "date": -4017, "note": "The Mandalorian Crusaders take Basilisk", "source": "https://starwars.fandom.com/wiki/Basilisk_war_droid",
-    "control": { "mandalorians": ["basilisk"] } },
-  { "date": -4000, "note": "The Republic's northern Rim settlements around 4,000 BBY", "source": "https://starwars.fandom.com/wiki/Galactic_Republic/Legends",
-    "control": { "galactic-republic": ["dantooine", "arkania", "deneba", "taris", "telos-iv", "peragus-ii", "katarr", "serroco", "kuar", "mimban", "dorin", "vanquo", "suurja", "jebble", "belsavis", "carida", "foerost", "cathar", "bandomeer", "bonadan", "quermia", "felucia", "mygeeto"] } },
-  { "date": -3997, "note": "The Krath seize the Koros system", "source": "https://starwars.fandom.com/wiki/Krath",
-    "suppress": ["tetan-monarchy"], "control": { "krath": ["empress-teta", "kirrek", "primus-goluud"] } },
-  { "date": -3996.9, "note": "The Brotherhood of the Sith holds Yavin 4; the Mandalorian Crusaders ride for Ulic", "source": "https://starwars.fandom.com/wiki/Brotherhood_of_the_Sith",
-    "control": { "brotherhood-of-the-sith": ["yavin-4"], "mandalorians": ["kuar"] } },
-  { "date": -3996, "note": "End of the Great Sith War; Ossus lies devastated", "source": "https://starwars.fandom.com/wiki/Great_Sith_War",
-    "suppress": ["krath", "brotherhood-of-the-sith"], "release": ["yavin-4", "kuar", "ossus"], "control": { "galactic-republic": ["empress-teta", "kirrek", "primus-goluud"] } },
-  { "date": -3973, "note": "The Neo-Crusaders conquer Cathar and the independent north", "source": "https://starwars.fandom.com/wiki/Mandalorian_Wars",
-    "control": { "mandalorians": ["cathar"] } },
-  { "date": -3963, "note": "The Mandalorians invade the Republic: Dxun, Taris and the northern line fall", "source": "https://starwars.fandom.com/wiki/Mandalorian_Wars",
-    "release": ["serroco"], "control": { "mandalorians": ["dxun", "taris", "vanquo", "suurja", "jebble"] } },
-  { "date": -3961, "note": "Revan's counteroffensive retakes the north", "source": "https://starwars.fandom.com/wiki/Mandalorian_Wars",
-    "control": { "galactic-republic": ["taris", "vanquo", "suurja", "jebble"], "onderon-kingdom": ["dxun"] } },
-  { "date": -3960, "note": "Malachor V: the Mandalorians are broken and disarmed", "source": "https://starwars.fandom.com/wiki/Battle_of_Malachor_V",
-    "suppress": ["mandalorians"], "release": ["cathar", "malachor-v"], "control": {} },
-  { "date": -3959, "note": "Jedi Civil War: Darth Revan's Sith Empire seizes the Sith worlds, Lehon and a swath of the Rim", "source": "https://starwars.fandom.com/wiki/Jedi_Civil_War",
-    "control": { "revan-sith-empire": ["korriban", "lehon", "malachor-v", "ziost", "thule", "khar-delba", "rhelg", "chhodos", "ashas-ree", "felucia", "mygeeto", "dathomir", "bandomeer", "bonadan", "quermia", "cathar", "nespis-viii"] } },
-  { "date": -3957, "note": "The Sith take Taris", "source": "https://starwars.fandom.com/wiki/Taris",
-    "control": { "revan-sith-empire": ["taris"] } },
-  { "date": -3956, "note": "The Star Forge is destroyed; Revan's Sith Empire collapses", "source": "https://starwars.fandom.com/wiki/Darth_Revan's_Sith_Empire",
-    "suppress": ["revan-sith-empire"], "release": ["taris"], "control": { "galactic-republic": ["felucia", "mygeeto", "bandomeer", "bonadan", "quermia"] } },
-  { "date": -3955, "note": "The Sith Triumvirate rules from Malachor V", "source": "https://starwars.fandom.com/wiki/Sith_Triumvirate",
-    "control": { "sith-triumvirate": ["malachor-v"] } },
-  { "date": -3951, "note": "The Dark Wars end; Telos is being restored", "source": "https://starwars.fandom.com/wiki/Dark_Wars",
-    "suppress": ["sith-triumvirate"], "release": ["malachor-v", "peragus-ii", "katarr"], "control": { "galactic-republic": ["telos-iv"] } },
-  { "date": -3900, "note": "The Republic consolidates; Naboo is colonised", "source": "https://starwars.fandom.com/wiki/Naboo/Legends",
-    "control": { "galactic-republic": ["naboo"] } },
-  { "date": -3681, "note": "The Sith Empire returns and retakes the Sith worlds", "source": "https://starwars.fandom.com/wiki/Great_Galactic_War",
-    "control": { "reconstituted-sith-empire": ["korriban", "ziost", "dromund-kaas", "khar-delba", "rhelg", "chhodos", "ashas-ree", "thule"], "mandalorians": ["mandalore"] } },
-  { "date": -3670, "note": "The Sith overrun the Outer Rim and Balmorra", "source": "https://starwars.fandom.com/wiki/Great_Galactic_War",
-    "control": { "reconstituted-sith-empire": ["sluis-van", "balmorra", "felucia", "mygeeto", "bandomeer", "bonadan", "quermia", "dathomir", "cathar"] } },
-  { "date": -3653, "note": "Treaty of Coruscant: the Empire keeps its conquests; Alderaan secedes", "source": "https://starwars.fandom.com/wiki/Treaty_of_Coruscant",
-    "release": ["alderaan"], "control": {} },
-  { "date": -3641, "note": "The Galactic War resumes; Balmorra is liberated", "source": "https://starwars.fandom.com/wiki/Galactic_War",
-    "control": { "galactic-republic": ["balmorra", "alderaan"] } },
-  { "date": -3632, "note": "The Eternal Empire of Zakuul subjugates both capitals", "source": "https://starwars.fandom.com/wiki/Eternal_Empire",
-    "control": { "eternal-empire": ["zakuul", "coruscant", "dromund-kaas"] } },
-  { "date": -3630, "note": "Zakuul falls to the Eternal Alliance", "source": "https://starwars.fandom.com/wiki/Eternal_Empire",
-    "suppress": ["eternal-empire"], "release": ["zakuul"], "control": { "galactic-republic": ["coruscant"], "reconstituted-sith-empire": ["dromund-kaas"] } },
-  { "date": -3300, "note": "The reborn Sith Empire fades from history (date is a placeholder; see NOTES.md)", "source": "https://starwars.fandom.com/wiki/Sith_Empire_(Post%E2%80%93Great_Hyperspace_War)",
-    "suppress": ["reconstituted-sith-empire"], "release": ["dathomir", "cathar"], "control": { "galactic-republic": ["sluis-van", "felucia", "mygeeto", "bandomeer", "bonadan", "quermia"] } },
-  { "date": -2000, "note": "Darth Ruin's New Sith Empire rises in the old Sith worlds", "source": "https://starwars.fandom.com/wiki/New_Sith_Empire",
-    "control": { "new-sith-empire": ["korriban", "ziost", "khar-delba", "rhelg", "chhodos", "ashas-ree", "thule", "tund"] } },
-  { "date": -1466, "note": "After Mizra the Sith hold much of the Outer Rim", "source": "https://starwars.fandom.com/wiki/Battle_of_Mizra",
-    "control": { "new-sith-empire": ["felucia", "mygeeto", "bandomeer", "bonadan", "quermia", "dathomir", "cathar", "voss", "desevro", "lianna", "raxus-prime", "yavin-4", "dantooine", "telos-iv", "belsavis", "rhen-var", "honoghr", "basilisk", "bastion", "dac"] } },
-  { "date": -1100, "note": "Republic Dark Age: the Republic holds little beyond the Core and Colonies", "source": "https://starwars.fandom.com/wiki/Republic_Dark_Age",
-    "control": { "new-sith-empire": { "regions": ["inner-rim", "expansion-region", "mid-rim"], "except": ["nal-hutta", "nar-shaddaa", "varl", "sleheyron", "kessel", "hapes", "manaan"] } } },
-  { "date": -1000, "note": "Ruusan: the Brotherhood of Darkness is destroyed and the Republic reclaims the inner galaxy", "source": "https://starwars.fandom.com/wiki/Ruusan_Reformation",
-    "suppress": ["new-sith-empire"], "control": { "galactic-republic": { "regions": ["inner-rim", "expansion-region", "mid-rim"], "except": ["nal-hutta", "nar-shaddaa", "varl", "sleheyron", "kessel", "hapes", "manaan", "dxun"] } } },
-  { "date": -900, "note": "The Republic reabsorbs the Rim over the century after Ruusan", "source": "https://starwars.fandom.com/wiki/Galactic_Republic/Legends",
-    "control": { "galactic-republic": ["felucia", "mygeeto", "bandomeer", "bonadan", "quermia", "dantooine", "telos-iv", "belsavis", "desevro", "lianna", "raxus-prime", "dac", "bastion", "manaan", "dxun"] } },
-  { "date": -100, "note": "The late Republic at its greatest extent", "source": "https://starwars.fandom.com/wiki/Galactic_Republic/Legends",
-    "control": { "galactic-republic": ["kashyyyk", "ryloth", "rodia", "christophsis", "utapau", "sullust", "eriadu", "sluis-van", "cato-neimoidia", "saleucami", "geonosis", "mustafar", "hapes", "yavin-4"], "hutts": ["tatooine"] } },
-  { "date": -19, "note": "Palpatine's Galactic Empire replaces the Republic", "source": "https://starwars.fandom.com/wiki/Galactic_Empire/Legends",
-    "suppress": ["galactic-republic"], "control": { "galactic-empire": { "regions": ["deep-core", "core-worlds", "colonies", "inner-rim", "expansion-region", "mid-rim", "outer-rim"], "except": ["nal-hutta", "nar-shaddaa", "varl", "sleheyron", "tatooine", "ossus", "malachor-v", "nathema", "katarr", "vultar", "korriban", "ziost", "dromund-kaas", "khar-delba", "rhelg", "chhodos", "ashas-ree", "thule", "tund", "bakura", "dagobah", "hoth", "endor", "rhen-var", "cathar", "voss", "basilisk", "jebble", "vanquo", "suurja", "peragus-ii", "dxun", "terminus", "apatros", "rishi", "makeb", "serroco"] } } },
-  { "date": 4, "note": "After Endor the New Republic takes its first worlds", "source": "https://starwars.fandom.com/wiki/New_Republic/Legends",
-    "control": { "new-republic": ["endor", "dac", "sullust", "bothawui", "kashyyyk", "chandrila", "bakura"] } },
-  { "date": 7, "note": "The New Republic holds Coruscant; the Empire shrinks to the Deep Core and the northern Rim", "source": "https://starwars.fandom.com/wiki/New_Republic/Legends",
-    "suppress": ["galactic-empire"], "control": { "new-republic": { "regions": ["core-worlds", "colonies", "inner-rim", "expansion-region", "mid-rim"], "except": ["nal-hutta", "nar-shaddaa", "varl", "sleheyron", "hapes", "ambria", "vultar", "dxun"], "systems": ["ryloth", "rodia", "christophsis", "sullust", "eriadu", "sluis-van", "dantooine", "telos-iv", "bandomeer", "bonadan", "quermia", "dac", "endor", "bakura", "kessel"] }, "galactic-empire": ["bastion", "byss", "prakith", "mygeeto", "felucia", "khomm"] } },
-  { "date": 25, "note": "The Yuuzhan Vong invade the Outer Rim", "source": "https://starwars.fandom.com/wiki/Yuuzhan_Vong_War",
-    "control": { "yuuzhan-vong": ["ithor", "dantooine", "ord-mantell", "bandomeer"] } },
-  { "date": 27, "note": "Coruscant falls to the Yuuzhan Vong; the government flees to Dac", "source": "https://starwars.fandom.com/wiki/Fall_of_Coruscant",
-    "control": { "yuuzhan-vong": ["coruscant", "duro", "commenor", "kashyyyk"] } },
-  { "date": 29, "note": "The Yuuzhan Vong are defeated", "source": "https://starwars.fandom.com/wiki/Yuuzhan_Vong_War",
-    "suppress": ["yuuzhan-vong"], "release": ["ithor"], "control": { "new-republic": ["coruscant", "duro", "commenor", "kashyyyk", "dantooine", "ord-mantell", "bandomeer"] } },
-  { "date": 130, "note": "Darth Krayt's Sith seize the Empire's throne; Roan Fel holds Bastion", "source": "https://starwars.fandom.com/wiki/Darth_Krayt's_Galactic_Empire",
-    "suppress": ["new-republic"], "control": { "krayt-sith-empire": { "regions": ["core-worlds", "colonies", "inner-rim", "expansion-region", "mid-rim"], "except": ["nal-hutta", "nar-shaddaa", "varl", "sleheyron", "hapes", "ambria", "vultar", "dxun"], "systems": ["korriban", "ryloth", "rodia", "sullust", "eriadu", "sluis-van", "dantooine", "telos-iv", "dac", "ossus"] }, "galactic-empire": ["bastion"] } }
+  {
+    "date": -36000,
+    "note": "The Rakatan Infinite Empire enslaves Force-strong worlds",
+    "source": "https://starwars.fandom.com/wiki/Infinite_Empire",
+    "control": {
+      "rakatan-infinite-empire": [
+        "lehon",
+        "coruscant",
+        "corellia",
+        "duro",
+        "kashyyyk",
+        "tatooine",
+        "dantooine",
+        "honoghr",
+        "manaan",
+        "belsavis",
+        "korriban"
+      ]
+    }
+  },
+  {
+    "date": -25200,
+    "note": "The Infinite Empire collapses; the Rakata retreat to Lehon",
+    "source": "https://starwars.fandom.com/wiki/Infinite_Empire",
+    "suppress": [
+      "rakatan-infinite-empire"
+    ],
+    "control": {
+      "rakatan-infinite-empire": [
+        "lehon"
+      ]
+    }
+  },
+  {
+    "date": -25053,
+    "note": "The Galactic Republic is founded in the Core; the Hutts and the Tion stand apart",
+    "source": "https://starwars.fandom.com/wiki/Galactic_Republic/Legends",
+    "control": {
+      "galactic-republic": {
+        "regions": [
+          "core-worlds"
+        ],
+        "systems": [
+          "ossus"
+        ]
+      },
+      "hutts": [
+        "nal-hutta",
+        "nar-shaddaa",
+        "varl",
+        "sleheyron",
+        "kessel"
+      ],
+      "tion-hegemony": [
+        "desevro",
+        "lianna",
+        "raxus-prime"
+      ]
+    }
+  },
+  {
+    "date": -23900,
+    "note": "The Tion Cluster is absorbed after the Tionese War",
+    "source": "https://starwars.fandom.com/wiki/Tionese_War",
+    "suppress": [
+      "tion-hegemony"
+    ],
+    "control": {
+      "galactic-republic": [
+        "desevro",
+        "lianna",
+        "raxus-prime"
+      ]
+    }
+  },
+  {
+    "date": -20000,
+    "note": "Great Manifest Period: the Colonies and Inner Rim are settled",
+    "source": "https://starwars.fandom.com/wiki/Great_Manifest_Period",
+    "control": {
+      "galactic-republic": {
+        "regions": [
+          "colonies"
+        ],
+        "systems": [
+          "thyferra",
+          "yag-dhul",
+          "denon",
+          "bestine-iv",
+          "taanab",
+          "ambria"
+        ]
+      }
+    }
+  },
+  {
+    "date": -17000,
+    "note": "The Expansion Region is settled; Lehon is forgotten",
+    "source": "https://starwars.fandom.com/wiki/Expansion_Region",
+    "release": [
+      "lehon"
+    ],
+    "control": {
+      "galactic-republic": {
+        "regions": [
+          "expansion-region"
+        ]
+      }
+    }
+  },
+  {
+    "date": -12000,
+    "note": "The Republic reaches the Mid Rim",
+    "source": "https://starwars.fandom.com/wiki/Mid_Rim",
+    "control": {
+      "galactic-republic": [
+        "ord-mantell",
+        "lantillies",
+        "cerea",
+        "iridonia",
+        "ithor",
+        "bothawui",
+        "malastare",
+        "ruusan"
+      ]
+    }
+  },
+  {
+    "date": -7000,
+    "note": "Mandalore the First conquers Mandalore",
+    "source": "https://starwars.fandom.com/wiki/Mandalore_the_First",
+    "control": {
+      "mandalorians": [
+        "mandalore"
+      ]
+    }
+  },
+  {
+    "date": -6900,
+    "note": "The Dark Jedi exiles found the Sith Empire on Korriban",
+    "source": "https://starwars.fandom.com/wiki/Sith_Empire",
+    "control": {
+      "old-sith-empire": [
+        "korriban",
+        "ziost",
+        "khar-delba",
+        "rhelg",
+        "chhodos",
+        "ashas-ree",
+        "thule",
+        "nathema",
+        "dromund-kaas"
+      ]
+    }
+  },
+  {
+    "date": -5010,
+    "note": "Empress Teta unifies the Koros system",
+    "source": "https://starwars.fandom.com/wiki/Unification_Wars_(Koros_system)",
+    "control": {
+      "tetan-monarchy": [
+        "empress-teta",
+        "kirrek",
+        "primus-goluud"
+      ]
+    }
+  },
+  {
+    "date": -5000,
+    "note": "Great Hyperspace War: the Sith land on Kirrek and reach Primus Goluud",
+    "source": "https://starwars.fandom.com/wiki/Great_Hyperspace_War",
+    "control": {
+      "old-sith-empire": [
+        "kirrek",
+        "primus-goluud"
+      ]
+    }
+  },
+  {
+    "date": -4999.5,
+    "note": "The Republic counter-invades and breaks the Sith Empire",
+    "source": "https://starwars.fandom.com/wiki/Great_Hyperspace_War",
+    "suppress": [
+      "old-sith-empire"
+    ],
+    "control": {
+      "tetan-monarchy": [
+        "kirrek",
+        "primus-goluud"
+      ],
+      "galactic-republic": [
+        "korriban",
+        "ziost",
+        "khar-delba",
+        "rhelg",
+        "chhodos",
+        "ashas-ree",
+        "thule"
+      ]
+    }
+  },
+  {
+    "date": -4980,
+    "note": "The Republic abandons the Sith worlds; the Sith Emperor founds his empire on Dromund Kaas",
+    "source": "https://starwars.fandom.com/wiki/Sith_Empire_(Post%E2%80%93Great_Hyperspace_War)",
+    "release": [
+      "korriban",
+      "ziost",
+      "khar-delba",
+      "rhelg",
+      "chhodos",
+      "ashas-ree",
+      "thule",
+      "nathema"
+    ],
+    "control": {
+      "reconstituted-sith-empire": [
+        "dromund-kaas"
+      ]
+    }
+  },
+  {
+    "date": -4400,
+    "note": "Freedon Nadd rules Onderon",
+    "source": "https://starwars.fandom.com/wiki/Onderon/Legends",
+    "control": {
+      "onderon-kingdom": [
+        "onderon",
+        "dxun"
+      ]
+    }
+  },
+  {
+    "date": -4017,
+    "note": "The Mandalorian Crusaders take Basilisk",
+    "source": "https://starwars.fandom.com/wiki/Basilisk_war_droid",
+    "control": {
+      "mandalorians": [
+        "basilisk"
+      ]
+    }
+  },
+  {
+    "date": -4000,
+    "note": "The Republic's northern Rim settlements around 4,000 BBY",
+    "source": "https://starwars.fandom.com/wiki/Galactic_Republic/Legends",
+    "control": {
+      "galactic-republic": [
+        "dantooine",
+        "arkania",
+        "deneba",
+        "taris",
+        "telos-iv",
+        "peragus-ii",
+        "katarr",
+        "serroco",
+        "kuar",
+        "mimban",
+        "dorin",
+        "vanquo",
+        "suurja",
+        "jebble",
+        "belsavis",
+        "carida",
+        "foerost",
+        "cathar",
+        "bandomeer",
+        "bonadan",
+        "quermia",
+        "felucia",
+        "mygeeto"
+      ]
+    }
+  },
+  {
+    "date": -3997,
+    "note": "The Krath seize the Koros system",
+    "source": "https://starwars.fandom.com/wiki/Krath",
+    "suppress": [
+      "tetan-monarchy"
+    ],
+    "control": {
+      "krath": [
+        "empress-teta",
+        "kirrek",
+        "primus-goluud"
+      ]
+    }
+  },
+  {
+    "date": -3996.9,
+    "note": "The Brotherhood of the Sith holds Yavin 4; the Mandalorian Crusaders ride for Ulic",
+    "source": "https://starwars.fandom.com/wiki/Brotherhood_of_the_Sith",
+    "control": {
+      "brotherhood-of-the-sith": [
+        "yavin-4"
+      ],
+      "mandalorians": [
+        "kuar"
+      ]
+    }
+  },
+  {
+    "date": -3996,
+    "note": "End of the Great Sith War; Ossus lies devastated",
+    "source": "https://starwars.fandom.com/wiki/Great_Sith_War",
+    "suppress": [
+      "krath",
+      "brotherhood-of-the-sith"
+    ],
+    "release": [
+      "yavin-4",
+      "kuar",
+      "ossus"
+    ],
+    "control": {
+      "galactic-republic": [
+        "empress-teta",
+        "kirrek",
+        "primus-goluud"
+      ]
+    }
+  },
+  {
+    "date": -3973,
+    "note": "The Neo-Crusaders conquer Cathar and the independent north",
+    "source": "https://starwars.fandom.com/wiki/Mandalorian_Wars",
+    "control": {
+      "mandalorians": [
+        "cathar"
+      ]
+    }
+  },
+  {
+    "date": -3963,
+    "note": "The Mandalorians invade the Republic: Dxun, Taris and the northern line fall",
+    "source": "https://starwars.fandom.com/wiki/Mandalorian_Wars",
+    "release": [
+      "serroco"
+    ],
+    "control": {
+      "mandalorians": [
+        "dxun",
+        "taris",
+        "vanquo",
+        "suurja",
+        "jebble"
+      ]
+    }
+  },
+  {
+    "date": -3961,
+    "note": "Revan's counteroffensive retakes the north",
+    "source": "https://starwars.fandom.com/wiki/Mandalorian_Wars",
+    "control": {
+      "galactic-republic": [
+        "taris",
+        "vanquo",
+        "suurja",
+        "jebble"
+      ],
+      "onderon-kingdom": [
+        "dxun"
+      ]
+    }
+  },
+  {
+    "date": -3960,
+    "note": "Malachor V: the Mandalorians are broken and disarmed",
+    "source": "https://starwars.fandom.com/wiki/Battle_of_Malachor_V",
+    "suppress": [
+      "mandalorians"
+    ],
+    "release": [
+      "cathar",
+      "malachor-v"
+    ],
+    "control": {}
+  },
+  {
+    "date": -3959,
+    "note": "Jedi Civil War: Darth Revan's Sith Empire seizes the Sith worlds, Lehon and a swath of the Rim",
+    "source": "https://starwars.fandom.com/wiki/Jedi_Civil_War",
+    "control": {
+      "revan-sith-empire": [
+        "korriban",
+        "lehon",
+        "malachor-v",
+        "ziost",
+        "thule",
+        "khar-delba",
+        "rhelg",
+        "chhodos",
+        "ashas-ree",
+        "felucia",
+        "mygeeto",
+        "dathomir",
+        "bandomeer",
+        "bonadan",
+        "quermia",
+        "cathar",
+        "nespis-viii"
+      ]
+    }
+  },
+  {
+    "date": -3957,
+    "note": "The Sith take Taris",
+    "source": "https://starwars.fandom.com/wiki/Taris",
+    "control": {
+      "revan-sith-empire": [
+        "taris"
+      ]
+    }
+  },
+  {
+    "date": -3956,
+    "note": "The Star Forge is destroyed; Revan's Sith Empire collapses",
+    "source": "https://starwars.fandom.com/wiki/Darth_Revan's_Sith_Empire",
+    "suppress": [
+      "revan-sith-empire"
+    ],
+    "release": [
+      "taris"
+    ],
+    "control": {
+      "galactic-republic": [
+        "felucia",
+        "mygeeto",
+        "bandomeer",
+        "bonadan",
+        "quermia"
+      ]
+    }
+  },
+  {
+    "date": -3955,
+    "note": "The Sith Triumvirate rules from Malachor V",
+    "source": "https://starwars.fandom.com/wiki/Sith_Triumvirate",
+    "control": {
+      "sith-triumvirate": [
+        "malachor-v"
+      ]
+    }
+  },
+  {
+    "date": -3951,
+    "note": "The Dark Wars end; Telos is being restored",
+    "source": "https://starwars.fandom.com/wiki/Dark_Wars",
+    "suppress": [
+      "sith-triumvirate"
+    ],
+    "release": [
+      "malachor-v",
+      "peragus-ii",
+      "katarr"
+    ],
+    "control": {
+      "galactic-republic": [
+        "telos-iv"
+      ]
+    }
+  },
+  {
+    "date": -3900,
+    "note": "The Republic consolidates; Naboo is colonised",
+    "source": "https://starwars.fandom.com/wiki/Naboo/Legends",
+    "control": {
+      "galactic-republic": [
+        "naboo"
+      ]
+    }
+  },
+  {
+    "date": -3681,
+    "note": "The Sith Empire returns and retakes the Sith worlds",
+    "source": "https://starwars.fandom.com/wiki/Great_Galactic_War",
+    "control": {
+      "reconstituted-sith-empire": [
+        "korriban",
+        "ziost",
+        "dromund-kaas",
+        "khar-delba",
+        "rhelg",
+        "chhodos",
+        "ashas-ree",
+        "thule"
+      ],
+      "mandalorians": [
+        "mandalore"
+      ]
+    }
+  },
+  {
+    "date": -3670,
+    "note": "The Sith overrun the Outer Rim and Balmorra",
+    "source": "https://starwars.fandom.com/wiki/Great_Galactic_War",
+    "control": {
+      "reconstituted-sith-empire": [
+        "sluis-van",
+        "balmorra",
+        "felucia",
+        "mygeeto",
+        "bandomeer",
+        "bonadan",
+        "quermia",
+        "dathomir",
+        "cathar"
+      ]
+    }
+  },
+  {
+    "date": -3653,
+    "note": "Treaty of Coruscant: the Empire keeps its conquests; Alderaan secedes",
+    "source": "https://starwars.fandom.com/wiki/Treaty_of_Coruscant",
+    "release": [
+      "alderaan"
+    ],
+    "control": {}
+  },
+  {
+    "date": -3641,
+    "note": "The Galactic War resumes; Balmorra is liberated",
+    "source": "https://starwars.fandom.com/wiki/Galactic_War",
+    "control": {
+      "galactic-republic": [
+        "balmorra",
+        "alderaan"
+      ]
+    }
+  },
+  {
+    "date": -3632,
+    "note": "The Eternal Empire of Zakuul subjugates both capitals",
+    "source": "https://starwars.fandom.com/wiki/Eternal_Empire",
+    "control": {
+      "eternal-empire": [
+        "zakuul",
+        "coruscant",
+        "dromund-kaas"
+      ]
+    }
+  },
+  {
+    "date": -3630,
+    "note": "Zakuul falls to the Eternal Alliance",
+    "source": "https://starwars.fandom.com/wiki/Eternal_Empire",
+    "suppress": [
+      "eternal-empire"
+    ],
+    "release": [
+      "zakuul"
+    ],
+    "control": {
+      "galactic-republic": [
+        "coruscant"
+      ],
+      "reconstituted-sith-empire": [
+        "dromund-kaas"
+      ]
+    }
+  },
+  {
+    "date": -3300,
+    "note": "The reborn Sith Empire fades from history (date is a placeholder; see NOTES.md)",
+    "source": "https://starwars.fandom.com/wiki/Sith_Empire_(Post%E2%80%93Great_Hyperspace_War)",
+    "suppress": [
+      "reconstituted-sith-empire"
+    ],
+    "release": [
+      "dathomir",
+      "cathar"
+    ],
+    "control": {
+      "galactic-republic": [
+        "sluis-van",
+        "felucia",
+        "mygeeto",
+        "bandomeer",
+        "bonadan",
+        "quermia"
+      ]
+    }
+  },
+  {
+    "date": -2000,
+    "note": "Darth Ruin's New Sith Empire rises in the old Sith worlds",
+    "source": "https://starwars.fandom.com/wiki/New_Sith_Empire",
+    "control": {
+      "new-sith-empire": [
+        "korriban",
+        "ziost",
+        "khar-delba",
+        "rhelg",
+        "chhodos",
+        "ashas-ree",
+        "thule",
+        "tund"
+      ]
+    }
+  },
+  {
+    "date": -1466,
+    "note": "After Mizra the Sith hold much of the Outer Rim",
+    "source": "https://starwars.fandom.com/wiki/Battle_of_Mizra",
+    "control": {
+      "new-sith-empire": [
+        "felucia",
+        "mygeeto",
+        "bandomeer",
+        "bonadan",
+        "quermia",
+        "dathomir",
+        "cathar",
+        "voss",
+        "desevro",
+        "lianna",
+        "raxus-prime",
+        "yavin-4",
+        "dantooine",
+        "telos-iv",
+        "belsavis",
+        "rhen-var",
+        "honoghr",
+        "basilisk",
+        "bastion",
+        "dac"
+      ]
+    }
+  },
+  {
+    "date": -1100,
+    "note": "Republic Dark Age: the Republic holds little beyond the Core and Colonies",
+    "source": "https://starwars.fandom.com/wiki/Republic_Dark_Age",
+    "control": {
+      "new-sith-empire": {
+        "regions": [
+          "inner-rim",
+          "expansion-region",
+          "mid-rim"
+        ],
+        "except": [
+          "nal-hutta",
+          "nar-shaddaa",
+          "varl",
+          "sleheyron",
+          "kessel",
+          "hapes",
+          "manaan"
+        ]
+      }
+    }
+  },
+  {
+    "date": -1000,
+    "note": "Ruusan: the Brotherhood of Darkness is destroyed and the Republic reclaims the inner galaxy",
+    "source": "https://starwars.fandom.com/wiki/Ruusan_Reformation",
+    "suppress": [
+      "new-sith-empire"
+    ],
+    "control": {
+      "galactic-republic": {
+        "regions": [
+          "inner-rim",
+          "expansion-region",
+          "mid-rim"
+        ],
+        "except": [
+          "nal-hutta",
+          "nar-shaddaa",
+          "varl",
+          "sleheyron",
+          "kessel",
+          "hapes",
+          "manaan",
+          "dxun"
+        ]
+      }
+    }
+  },
+  {
+    "date": -900,
+    "note": "The Republic reabsorbs the Rim over the century after Ruusan",
+    "source": "https://starwars.fandom.com/wiki/Galactic_Republic/Legends",
+    "control": {
+      "galactic-republic": [
+        "felucia",
+        "mygeeto",
+        "bandomeer",
+        "bonadan",
+        "quermia",
+        "dantooine",
+        "telos-iv",
+        "belsavis",
+        "desevro",
+        "lianna",
+        "raxus-prime",
+        "dac",
+        "bastion",
+        "manaan",
+        "dxun"
+      ]
+    }
+  },
+  {
+    "date": -100,
+    "note": "The late Republic at its greatest extent",
+    "source": "https://starwars.fandom.com/wiki/Galactic_Republic/Legends",
+    "control": {
+      "galactic-republic": [
+        "kashyyyk",
+        "ryloth",
+        "rodia",
+        "christophsis",
+        "utapau",
+        "sullust",
+        "eriadu",
+        "sluis-van",
+        "cato-neimoidia",
+        "saleucami",
+        "geonosis",
+        "mustafar",
+        "hapes",
+        "yavin-4"
+      ],
+      "hutts": [
+        "tatooine"
+      ]
+    }
+  },
+  {
+    "date": -19,
+    "note": "Palpatine's Galactic Empire replaces the Republic",
+    "source": "https://starwars.fandom.com/wiki/Galactic_Empire/Legends",
+    "suppress": [
+      "galactic-republic"
+    ],
+    "control": {
+      "galactic-empire": {
+        "regions": [
+          "deep-core",
+          "core-worlds",
+          "colonies",
+          "inner-rim",
+          "expansion-region",
+          "mid-rim",
+          "outer-rim"
+        ],
+        "except": [
+          "nal-hutta",
+          "nar-shaddaa",
+          "varl",
+          "sleheyron",
+          "tatooine",
+          "ossus",
+          "malachor-v",
+          "nathema",
+          "katarr",
+          "vultar",
+          "korriban",
+          "ziost",
+          "dromund-kaas",
+          "khar-delba",
+          "rhelg",
+          "chhodos",
+          "ashas-ree",
+          "thule",
+          "tund",
+          "bakura",
+          "dagobah",
+          "hoth",
+          "endor",
+          "rhen-var",
+          "cathar",
+          "voss",
+          "basilisk",
+          "jebble",
+          "vanquo",
+          "suurja",
+          "peragus-ii",
+          "dxun",
+          "terminus",
+          "apatros",
+          "rishi",
+          "makeb",
+          "serroco"
+        ]
+      }
+    }
+  },
+  {
+    "date": 4,
+    "note": "After Endor the New Republic takes its first worlds",
+    "source": "https://starwars.fandom.com/wiki/New_Republic/Legends",
+    "control": {
+      "new-republic": [
+        "endor",
+        "dac",
+        "sullust",
+        "bothawui",
+        "kashyyyk",
+        "chandrila",
+        "bakura"
+      ]
+    }
+  },
+  {
+    "date": 7,
+    "note": "The New Republic holds Coruscant; the Empire shrinks to the Deep Core and the northern Rim",
+    "source": "https://starwars.fandom.com/wiki/New_Republic/Legends",
+    "suppress": [
+      "galactic-empire"
+    ],
+    "control": {
+      "new-republic": {
+        "regions": [
+          "core-worlds",
+          "colonies",
+          "inner-rim",
+          "expansion-region",
+          "mid-rim"
+        ],
+        "except": [
+          "nal-hutta",
+          "nar-shaddaa",
+          "varl",
+          "sleheyron",
+          "hapes",
+          "ambria",
+          "vultar",
+          "dxun"
+        ],
+        "systems": [
+          "ryloth",
+          "rodia",
+          "christophsis",
+          "sullust",
+          "eriadu",
+          "sluis-van",
+          "dantooine",
+          "telos-iv",
+          "bandomeer",
+          "bonadan",
+          "quermia",
+          "dac",
+          "endor",
+          "bakura",
+          "kessel"
+        ]
+      },
+      "galactic-empire": [
+        "bastion",
+        "byss",
+        "prakith",
+        "mygeeto",
+        "felucia",
+        "khomm"
+      ]
+    }
+  },
+  {
+    "date": 25,
+    "note": "The Yuuzhan Vong invade the Outer Rim",
+    "source": "https://starwars.fandom.com/wiki/Yuuzhan_Vong_War",
+    "control": {
+      "yuuzhan-vong": [
+        "ithor",
+        "dantooine",
+        "ord-mantell",
+        "bandomeer"
+      ]
+    }
+  },
+  {
+    "date": 27,
+    "note": "Coruscant falls to the Yuuzhan Vong; the government flees to Dac",
+    "source": "https://starwars.fandom.com/wiki/Fall_of_Coruscant",
+    "control": {
+      "yuuzhan-vong": [
+        "coruscant",
+        "duro",
+        "commenor",
+        "kashyyyk"
+      ]
+    }
+  },
+  {
+    "date": 29,
+    "note": "The Yuuzhan Vong are defeated",
+    "source": "https://starwars.fandom.com/wiki/Yuuzhan_Vong_War",
+    "suppress": [
+      "yuuzhan-vong"
+    ],
+    "release": [
+      "ithor"
+    ],
+    "control": {
+      "new-republic": [
+        "coruscant",
+        "duro",
+        "commenor",
+        "kashyyyk",
+        "dantooine",
+        "ord-mantell",
+        "bandomeer"
+      ]
+    }
+  },
+  {
+    "date": 130,
+    "note": "Darth Krayt's Sith seize the Empire's throne; Roan Fel holds Bastion",
+    "source": "https://starwars.fandom.com/wiki/Darth_Krayt's_Galactic_Empire",
+    "suppress": [
+      "new-republic"
+    ],
+    "control": {
+      "krayt-sith-empire": {
+        "regions": [
+          "deep-core",
+          "core-worlds",
+          "colonies",
+          "inner-rim",
+          "expansion-region",
+          "mid-rim"
+        ],
+        "except": [
+          "ambria",
+          "dxun",
+          "hapes",
+          "nal-hutta",
+          "nar-shaddaa",
+          "sleheyron",
+          "varl",
+          "vultar"
+        ],
+        "systems": [
+          "korriban",
+          "ryloth",
+          "rodia",
+          "sullust",
+          "eriadu",
+          "sluis-van",
+          "dantooine",
+          "telos-iv",
+          "dac",
+          "ossus",
+          "mygeeto",
+          "felucia"
+        ]
+      },
+      "galactic-empire": [
+        "bastion"
+      ]
+    }
+  }
 ]
