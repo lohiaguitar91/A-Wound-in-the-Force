@@ -5,7 +5,7 @@ import type { BranchResult } from '../engine/branch';
 import type { Selection } from '../app/state';
 import { Camera, type Bounds, type Insets } from './camera';
 import { catmullRom, computeRegionRings, rgba, type RegionRing } from './geometry';
-import { makeGalaxyArt, makeScreenStars, type GalaxyArt } from './starfield';
+import { makeGalaxyArtBuilder, makeScreenStars, type GalaxyArt } from './starfield';
 import { prefersReducedMotion } from './gestures';
 
 export interface FrameInput {
@@ -62,10 +62,11 @@ export class Renderer {
   private insets: Insets = { top: 0, right: 0, bottom: 0, left: 0 };
   private dirty = true;
   private raf = 0;
-  private animTimer = 0;
   private input: FrameInput | null = null;
   private screenStars: HTMLCanvasElement | null = null;
-  private galaxy: GalaxyArt;
+  private galaxy: GalaxyArt | null = null;
+  private bgLayer: HTMLCanvasElement;
+  private bgKey = '';
   private rings: RegionRing[];
   private lanes: { id: string; name: string; path: [number, number][] }[];
   private regionAnchors = new Map<string, [number, number]>();
@@ -73,10 +74,13 @@ export class Renderer {
   private factions: Map<string, Faction>;
   private territoryLayer: HTMLCanvasElement;
   private prevTerritoryLayer: HTMLCanvasElement;
+  private staticKey = '';
+  private staticLabelBoxes: LabelBox[] = [];
   private scratchA: HTMLCanvasElement;
   private scratchB: HTMLCanvasElement;
   private territoryKey = '';
-  private fadeStart = 0;
+  private territoryWarm = false; // the very first render is drawn without outlines
+  private fadeStart = -1e9;
   private lastBranchKey = '';
   private gestureActive = false;
   private flyRaf = 0;
@@ -86,15 +90,36 @@ export class Renderer {
   readonly timeScale: TimeScale;
   readonly bounds: Bounds;
 
-  constructor(private readonly canvas: HTMLCanvasElement, private readonly index: AtlasIndex) {
+  private fx: CanvasRenderingContext2D;
+  private fxTimer = 0;
+  private lastFxDraw = 0;
+  private fxUntil = 0; // pulses run only for a short while after something changes
+
+  constructor(private readonly canvas: HTMLCanvasElement, private readonly fxCanvas: HTMLCanvasElement, private readonly index: AtlasIndex) {
     const ctx = canvas.getContext('2d', { alpha: false });
-    if (!ctx) throw new Error('Canvas 2D not supported');
+    const fx = fxCanvas.getContext('2d');
+    if (!ctx || !fx) throw new Error('Canvas 2D not supported');
     this.ctx = ctx;
+    this.fx = fx;
     this.systems = index.atlas.systems;
     this.factions = index.factions;
     this.timeScale = new TimeScale(index.atlas.eras.scale);
     const center = index.atlas.regions.center;
-    this.galaxy = makeGalaxyArt(center);
+    // The galaxy artwork is generated after first paint, one small step per idle
+    // callback, so it never produces a long task.
+    const builder = makeGalaxyArtBuilder(center);
+    const idle = (cb: () => void) => {
+      if ('requestIdleCallback' in window) (window as Window & { requestIdleCallback: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback(cb, { timeout: 250 });
+      else setTimeout(cb, 16);
+    };
+    const stepArt = () => {
+      if (builder.step()) {
+        this.galaxy = builder.art;
+        this.bgKey = '';
+        this.invalidate();
+      } else idle(stepArt);
+    };
+    idle(stepArt);
     this.rings = computeRegionRings(index.atlas.regions.regions, this.systems, center);
     this.lanes = index.atlas.hyperlanes.map((l) => ({
       id: l.id,
@@ -123,6 +148,8 @@ export class Renderer {
     this.bounds = { minX: minX - 0.6, minY: minY - 0.6, maxX: maxX + 0.6, maxY: maxY + 0.6 };
     this.territoryLayer = document.createElement('canvas');
     this.prevTerritoryLayer = document.createElement('canvas');
+    this.bgLayer = document.createElement('canvas');
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) this.invalidate(); });
     this.scratchA = document.createElement('canvas');
     this.scratchB = document.createElement('canvas');
     if (typeof matchMedia === 'function') {
@@ -132,15 +159,41 @@ export class Renderer {
 
   // ---- public API -------------------------------------------------------
 
+  private fullRes = false;
+
+  /** Rendering resolution: 1x until the reader interacts (or a few seconds pass), then the device's. */
+  private targetDpr(): number {
+    const forced = Number(new URLSearchParams(location.search).get('dpr'));
+    if (forced > 0) return forced;
+    return this.fullRes ? Math.min(window.devicePixelRatio || 1, 3) : 1;
+  }
+
+  /** Switch to full device resolution (idempotent). The first paint stays at 1x so it is cheap. */
+  enableFullResolution(): void {
+    if (this.fullRes) return;
+    this.fullRes = true;
+    if (this.targetDpr() !== this.dpr) this.resize(this.cssW, this.cssH, this.insets);
+  }
+
+  get isFullResolution(): boolean {
+    return this.fullRes;
+  }
+
   resize(cssW: number, cssH: number, insets: Insets): void {
     this.cssW = Math.max(1, Math.round(cssW));
     this.cssH = Math.max(1, Math.round(cssH));
     this.insets = insets;
-    this.dpr = Math.min(window.devicePixelRatio || 1, 3);
+    this.dpr = this.targetDpr();
     this.canvas.width = Math.round(this.cssW * this.dpr);
     this.canvas.height = Math.round(this.cssH * this.dpr);
-    this.canvas.style.width = `${this.cssW}px`;
-    this.canvas.style.height = `${this.cssH}px`;
+    // The animation overlay runs at 1x: it only holds soft pulse rings, and
+    // re-rasterising a full-resolution canvas 10 times a second is what hurts phones.
+    this.fxCanvas.width = this.cssW;
+    this.fxCanvas.height = this.cssH;
+    for (const c of [this.canvas, this.fxCanvas]) {
+      c.style.width = `${this.cssW}px`;
+      c.style.height = `${this.cssH}px`;
+    }
     this.camera.resize(this.cssW, this.cssH);
     this.screenStars = makeScreenStars(this.cssW, this.cssH, Math.min(this.dpr, 2));
     const layerDpr = this.layerDpr();
@@ -148,7 +201,13 @@ export class Renderer {
       c.width = Math.round(this.cssW * layerDpr);
       c.height = Math.round(this.cssH * layerDpr);
     }
+    const bgDpr = this.bgDpr();
+    this.bgLayer.width = Math.round(this.cssW * bgDpr);
+    this.bgLayer.height = Math.round(this.cssH * bgDpr);
+    // (re)sizing a canvas clears it, so the scratch canvases start clean
     this.territoryKey = '';
+    this.staticKey = '';
+    this.bgKey = '';
     this.invalidate();
   }
 
@@ -174,19 +233,29 @@ export class Renderer {
       pctx.drawImage(this.territoryLayer, 0, 0);
       this.fadeStart = performance.now();
     }
+    const first = this.input === null;
     this.lastBranchKey = branchKey;
     this.input = input;
     this.invalidate();
+    // The first frame stays still; flares start pulsing once the reader does something.
+    if (!first) this.wake();
   }
 
   setGestureActive(active: boolean): void {
     this.gestureActive = active;
     this.invalidate();
+    if (!active) this.wake(1500);
   }
 
   invalidate(): void {
     this.dirty = true;
     if (!this.raf) this.raf = requestAnimationFrame(() => this.frame());
+  }
+
+  /** Let the event flares pulse for a moment (after a scrub, toggle or pan), then go quiet. */
+  wake(ms = 2400): void {
+    this.fxUntil = Math.max(this.fxUntil, performance.now() + ms);
+    this.scheduleFx();
   }
 
   worldToScreen(x: number, y: number): [number, number] {
@@ -327,23 +396,92 @@ export class Renderer {
   // ---- frame ------------------------------------------------------------
 
   private layerDpr(): number {
-    return Math.min(this.dpr, 1.75);
+    return Math.min(this.dpr, 1);
+  }
+
+  private bgDpr(): number {
+    return Math.min(this.dpr, 1);
   }
 
   private frame(): void {
     this.raf = 0;
     if (!this.dirty || !this.input) return;
     this.dirty = false;
+    this.counters.frames++;
     const now = performance.now();
     this.draw(now);
     const fading = now - this.fadeStart < 520 && !this.reduced;
-    const pulsing = this.activeEvents.length > 0 && !this.reduced && !this.gestureActive;
     if (fading) this.invalidate();
-    else if (pulsing && !this.animTimer) {
-      this.animTimer = window.setTimeout(() => {
-        this.animTimer = 0;
-        this.invalidate();
-      }, 50);
+    this.drawFx(now);
+    this.scheduleFx();
+  }
+
+  /** The overlay animation loop: cheap pulse rings only, ~15 fps, never while hidden or reduced-motion. */
+  private scheduleFx(): void {
+    const now = performance.now();
+    const wants = this.activeEvents.length > 0 && !this.reduced && !this.gestureActive && !document.hidden && now < this.fxUntil;
+    if (!wants || this.fxTimer) {
+      if (!wants && !this.fxTimer && this.lastFxDraw > 0 && now >= this.fxUntil) this.drawFx(now, true);
+      return;
+    }
+    this.fxTimer = window.setTimeout(() => {
+      this.fxTimer = 0;
+      this.counters.fxTimers++;
+      if (this.dirty) return; // the main frame will draw fx itself
+      this.drawFx(performance.now());
+      this.scheduleFx();
+    }, 100);
+  }
+
+  /** Measure average main-frame draw time over n frames (used by the perf check). */
+  benchFrame(n = 20, invalidateCaches = true): number {
+    if (!this.input) return 0;
+    const t0 = performance.now();
+    for (let i = 0; i < n; i++) {
+      if (invalidateCaches) {
+        this.bgKey = '';
+        this.territoryKey = '';
+      }
+      this.draw(t0 + i);
+    }
+    return (performance.now() - t0) / n;
+  }
+
+  lastProfile: Record<string, number> = {};
+  counters = { frames: 0, fx: 0, territory: 0, bg: 0, fxTimers: 0 };
+
+  private drawFx(now: number, settle = false): void {
+    const { fx, camera } = this;
+    if (!this.input) return;
+    fx.setTransform(1, 0, 0, 1, 0, 0);
+    fx.clearRect(0, 0, this.cssW, this.cssH);
+    this.counters.fx++;
+    this.lastFxDraw = settle ? 0 : now;
+    if (this.reduced || settle) return;
+    fx.lineWidth = 1.5;
+    for (const a of this.activeEvents) {
+      const [x, y] = camera.worldToScreen(a.x, a.y);
+      if (x < -40 || x > this.cssW + 40 || y < -40 || y > this.cssH + 40) continue;
+      const base = a.status === 'added' ? SPEC : a.status === 'uncertain' ? UNCERTAIN : (TYPE_COLORS[a.event.type] ?? '#ff9a62');
+      const ph = (now / 1100 + hash(a.event.id) * 0.1) % 1;
+      const r0 = 5 + a.event.importance * 1.6 + a.proximity * 6;
+      fx.strokeStyle = rgba(base, (1 - ph) * 0.45 * (0.4 + a.proximity * 0.6));
+      fx.setLineDash(a.status === 'added' ? [4, 3] : a.status === 'uncertain' ? [1.5, 3] : []);
+      fx.beginPath();
+      fx.arc(x, y, r0 + ph * 14, 0, Math.PI * 2);
+      fx.stroke();
+    }
+    fx.setLineDash([]);
+    for (const id of this.input.highlight) {
+      const s = this.index.systems.get(id);
+      if (!s) continue;
+      const [x, y] = camera.worldToScreen(s.coordinates.x, s.coordinates.y);
+      const ph = (now / 700) % 1;
+      fx.strokeStyle = rgba(SPEC, 1 - ph * 0.7);
+      fx.lineWidth = 2;
+      fx.beginPath();
+      fx.arc(x, y, 10 + ph * 8, 0, Math.PI * 2);
+      fx.stroke();
     }
   }
 
@@ -360,22 +498,46 @@ export class Renderer {
       ctx.drawImage(this.screenStars, 0, 0, this.canvas.width, this.canvas.height);
       ctx.restore();
     }
-    // Galaxy art in world space.
-    {
-      const [sx, sy] = camera.worldToScreen(this.galaxy.originX, this.galaxy.originY);
-      const size = (this.galaxy.canvas.width * this.galaxy.unitsPerPx) * camera.scale;
-      ctx.drawImage(this.galaxy.canvas, sx, sy, size, size);
+    // The galaxy artwork (the only expensive raster) is cached at low resolution per camera state.
+    const sKey = `${camera.cx.toFixed(4)}|${camera.cy.toFixed(4)}|${camera.scale.toFixed(3)}|${this.cssW}x${this.cssH}`;
+    const prof = this.lastProfile;
+    let p0 = performance.now();
+    const lap = (k: string) => { const p1 = performance.now(); prof[k] = p1 - p0; p0 = p1; };
+    if (this.galaxy) {
+      if (sKey !== this.bgKey) {
+        this.bgKey = sKey;
+        this.counters.bg++;
+        const bctx = this.bgLayer.getContext('2d')!;
+        const bd = this.bgDpr();
+        bctx.setTransform(bd, 0, 0, bd, 0, 0);
+        bctx.clearRect(0, 0, this.cssW, this.cssH);
+        const [sx, sy] = camera.worldToScreen(this.galaxy.originX, this.galaxy.originY);
+        const size = (this.galaxy.canvas.width * this.galaxy.unitsPerPx) * camera.scale;
+        bctx.drawImage(this.galaxy.canvas, sx, sy, size, size);
+      }
+      ctx.save();
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.drawImage(this.bgLayer, 0, 0, this.canvas.width, this.canvas.height);
+      ctx.restore();
     }
+    lap('static');
+    this.labelBoxes = [];
     this.drawGrid(ctx);
     this.drawRegions(ctx);
-    this.drawTerritory(ctx, t, input, now);
     this.drawLanes(ctx);
+    this.staticLabelBoxes = this.labelBoxes;
+    lap('staticBlit');
+    this.drawTerritory(ctx, t, input, now);
+    lap('territory');
     this.activeEvents = this.activeEventsAt(t, input.branch);
-    this.labelBoxes = [];
-    this.drawEvents(ctx, now);
-    this.drawSystems(ctx, t, input, now);
+    this.labelBoxes = [...this.staticLabelBoxes];
+    this.drawEvents(ctx);
+    lap('events');
+    this.drawSystems(ctx, t, input);
+    lap('systems');
     this.drawRegionLabels(ctx);
     this.drawGridLabels(ctx);
+    lap('labels');
   }
 
   private drawGrid(ctx: CanvasRenderingContext2D): void {
@@ -515,7 +677,13 @@ export class Renderer {
     const key = `${t}|${input.branch.pivots.join(',')}|${camera.cx.toFixed(3)}|${camera.cy.toFixed(3)}|${camera.scale.toFixed(2)}|${this.gestureActive ? 'g' : 's'}`;
     if (key !== this.territoryKey) {
       this.territoryKey = key;
+      this.counters.territory++;
       this.renderTerritoryLayer(t, input);
+      if (!this.territoryWarm) {
+        // The first render skips outlines; they arrive with the galaxy artwork's frame.
+        this.territoryWarm = true;
+        this.territoryKey = '';
+      }
     }
     const fade = this.reduced ? 1 : Math.min(1, (now - this.fadeStart) / 500);
     ctx.save();
@@ -545,7 +713,8 @@ export class Renderer {
       if (!groups.has(st.faction)) groups.set(st.faction, []);
       groups.get(st.faction)!.push({ s, w });
     }
-    const detailed = !this.gestureActive;
+    const detailed = !this.gestureActive && this.territoryWarm;
+    if (!this.territoryWarm) this.territoryWarm = false;
     for (const [fid, list] of groups) {
       const f = this.factions.get(fid);
       if (!f) continue;
@@ -580,30 +749,36 @@ export class Renderer {
     const a = this.scratchA.getContext('2d')!;
     const b = this.scratchB.getContext('2d')!;
     a.setTransform(d, 0, 0, d, 0, 0);
-    a.clearRect(0, 0, this.cssW, this.cssH);
     a.globalCompositeOperation = 'source-over';
     a.fillStyle = color;
     const bandPx = ghost ? 3 : 1.6;
     let any = false;
+    let bx0 = Infinity, by0 = Infinity, bx1 = -Infinity, by1 = -Infinity;
     for (const { s, w } of list) {
       const [x, y] = camera.worldToScreen(s.coordinates.x, s.coordinates.y);
       const r = this.territoryRadius(s) * camera.scale;
       if (x < -r || x > this.cssW + r || y < -r || y > this.cssH + r) continue;
       any = true;
+      bx0 = Math.min(bx0, x - r - bandPx - 2); by0 = Math.min(by0, y - r - bandPx - 2);
+      bx1 = Math.max(bx1, x + r + bandPx + 2); by1 = Math.max(by1, y + r + bandPx + 2);
       a.globalAlpha = w;
       a.beginPath();
       a.arc(x, y, r, 0, Math.PI * 2);
       a.fill();
     }
     if (!any) return;
+    // Only touch the pixels this faction covers: full-canvas composites are the expensive part.
+    const sx = Math.max(0, Math.floor(bx0 * d)), sy = Math.max(0, Math.floor(by0 * d));
+    const ex = Math.min(this.scratchA.width, Math.ceil(bx1 * d)), ey = Math.min(this.scratchA.height, Math.ceil(by1 * d));
+    const sw = ex - sx, sh = ey - sy;
+    if (sw <= 0 || sh <= 0) return;
     a.globalAlpha = 1;
     if (fillAlpha > 0) {
       lctx.globalAlpha = fillAlpha;
-      lctx.drawImage(this.scratchA, 0, 0);
+      lctx.drawImage(this.scratchA, sx, sy, sw, sh, sx, sy, sw, sh);
     }
     if (lineAlpha > 0) {
       b.setTransform(d, 0, 0, d, 0, 0);
-      b.clearRect(0, 0, this.cssW, this.cssH);
       b.globalCompositeOperation = 'source-over';
       b.fillStyle = color;
       for (const { s, w } of list) {
@@ -618,17 +793,32 @@ export class Renderer {
       b.globalAlpha = 1;
       b.globalCompositeOperation = 'destination-out';
       b.setTransform(1, 0, 0, 1, 0, 0);
-      b.drawImage(this.scratchA, 0, 0);
+      b.drawImage(this.scratchA, sx, sy, sw, sh, sx, sy, sw, sh);
       if (ghost) {
         b.globalCompositeOperation = 'destination-in';
         b.fillStyle = this.hatchPattern(b, color, d);
-        b.fillRect(0, 0, this.scratchB.width, this.scratchB.height);
+        b.fillRect(sx, sy, sw, sh);
       }
       b.globalCompositeOperation = 'source-over';
       lctx.globalAlpha = lineAlpha;
-      lctx.drawImage(this.scratchB, 0, 0);
+      lctx.drawImage(this.scratchB, sx, sy, sw, sh, sx, sy, sw, sh);
+      b.setTransform(d, 0, 0, d, 0, 0);
+      b.clearRect(bx0 - 2, by0 - 2, bx1 - bx0 + 4, by1 - by0 + 4);
     }
+    a.clearRect(bx0 - 2, by0 - 2, bx1 - bx0 + 4, by1 - by0 + 4);
     lctx.globalAlpha = 1;
+  }
+
+  /** Soft glow drawn as two translucent discs: far cheaper than a gradient per node. */
+  private drawGlow(ctx: CanvasRenderingContext2D, x: number, y: number, color: string, radius: number, alpha: number): void {
+    ctx.fillStyle = rgba(color, alpha * 0.22);
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = rgba(color, alpha * 0.45);
+    ctx.beginPath();
+    ctx.arc(x, y, radius * 0.55, 0, Math.PI * 2);
+    ctx.fill();
   }
 
   private hatchCache = new Map<string, CanvasPattern>();
@@ -658,34 +848,16 @@ export class Renderer {
 
   // ---- events & systems -------------------------------------------------
 
-  private drawEvents(ctx: CanvasRenderingContext2D, now: number): void {
+  private drawEvents(ctx: CanvasRenderingContext2D): void {
     const { camera } = this;
-    const pulse = this.reduced ? 0 : 1;
     for (const a of this.activeEvents) {
       const [x, y] = camera.worldToScreen(a.x, a.y);
       if (x < -40 || x > this.cssW + 40 || y < -40 || y > this.cssH + 40) continue;
       const base = a.status === 'added' ? SPEC : a.status === 'uncertain' ? UNCERTAIN : (TYPE_COLORS[a.event.type] ?? '#ff9a62');
       const imp = a.event.importance;
-      const ph = (now / 900 + hash(a.event.id) * 0.1) % 1;
       const r0 = 5 + imp * 1.6 + a.proximity * 6;
-      // Expanding pulse ring.
-      if (pulse) {
-        const pr = r0 + ph * 14;
-        ctx.strokeStyle = rgba(base, (1 - ph) * 0.45 * (0.4 + a.proximity * 0.6));
-        ctx.lineWidth = 1.5;
-        ctx.setLineDash(a.status === 'added' ? [4, 3] : a.status === 'uncertain' ? [1.5, 3] : []);
-        ctx.beginPath();
-        ctx.arc(x, y, pr, 0, Math.PI * 2);
-        ctx.stroke();
-      }
       // Glow core.
-      const g = ctx.createRadialGradient(x, y, 0, x, y, r0 * 1.6);
-      g.addColorStop(0, rgba(base, 0.55 * (0.5 + a.proximity * 0.5)));
-      g.addColorStop(1, rgba(base, 0));
-      ctx.fillStyle = g;
-      ctx.beginPath();
-      ctx.arc(x, y, r0 * 1.6, 0, Math.PI * 2);
-      ctx.fill();
+      this.drawGlow(ctx, x, y, base, r0 * 1.6, 0.55 * (0.5 + a.proximity * 0.5));
       // Static ring so reduced-motion users still see the flare.
       ctx.strokeStyle = rgba(base, 0.5 + a.proximity * 0.4);
       ctx.lineWidth = a.status === 'kept' ? 1.2 : 1.6;
@@ -719,7 +891,7 @@ export class Renderer {
     }
   }
 
-  private drawSystems(ctx: CanvasRenderingContext2D, t: number, input: FrameInput, now: number): void {
+  private drawSystems(ctx: CanvasRenderingContext2D, t: number, input: FrameInput): void {
     const { camera } = this;
     const control = input.branch.territory.controlAt(t);
     const selectedId = input.selection?.type === 'system' ? input.selection.id : input.selection?.type === 'event' ? (input.branch.allEvents.get(input.selection.id)?.location.system ?? null) : null;
@@ -761,13 +933,7 @@ export class Renderer {
         }
       } else {
         // Glow + core.
-        const g = ctx.createRadialGradient(x, y, 0, x, y, r * 2.6);
-        g.addColorStop(0, fcolor ? rgba(fcolor, 0.5) : 'rgba(233,216,166,0.35)');
-        g.addColorStop(1, 'rgba(0,0,0,0)');
-        ctx.fillStyle = g;
-        ctx.beginPath();
-        ctx.arc(x, y, r * 2.6, 0, Math.PI * 2);
-        ctx.fill();
+        this.drawGlow(ctx, x, y, fcolor ?? ACCENT, r * 2.6, fcolor ? 0.5 : 0.35);
         ctx.fillStyle = '#f4f1e8';
         ctx.beginPath();
         ctx.arc(x, y, r, 0, Math.PI * 2);
@@ -781,11 +947,10 @@ export class Renderer {
         }
       }
       if (selected || highlighted) {
-        const ph = this.reduced ? 0.5 : (now / 700) % 1;
         ctx.strokeStyle = selected ? ACCENT : SPEC;
         ctx.lineWidth = 2;
         ctx.beginPath();
-        ctx.arc(x, y, r + 6 + (highlighted ? ph * 4 : 0), 0, Math.PI * 2);
+        ctx.arc(x, y, r + 6, 0, Math.PI * 2);
         ctx.stroke();
       }
       const wantLabel = selected || highlighted || activeSystems.has(s.id) || s.importance >= minImportance;
@@ -820,10 +985,12 @@ export class Renderer {
     ctx.textBaseline = 'middle';
     if (opts.shadow) {
       ctx.save();
-      ctx.shadowColor = 'rgba(0,0,0,0.9)';
-      ctx.shadowBlur = 3;
-      ctx.fillText(text, x, y, opts.maxWidth);
+      ctx.strokeStyle = 'rgba(6,7,13,0.85)';
+      ctx.lineWidth = 3;
+      ctx.lineJoin = 'round';
+      ctx.strokeText(text, x, y, opts.maxWidth);
       ctx.restore();
+      ctx.fillText(text, x, y, opts.maxWidth);
     } else {
       ctx.fillText(text, x, y, opts.maxWidth);
     }

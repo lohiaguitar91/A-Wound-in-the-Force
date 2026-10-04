@@ -32,6 +32,11 @@ export interface AtlasHooks {
   eraIds(): string[];
   activeEventIds(): string[];
   holdings(): Record<string, number>;
+  benchFrame(n?: number, invalidateCaches?: boolean): number;
+  profile(): Record<string, number>;
+  counters(): Record<string, number>;
+  fullRes(): void;
+  timings(): Record<string, number>;
 }
 
 const $ = <T extends HTMLElement>(sel: string): T => {
@@ -45,8 +50,10 @@ export async function boot(): Promise<void> {
   const canvas = $<HTMLCanvasElement>('#map');
   const timeReadout = $('#time-readout');
   let index: AtlasIndex;
+  performance.mark('atlas:boot');
   try {
     index = await loadAtlas();
+    performance.mark('atlas:loaded');
   } catch (err) {
     timeReadout.textContent = 'Could not load atlas data';
     console.error(err);
@@ -60,7 +67,8 @@ export async function boot(): Promise<void> {
     pivots: (url.pivots ?? []).filter((p) => validPivots.has(p)),
     selection: url.selection && ((url.selection.type === 'system' && index.systems.has(url.selection.id)) || (url.selection.type === 'event' && index.baseEvents.has(url.selection.id))) ? url.selection : null,
   });
-  const renderer = new Renderer(canvas, index);
+  const renderer = new Renderer(canvas, $<HTMLCanvasElement>('#map-fx'), index);
+  performance.mark('atlas:renderer');
   const sheet = new Sheet($('#sheet'));
   const live = $('#live');
   const legendEl = $('#legend');
@@ -78,8 +86,12 @@ export async function boot(): Promise<void> {
     return { top: Math.max(topbar.offsetHeight, hudBottom + 4), right: 0, bottom: scrubberEl.offsetHeight, left: 0 };
   };
   let firstLayout = true;
+  let lastSize = '';
   const layout = () => {
     const r = app.getBoundingClientRect();
+    const sizeKey = `${Math.round(r.width)}x${Math.round(r.height)}|${JSON.stringify(insets())}`;
+    if (sizeKey === lastSize) return; // ResizeObserver fires once on observe; skip the duplicate
+    lastSize = sizeKey;
     renderer.resize(r.width, r.height, insets());
     if (firstLayout) {
       firstLayout = false;
@@ -174,7 +186,7 @@ export async function boot(): Promise<void> {
 
   // ---- gestures ---------------------------------------------------------
   attachGestures(canvas, renderer.camera, {
-    onChange: () => renderer.invalidate(),
+    onChange: () => { renderer.invalidate(); renderer.wake(1200); },
     onGestureStart: () => renderer.setGestureActive(true),
     onGestureEnd: () => renderer.setGestureActive(false),
     onTap: (x, y) => {
@@ -247,7 +259,9 @@ export async function boot(): Promise<void> {
     updateCanvasLabel();
   };
 
+  let storeSets = 0;
   store.subscribe((s, prev) => {
+    storeSets++;
     pushFrame();
     if (s.time !== prev.time) scrubber.setTime(s.time);
     if (s.time !== prev.time || s.pivots !== prev.pivots) {
@@ -284,6 +298,12 @@ export async function boot(): Promise<void> {
 
   // ---- boot -------------------------------------------------------------
   {
+    // First paint renders at 1x; go to full device resolution on the first interaction or after a short idle.
+    const up = () => renderer.enableFullResolution();
+    for (const type of ['pointerdown', 'keydown', 'wheel', 'touchstart']) window.addEventListener(type, up, { once: true, passive: true });
+    setTimeout(up, 3500);
+  }
+  {
     // Colour the scrubber track by era using the real time-scale fractions.
     const colors = ['#26304d', '#3b4a7a', '#5b4a3b', '#6a3b3b', '#3b5e4e', '#4d3b6a', '#3b3b3b'];
     const stops = atlas.eras.eras.map((e, i) => `${colors[i % colors.length]} ${(renderer.timeScale.toFraction(e.start) * 100).toFixed(2)}% ${(renderer.timeScale.toFraction(e.end) * 100).toFixed(2)}%`);
@@ -292,9 +312,11 @@ export async function boot(): Promise<void> {
   new ResizeObserver(() => layout()).observe(app);
   window.addEventListener('orientationchange', () => setTimeout(layout, 60));
   layout();
+  performance.mark('atlas:layout');
   scrubber.setTime(store.get().time);
   pushFrame();
-  updateChrome();
+  performance.mark('atlas:frame-queued');
+  setTimeout(() => { updateChrome(); performance.mark('atlas:chrome'); }, 0);
   if (store.get().selection) {
     const sel = store.get().selection!;
     if (sel.type === 'system') actions.showSystem(sel.id, false);
@@ -315,6 +337,16 @@ export async function boot(): Promise<void> {
     eraIds: () => atlas.eras.eras.map((e) => e.id),
     activeEventIds: () => renderer.activeEventsAt(store.get().time, store.branch).map((a) => a.event.id),
     holdings: () => Object.fromEntries([...store.branch.territory.holdingsAt(store.get().time)].map(([f, l]) => [f, l.length])),
+    benchFrame: (n, inv) => renderer.benchFrame(n, inv),
+    profile: () => ({ ...renderer.lastProfile }),
+    counters: () => ({ ...renderer.counters, storeSets: storeSets }),
+    fullRes: () => renderer.enableFullResolution(),
+    timings: () => {
+      const marks = performance.getEntriesByType('mark').filter((m) => m.name.startsWith('atlas:'));
+      const out: Record<string, number> = {};
+      for (let i = 1; i < marks.length; i++) out[marks[i].name.slice(6)] = Math.round(marks[i].startTime - marks[i - 1].startTime);
+      return out;
+    },
   };
   document.dispatchEvent(new CustomEvent('atlas:ready'));
 }

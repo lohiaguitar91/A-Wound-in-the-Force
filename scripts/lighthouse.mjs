@@ -32,7 +32,7 @@ const args = [
   'lighthouse', url,
   '--output=json', '--output=html', `--output-path=${join(outDir, 'report')}`,
   '--only-categories=performance,accessibility,best-practices,seo',
-  '--chrome-flags=--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu',
+  '--chrome-flags=--headless=new --no-sandbox --disable-dev-shm-usage',
   '--quiet',
 ];
 const res = spawnSync('npx', args, { stdio: 'inherit', env: { ...process.env, ...(chromePath ? { CHROME_PATH: chromePath } : {}) } });

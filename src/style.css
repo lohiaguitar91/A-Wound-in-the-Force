@@ -70,6 +70,7 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
   cursor: grab;
 }
 .map:focus-visible { box-shadow: inset 0 0 0 2px var(--accent-2); }
+.map-fx { pointer-events: none; background: transparent; }
 .map.dragging { cursor: grabbing; }
 
 /* Top bar */
@@ -140,13 +141,15 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 .play[aria-pressed="true"] .ico-play { display: none; }
 .play[aria-pressed="true"] .ico-pause { display: block; }
 
-.track-wrap { position: relative; padding: 14px 0 4px; }
-.era-ticks { position: absolute; left: 0; right: 0; top: 0; height: 14px; }
+.track-wrap { position: relative; padding: 16px 0 4px; }
+.era-ticks { position: absolute; left: 0; right: 0; top: 0; height: 16px; }
 .era-tick {
-  position: absolute; top: 0; height: 14px; border-left: 1px solid rgba(255, 255, 255, 0.22);
-  font-size: 9.5px; color: var(--fg-dim); padding-left: 3px; white-space: nowrap; overflow: hidden;
-  letter-spacing: 0.02em; text-transform: uppercase; line-height: 12px;
+  position: absolute; top: 0; height: 16px; border: 0; border-left: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 10.5px; color: var(--fg); padding: 0 0 0 3px; margin: 0; white-space: nowrap; overflow: hidden;
+  letter-spacing: 0.02em; text-transform: uppercase; line-height: 16px; text-align: left;
+  background: rgba(6, 7, 13, 0.9); border-radius: 0 3px 3px 0; cursor: pointer; font-family: inherit;
 }
+.era-tick:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 1px; }
 .era-tick.active { color: var(--accent); border-left-color: var(--accent); }
 .track {
   -webkit-appearance: none; appearance: none; width: 100%; height: var(--tap); margin: 0;

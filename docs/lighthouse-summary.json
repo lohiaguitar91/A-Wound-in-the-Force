@@ -1,21 +1,19 @@
 {
   "url": "http://127.0.0.1:4173/",
-  "fetchTime": "2026-10-04T20:45:19.293Z",
+  "fetchTime": "2026-10-04T21:07:48.040Z",
   "formFactor": "mobile",
   "scores": {
-    "performance": 70,
-    "accessibility": 96,
+    "performance": 99,
+    "accessibility": 100,
     "best-practices": 100,
     "seo": 91
   },
   "metrics": {
-    "firstContentfulPaint": "1.2 s",
-    "largestContentfulPaint": "2.0 s",
-    "totalBlockingTime": "3,450 ms",
+    "firstContentfulPaint": "1.1 s",
+    "largestContentfulPaint": "1.5 s",
+    "totalBlockingTime": "90 ms",
     "cumulativeLayoutShift": "0",
-    "speedIndex": "1.9 s"
+    "speedIndex": "1.1 s"
   },
-  "failingAccessibility": [
-    "color-contrast"
-  ]
+  "failingAccessibility": []
 }

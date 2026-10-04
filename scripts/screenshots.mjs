@@ -29,6 +29,7 @@ const context = await browser.newContext({ ...devices['iPhone 13'], viewport: { 
 const page = await context.newPage();
 await page.goto(baseUrl, { waitUntil: 'networkidle' });
 await page.waitForFunction(() => window.__atlas?.ready === true);
+await page.evaluate(() => window.__atlas.fullRes());
 const settle = async () => {
   await page.waitForTimeout(250);
 };
