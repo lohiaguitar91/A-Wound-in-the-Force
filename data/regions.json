@@ -1,0 +1,14 @@
+{
+  "center": { "x": 11.0, "y": 11.4 },
+  "regions": [
+    { "id": "deep-core", "name": "Deep Core", "order": 0, "ring": true },
+    { "id": "core-worlds", "name": "Core Worlds", "order": 1, "ring": true },
+    { "id": "colonies", "name": "Colonies", "order": 2, "ring": true },
+    { "id": "inner-rim", "name": "Inner Rim", "order": 3, "ring": true },
+    { "id": "expansion-region", "name": "Expansion Region", "order": 4, "ring": true },
+    { "id": "mid-rim", "name": "Mid Rim", "order": 5, "ring": true },
+    { "id": "outer-rim", "name": "Outer Rim Territories", "short": "Outer Rim", "order": 6, "ring": true },
+    { "id": "wild-space", "name": "Wild Space", "order": 7, "ring": false },
+    { "id": "unknown-regions", "name": "Unknown Regions", "order": 8, "ring": false }
+  ]
+}

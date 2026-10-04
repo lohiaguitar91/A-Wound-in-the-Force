@@ -1,0 +1,32 @@
+{
+  "$id": "factions.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "short", "color", "era", "kind", "summary", "source", "continuity"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "defs.json#/definitions/id" },
+      "name": { "type": "string", "minLength": 2 },
+      "short": { "type": "string", "minLength": 2, "maxLength": 22 },
+      "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+      "era": {
+        "type": "object",
+        "required": ["start"],
+        "additionalProperties": false,
+        "properties": {
+          "start": { "$ref": "defs.json#/definitions/year" },
+          "end": { "$ref": "defs.json#/definitions/year" },
+          "approx": { "type": "boolean" }
+        }
+      },
+      "kind": { "type": "string", "enum": ["state", "order", "coalition", "species", "movement", "corporation", "sect"] },
+      "territorial": { "type": "boolean" },
+      "summary": { "$ref": "defs.json#/definitions/summary" },
+      "source": { "$ref": "defs.json#/definitions/wookieeUrl" },
+      "sources": { "type": "array", "items": { "$ref": "defs.json#/definitions/url" } },
+      "continuity": { "$ref": "defs.json#/definitions/continuity" }
+    }
+  }
+}

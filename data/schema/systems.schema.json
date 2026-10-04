@@ -1,0 +1,43 @@
+{
+  "$id": "systems.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "grid", "region", "summary", "source", "continuity"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "defs.json#/definitions/id" },
+      "name": { "type": "string", "minLength": 1 },
+      "aliases": { "type": "array", "items": { "type": "string" } },
+      "grid": { "$ref": "defs.json#/definitions/grid" },
+      "region": { "$ref": "defs.json#/definitions/id" },
+      "sector": { "type": "string" },
+      "coordinates": {
+        "type": "object",
+        "required": ["x", "y"],
+        "additionalProperties": false,
+        "properties": {
+          "x": { "type": "number", "minimum": 0, "maximum": 22 },
+          "y": { "type": "number", "minimum": 0, "maximum": 24 }
+        }
+      },
+      "importance": { "type": "integer", "minimum": 1, "maximum": 5 },
+      "summary": { "$ref": "defs.json#/definitions/summary" },
+      "source": { "$ref": "defs.json#/definitions/wookieeUrl" },
+      "sources": { "type": "array", "items": { "$ref": "defs.json#/definitions/url" } },
+      "continuity": { "$ref": "defs.json#/definitions/continuity" },
+      "fate": {
+        "type": "object",
+        "required": ["event", "state"],
+        "additionalProperties": false,
+        "properties": {
+          "event": { "$ref": "defs.json#/definitions/id" },
+          "state": { "type": "string", "enum": ["destroyed", "devastated", "abandoned", "dead"] }
+        }
+      },
+      "gridUncertain": { "type": "boolean" },
+      "tags": { "type": "array", "items": { "type": "string" } }
+    }
+  }
+}

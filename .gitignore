@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.cache/
+public/data/atlas.json
+test-results/
+playwright-report/
+.lighthouse/
+*.log
+.DS_Store

@@ -1,0 +1,24 @@
+{
+  "range": { "start": -37000, "end": 140 },
+  "eras": [
+    { "id": "pre-republic", "name": "Pre-Republic", "short": "Pre-Rep.", "start": -37000, "end": -25053 },
+    { "id": "old-republic", "name": "Old Republic", "short": "Old Republic", "start": -25053, "end": -1000 },
+    { "id": "rise-of-the-empire", "name": "Rise of the Empire", "short": "Empire", "start": -1000, "end": 0 },
+    { "id": "rebellion", "name": "Rebellion", "short": "Rebel.", "start": 0, "end": 5 },
+    { "id": "new-republic", "name": "New Republic", "short": "New Rep.", "start": 5, "end": 25 },
+    { "id": "new-jedi-order", "name": "New Jedi Order", "short": "NJO", "start": 25, "end": 40 },
+    { "id": "legacy", "name": "Legacy", "short": "Legacy", "start": 40, "end": 140 }
+  ],
+  "scale": [
+    { "start": -37000, "end": -25053, "weight": 5 },
+    { "start": -25053, "end": -7000, "weight": 6 },
+    { "start": -7000, "end": -5100, "weight": 7 },
+    { "start": -5100, "end": -3500, "weight": 36 },
+    { "start": -3500, "end": -1000, "weight": 16 },
+    { "start": -1000, "end": 0, "weight": 12 },
+    { "start": 0, "end": 5, "weight": 4 },
+    { "start": 5, "end": 25, "weight": 5 },
+    { "start": 25, "end": 40, "weight": 5 },
+    { "start": 40, "end": 140, "weight": 4 }
+  ]
+}
