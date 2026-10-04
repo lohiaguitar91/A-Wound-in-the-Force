@@ -1,0 +1,158 @@
+[
+  {
+    "id": "kashyyyk",
+    "name": "Kashyyyk",
+    "grid": "P-9",
+    "region": "mid-rim",
+    "importance": 4,
+    "summary": "The Wookiee homeworld of continent-spanning wroshyr forests. Once a Rakatan slave world, it was exploited by Czerka during the Jedi Civil War and hid a Star Map in its Shadowlands.",
+    "source": "https://starwars.fandom.com/wiki/Kashyyyk/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "naboo",
+    "name": "Naboo",
+    "grid": "O-17",
+    "region": "mid-rim",
+    "importance": 4,
+    "summary": "A green Mid Rim world shared by human colonists and the amphibious Gungans. The Trade Federation's blockade of Naboo in 32 BBY was the manufactured crisis that lifted Palpatine to the chancellorship.",
+    "source": "https://starwars.fandom.com/wiki/Naboo/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "bothawui",
+    "name": "Bothawui",
+    "grid": "T-11",
+    "gridUncertain": true,
+    "region": "mid-rim",
+    "importance": 3,
+    "summary": "Homeworld of the Bothans and their spynet, a Mid Rim power in its own right. A Republic fleet under Jedi Belth Allusis made its famous stand here against the Sith Empire in 3,671 BBY.",
+    "source": "https://starwars.fandom.com/wiki/Bothawui",
+    "continuity": "legends"
+  },
+  {
+    "id": "malastare",
+    "name": "Malastare",
+    "grid": "U-9",
+    "gridUncertain": true,
+    "region": "mid-rim",
+    "importance": 2,
+    "summary": "A high-gravity world of the Gran and the native Dug on the Hydian Way, rich in fuel and infamous for its podracing circuits. Its senators were a reliable bloc in late-Republic politics.",
+    "source": "https://starwars.fandom.com/wiki/Malastare/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "ithor",
+    "name": "Ithor",
+    "grid": "I-7",
+    "gridUncertain": true,
+    "region": "mid-rim",
+    "importance": 2,
+    "summary": "A sacred jungle world whose Ithorian natives lived in floating herd-ships rather than touch the surface. Ithorians led the Telos restoration effort after the Jedi Civil War, and the Yuuzhan Vong poisoned the planet in 25 ABY.",
+    "source": "https://starwars.fandom.com/wiki/Ithor",
+    "continuity": "legends",
+    "fate": {
+      "event": "fall-of-ithor",
+      "state": "devastated"
+    }
+  },
+  {
+    "id": "ord-mantell",
+    "name": "Ord Mantell",
+    "grid": "L-7",
+    "region": "mid-rim",
+    "importance": 3,
+    "summary": "An old Republic ordnance depot that decayed into a haven for smugglers and separatists. The Republic fought a long guerrilla war against separatists here during the Cold War.",
+    "source": "https://starwars.fandom.com/wiki/Ord_Mantell/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "lantillies",
+    "name": "Lantillies",
+    "grid": "P-7",
+    "gridUncertain": true,
+    "region": "mid-rim",
+    "importance": 1,
+    "summary": "A shipbuilding stop on the Perlemian Trade Route, home to Lantillian ShipWrights and one of the many Mid Rim worlds that grew rich simply by sitting on the great eastern hyperlane.",
+    "source": "https://starwars.fandom.com/wiki/Lantillies",
+    "continuity": "legends"
+  },
+  {
+    "id": "ruusan",
+    "name": "Ruusan",
+    "grid": "K-19",
+    "gridUncertain": true,
+    "region": "mid-rim",
+    "importance": 4,
+    "summary": "A dry Mid Rim world where seven battles between Lord Kaan's Brotherhood of Darkness and Lord Hoth's Army of Light ended the New Sith Wars in 1,000 BBY. Kaan's thought bomb killed every Force-user on the battlefield; only Darth Bane walked away.",
+    "source": "https://starwars.fandom.com/wiki/Ruusan",
+    "continuity": "legends"
+  },
+  {
+    "id": "iridonia",
+    "name": "Iridonia",
+    "grid": "N-6",
+    "gridUncertain": true,
+    "region": "mid-rim",
+    "importance": 2,
+    "summary": "The harsh homeworld of the Zabrak, whose warriors fought alongside the Republic from the Old Republic era onward and were among the first species to colonise other worlds.",
+    "source": "https://starwars.fandom.com/wiki/Iridonia",
+    "continuity": "legends"
+  },
+  {
+    "id": "cerea",
+    "name": "Cerea",
+    "grid": "N-9",
+    "gridUncertain": true,
+    "region": "mid-rim",
+    "importance": 1,
+    "summary": "Homeworld of the binary-brained Cereans, a technologically restrained Mid Rim society that produced Jedi Master Ki-Adi-Mundi.",
+    "source": "https://starwars.fandom.com/wiki/Cerea",
+    "continuity": "legends"
+  },
+  {
+    "id": "nal-hutta",
+    "name": "Nal Hutta",
+    "aliases": [
+      "Hutta"
+    ],
+    "grid": "S-12",
+    "region": "mid-rim",
+    "importance": 4,
+    "summary": "The polluted bog-world the Hutts made their capital after the fall of Varl. The Hutt clans ruled their space from here for all of recorded history, outside the Republic's laws and the Sith's wars alike.",
+    "source": "https://starwars.fandom.com/wiki/Nal_Hutta/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "nar-shaddaa",
+    "name": "Nar Shaddaa",
+    "grid": "S-12",
+    "region": "mid-rim",
+    "importance": 4,
+    "summary": "Nal Hutta's city-moon, the Smugglers' Moon, a vertical slum where refugees from the Mandalorian Wars gathered and where the Jedi Exile found Zez-Kai Ell in hiding during the First Jedi Purge.",
+    "source": "https://starwars.fandom.com/wiki/Nar_Shaddaa/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "varl",
+    "name": "Varl",
+    "grid": "S-13",
+    "gridUncertain": true,
+    "region": "mid-rim",
+    "importance": 1,
+    "summary": "The ruined original homeworld of the Hutts, abandoned in antiquity after a catastrophe the Hutts blamed on their own gods. Its memory shaped the Hutt move to Nal Hutta.",
+    "source": "https://starwars.fandom.com/wiki/Varl",
+    "continuity": "legends"
+  },
+  {
+    "id": "sleheyron",
+    "name": "Sleheyron",
+    "grid": "T-11",
+    "gridUncertain": true,
+    "region": "mid-rim",
+    "importance": 1,
+    "summary": "A volcanic Hutt trading world in the Si'Klaata Cluster, a slave-market hub of Hutt Space in the Old Republic era.",
+    "source": "https://starwars.fandom.com/wiki/Sleheyron",
+    "continuity": "legends"
+  }
+]

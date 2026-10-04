@@ -1,0 +1,241 @@
+[
+  {
+    "id": "fondor",
+    "name": "Fondor",
+    "grid": "L-11",
+    "gridUncertain": true,
+    "region": "colonies",
+    "importance": 3,
+    "summary": "A Colonies shipyard world whose orbital docks rivalled Kuat's. Fondor built warships for every galactic government from the Old Republic to the Galactic Alliance.",
+    "source": "https://starwars.fandom.com/wiki/Fondor/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "cato-neimoidia",
+    "name": "Cato Neimoidia",
+    "grid": "N-11",
+    "region": "colonies",
+    "importance": 2,
+    "summary": "The richest of the Neimoidian purse-worlds, its bridge cities strung between rocky arches. It served as a Trade Federation stronghold and fell during the last days of the Clone Wars.",
+    "source": "https://starwars.fandom.com/wiki/Cato_Neimoidia/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "balmorra",
+    "name": "Balmorra",
+    "grid": "L-8",
+    "gridUncertain": true,
+    "region": "colonies",
+    "importance": 3,
+    "summary": "An arms-manufacturing world near the Core whose droid and weapons factories made it strategically vital. The Sith Empire occupied it during the Great Galactic War and a Republic-backed resistance fought on through the Cold War.",
+    "source": "https://starwars.fandom.com/wiki/Balmorra",
+    "continuity": "legends"
+  },
+  {
+    "id": "commenor",
+    "name": "Commenor",
+    "grid": "N-11",
+    "gridUncertain": true,
+    "region": "colonies",
+    "importance": 2,
+    "summary": "A prosperous Colonies trade world settled early from the Core, remembered for its merchants and for declaring independence during the Second Galactic Civil War.",
+    "source": "https://starwars.fandom.com/wiki/Commenor",
+    "continuity": "legends"
+  },
+  {
+    "id": "arkania",
+    "name": "Arkania",
+    "grid": "M-4",
+    "gridUncertain": true,
+    "region": "colonies",
+    "importance": 3,
+    "summary": "Icy homeworld of the Arkanians, master geneticists whose Jedi, Arca Jeth among them, shaped the Old Republic. Jedi Master Arca's praxeum trained Ulic and Cay Qel-Droma before the Beast Wars of Onderon.",
+    "source": "https://starwars.fandom.com/wiki/Arkania",
+    "continuity": "legends"
+  },
+  {
+    "id": "deneba",
+    "name": "Deneba",
+    "grid": "N-10",
+    "gridUncertain": true,
+    "region": "colonies",
+    "importance": 2,
+    "summary": "A red-sanded world whose Mount Meru hosted the great Jedi convocation of 3,997 BBY. The Krath attacked the gathering with war droids and Master Arca Jeth was killed, driving Ulic Qel-Droma toward his fateful infiltration.",
+    "source": "https://starwars.fandom.com/wiki/Deneba",
+    "continuity": "legends"
+  },
+  {
+    "id": "carida",
+    "name": "Carida",
+    "grid": "L-8",
+    "gridUncertain": true,
+    "region": "colonies",
+    "importance": 2,
+    "summary": "A high-gravity world that hosted the Republic's and then the Empire's most prestigious military academy. It was destroyed when Kyp Durron fired the Sun Crusher into its star in 11 ABY.",
+    "source": "https://starwars.fandom.com/wiki/Carida",
+    "continuity": "legends",
+    "fate": {
+      "event": "destruction-of-carida",
+      "state": "destroyed"
+    }
+  },
+  {
+    "id": "onderon",
+    "name": "Onderon",
+    "grid": "O-6",
+    "region": "inner-rim",
+    "importance": 4,
+    "summary": "A jungle world whose walled city of Iziz was ruled by a dynasty steeped in the teachings of the Dark Jedi Freedon Nadd. Its Beast Wars, the Naddist uprising and the civil war between Queen Talia and General Vaklu made it a recurring flashpoint of the Old Republic.",
+    "source": "https://starwars.fandom.com/wiki/Onderon/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "dxun",
+    "name": "Dxun",
+    "grid": "O-6",
+    "region": "inner-rim",
+    "importance": 3,
+    "summary": "Onderon's largest moon, a predator-filled jungle that passes close enough to the planet for beasts to cross between them. Freedon Nadd's tomb was built here, Mandalore the Indomitable died here, and the Neo-Crusaders used it as a forward base in the Mandalorian Wars.",
+    "source": "https://starwars.fandom.com/wiki/Dxun",
+    "continuity": "legends"
+  },
+  {
+    "id": "manaan",
+    "name": "Manaan",
+    "grid": "Q-8",
+    "gridUncertain": true,
+    "region": "inner-rim",
+    "importance": 4,
+    "summary": "An ocean world whose Selkath rulers sold the healing fluid kolto to both sides of the Jedi Civil War under strict neutrality. Ahto City hosted Republic and Sith embassies within walking distance of each other.",
+    "source": "https://starwars.fandom.com/wiki/Manaan",
+    "continuity": "legends"
+  },
+  {
+    "id": "thyferra",
+    "name": "Thyferra",
+    "grid": "L-13",
+    "gridUncertain": true,
+    "region": "inner-rim",
+    "importance": 2,
+    "summary": "The source of nearly all of the galaxy's bacta, a humid Inner Rim world on the Rimma Trade Route whose Vratix growers and human cartels held enormous economic leverage.",
+    "source": "https://starwars.fandom.com/wiki/Thyferra",
+    "continuity": "legends"
+  },
+  {
+    "id": "yag-dhul",
+    "name": "Yag'Dhul",
+    "grid": "L-15",
+    "gridUncertain": true,
+    "region": "inner-rim",
+    "importance": 2,
+    "summary": "Homeworld of the mathematically gifted Givin, sitting at the crossroads where the Rimma Trade Route meets the Corellian Trade Spine. Its space station was a strategic prize in several wars.",
+    "source": "https://starwars.fandom.com/wiki/Yag%27Dhul",
+    "continuity": "legends"
+  },
+  {
+    "id": "denon",
+    "name": "Denon",
+    "grid": "L-12",
+    "gridUncertain": true,
+    "region": "inner-rim",
+    "importance": 2,
+    "summary": "A city-world of the Inner Rim at the junction of the Corellian Run and the Hydian Way, second only to Coruscant in urban sprawl and a key waypoint on the long road to the southern Rim.",
+    "source": "https://starwars.fandom.com/wiki/Denon",
+    "continuity": "legends"
+  },
+  {
+    "id": "bestine-iv",
+    "name": "Bestine IV",
+    "grid": "K-14",
+    "gridUncertain": true,
+    "region": "inner-rim",
+    "importance": 1,
+    "summary": "An ocean world of the Inner Rim on the Corellian Trade Spine, known for its island shipyards and as the home of Rebel pilot Jek Porkins.",
+    "source": "https://starwars.fandom.com/wiki/Bestine_IV",
+    "continuity": "legends"
+  },
+  {
+    "id": "ambria",
+    "name": "Ambria",
+    "grid": "L-12",
+    "gridUncertain": true,
+    "region": "inner-rim",
+    "importance": 3,
+    "summary": "A barren Inner Rim world scarred by Sith sorcery, where Jedi Master Thon kept his retreat and trained Nomi Sunrider. Darth Bane died here in 980 BBY in his final duel with his apprentice Zannah.",
+    "source": "https://starwars.fandom.com/wiki/Ambria",
+    "continuity": "legends"
+  },
+  {
+    "id": "taanab",
+    "name": "Taanab",
+    "grid": "N-8",
+    "gridUncertain": true,
+    "region": "inner-rim",
+    "importance": 1,
+    "summary": "A pastoral agriworld on the Perlemian Trade Route, best known for the pirate raid Lando Calrissian famously repelled a few years before the Battle of Endor.",
+    "source": "https://starwars.fandom.com/wiki/Taanab",
+    "continuity": "legends"
+  },
+  {
+    "id": "hapes",
+    "name": "Hapes",
+    "grid": "O-9",
+    "gridUncertain": true,
+    "region": "inner-rim",
+    "importance": 2,
+    "summary": "Capital of the matriarchal Hapes Consortium, a cluster of sixty-three worlds closed to outsiders for most of the Republic's history and courted by the New Republic after Endor.",
+    "source": "https://starwars.fandom.com/wiki/Hapes",
+    "continuity": "legends"
+  },
+  {
+    "id": "kuar",
+    "name": "Kuar",
+    "grid": "M-13",
+    "gridUncertain": true,
+    "region": "expansion-region",
+    "importance": 2,
+    "summary": "A dead world of ruined cities in the Expansion Region where Ulic Qel-Droma defeated Mandalore the Indomitable in single combat in 3,996 BBY, binding the Mandalorian Crusaders to the Sith cause.",
+    "source": "https://starwars.fandom.com/wiki/Kuar",
+    "continuity": "legends"
+  },
+  {
+    "id": "mimban",
+    "name": "Mimban",
+    "aliases": [
+      "Circarpous V"
+    ],
+    "grid": "M-15",
+    "gridUncertain": true,
+    "region": "expansion-region",
+    "importance": 1,
+    "summary": "A swampy Expansion Region world whose Coway and Mimbanite natives lived among ruins of an older civilisation. It was the site of the Temple of Pomojema and an Imperial mining colony.",
+    "source": "https://starwars.fandom.com/wiki/Mimban",
+    "continuity": "legends"
+  },
+  {
+    "id": "serroco",
+    "name": "Serroco",
+    "grid": "L-13",
+    "gridUncertain": true,
+    "region": "expansion-region",
+    "importance": 2,
+    "summary": "A Republic world whose cities were obliterated by Mandalorian nuclear bombardment in 3,963 BBY, after Republic commanders ignored a Jedi warning and sheltered their fleet among the population.",
+    "source": "https://starwars.fandom.com/wiki/Serroco",
+    "continuity": "legends",
+    "fate": {
+      "event": "bombardment-of-serroco",
+      "state": "devastated"
+    }
+  },
+  {
+    "id": "dorin",
+    "name": "Dorin",
+    "grid": "L-6",
+    "gridUncertain": true,
+    "region": "expansion-region",
+    "importance": 1,
+    "summary": "Helium-rich homeworld of the Kel Dor, whose Baran Do sages studied the Force independently of the Jedi for thousands of years before joining the Order.",
+    "source": "https://starwars.fandom.com/wiki/Dorin",
+    "continuity": "legends"
+  }
+]

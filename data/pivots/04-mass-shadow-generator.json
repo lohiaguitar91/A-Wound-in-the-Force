@@ -1,0 +1,105 @@
+[
+  {
+    "id": "mass-shadow-generator-never-fires",
+    "number": 4,
+    "name": "The Mass Shadow Generator never fires at Malachor V",
+    "question": "What if the General had not given the order at Malachor V?",
+    "divergence": { "date": -3960, "event": "mass-shadow-generator-fires" },
+    "premise": "Revan's trap at Malachor V ended the Mandalorian Wars in a single stroke and created two wounds in the Force: the Jedi Exile and Darth Nihilus. This branch assumes the generator is never triggered, whether because the General refuses or because Bao-Dur's device fails. Revan's fleet still wins a conventional, far bloodier battle and Mandalore the Ultimate still dies at Revan's hand, but a core of clans and ships escapes, Malachor V is left intact, and no one is cut off from the Force. The General follows Revan into the Unknown Regions with the rest, so there is no Exile to return in 3,951 BBY; without Nihilus the Sith remnant that gathers at the Trayus Academy is a weaker, different thing, which is why the Triumvirate and the First Jedi Purge are marked uncertain rather than removed.",
+    "basis": [
+      { "text": "Knights of the Old Republic II attributes the Exile's severance from the Force, and Nihilus's hunger, directly to the generator's activation.", "source": "https://starwars.fandom.com/wiki/Mass_Shadow_Generator" },
+      { "text": "Canderous describes the clans scattering only after their fleet was annihilated; before that the battle was conventional and the Republic was winning.", "source": "https://starwars.fandom.com/wiki/Battle_of_Malachor_V" },
+      { "text": "Kreia says the Exile was the only Jedi who did not follow Revan because she alone had been cut off; the others went willingly.", "source": "https://starwars.fandom.com/wiki/Meetra_Surik" },
+      { "text": "Darth Sion and Darth Traya did not owe their existence to the generator; Nihilus did.", "source": "https://starwars.fandom.com/wiki/Sith_Triumvirate" }
+    ],
+    "source": "https://starwars.fandom.com/wiki/Battle_of_Malachor_V",
+    "horizon": -3940,
+    "branch": {
+      "remove": [
+        { "event": "mass-shadow-generator-fires", "reason": "The divergence: the generator is never activated." }
+      ],
+      "keep": [
+        { "event": "mandalorian-wars-end", "reason": "Mandalore still dies at Revan's hand and the clans still lose the battle; the surrender happens, but the clans are not disarmed as thoroughly (see the added events)." },
+        { "event": "kreia-finds-trayus", "reason": "Kreia still follows Revan's trail to the Trayus Academy on an intact Malachor V; the planet's dark side predates the generator." }
+      ],
+      "uncertain": [
+        { "event": "sith-triumvirate-formed", "reason": "Traya and Sion still gather at Trayus, but without Nihilus the Triumvirate is a pair, and weaker." },
+        { "event": "first-jedi-purge", "reason": "A Sith remnant without Nihilus hunts the Jedi less effectively; the purge may be slower and less complete." }
+      ],
+      "add": [
+        {
+          "id": "spec-malachor-conventional-victory",
+          "name": "Revan's fleet grinds out a conventional victory at Malachor V",
+          "type": "battle",
+          "date": -3960,
+          "location": { "system": "malachor-v" },
+          "factions": ["galactic-republic", "jedi-order", "mandalorians"],
+          "summary": "With no superweapon, the battle becomes a day-long slaughter in Malachor's orbit. Revan's fleet wins on numbers and the Jedi's battle meditation, at a cost in ships and crews far higher than the Republic ever admitted in our history.",
+          "source": "https://starwars.fandom.com/wiki/Battle_of_Malachor_V",
+          "continuity": "legends",
+          "importance": 4,
+          "speculative": true,
+          "basis": "The battle was already turning in the Republic's favour before the generator fired; Mandalore's death removed the clans' will to continue.",
+          "links": { "requires": ["mandalorian-fleet-escapes-malachor", "revan-kills-mandalore"] },
+          "tags": ["speculative", "malachor"]
+        },
+        {
+          "id": "spec-clans-keep-their-fleet",
+          "name": "The surviving clans withdraw to Dxun and Mandalore",
+          "type": "political",
+          "date": -3960,
+          "location": { "system": "dxun" },
+          "factions": ["mandalorians"],
+          "summary": "The clans that escape Malachor regroup on Dxun and Mandalore with their armour and a remnant fleet. They are beaten, not broken, and Revan does not take the mask, so a new Mandalore is named within the year.",
+          "source": "https://starwars.fandom.com/wiki/Mandalorian/Legends",
+          "continuity": "legends",
+          "importance": 3,
+          "speculative": true,
+          "basis": "In real history Revan took Mandalore's mask specifically so that no leader could rally the scattered clans.",
+          "links": { "requires": ["spec-malachor-conventional-victory"] },
+          "tags": ["speculative", "mandalorians"]
+        },
+        {
+          "id": "spec-general-follows-revan",
+          "name": "The General follows Revan and Malak into the Unknown Regions",
+          "type": "exploration",
+          "date": -3960,
+          "location": { "system": "malachor-v" },
+          "factions": ["jedi-order", "galactic-republic"],
+          "summary": "Never cut off from the Force, the General has no reason to return to the Council for judgment. She goes where the rest of Revan's officers go: into the Unknown Regions, and in time into the Sith Emperor's grip.",
+          "source": "https://starwars.fandom.com/wiki/Meetra_Surik",
+          "continuity": "legends",
+          "importance": 4,
+          "speculative": true,
+          "basis": "Kreia states that the Exile alone stayed behind because the echo of Malachor had cut her off; the other Revanchists followed Revan.",
+          "links": { "requires": ["spec-malachor-conventional-victory"] },
+          "tags": ["speculative", "exile"]
+        },
+        {
+          "id": "spec-trayus-academy-intact",
+          "name": "Revan keeps the Trayus Academy on an unbroken Malachor V",
+          "type": "founding",
+          "date": -3959,
+          "location": { "system": "malachor-v" },
+          "factions": ["revan-sith-empire"],
+          "summary": "An intact Malachor V gives Darth Revan a second Sith academy beside Korriban, closer to the Republic and steeped in older teachings. Whatever Sith survive the Jedi Civil War inherit it whole.",
+          "source": "https://starwars.fandom.com/wiki/Trayus_Academy",
+          "continuity": "legends",
+          "importance": 3,
+          "speculative": true,
+          "basis": "Revan used the Trayus Academy before the battle; in our history its ruins still served the Triumvirate.",
+          "links": { "requires": ["jedi-civil-war-begins", "spec-general-follows-revan"] },
+          "tags": ["speculative", "malachor"]
+        }
+      ],
+      "territory": [
+        { "date": -3960, "note": "Speculation: the clans keep Mandalore and Dxun; Malachor V is never devastated", "source": "https://starwars.fandom.com/wiki/Battle_of_Malachor_V",
+          "control": { "mandalorians": ["mandalore", "basilisk", "dxun"] } },
+        { "date": -3959, "note": "Speculation: Revan's Sith hold an intact Malachor V as a second academy", "source": "https://starwars.fandom.com/wiki/Trayus_Academy",
+          "control": { "revan-sith-empire": ["malachor-v"] } }
+      ],
+      "fates": []
+    },
+    "conflicts": []
+  }
+]

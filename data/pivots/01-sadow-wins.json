@@ -1,0 +1,109 @@
+[
+  {
+    "id": "sadow-wins-great-hyperspace-war",
+    "number": 1,
+    "name": "Naga Sadow wins the Great Hyperspace War",
+    "question": "What if Sadow's battle meditation had held at Coruscant in 5,000 BBY?",
+    "divergence": { "date": -5000, "event": "republic-holds-coruscant" },
+    "premise": "In real history the Sith assault on Coruscant collapsed the moment Gav Daragon broke Naga Sadow's concentration and his Massassi illusions vanished. This branch assumes Sadow kept his focus: Coruscant falls, the Koros system is overrun, and the Sith Empire absorbs the Core before the Republic can rally. Sadow then inherits the problem every Sith ruler faced: rivals at home, an empire too big to hold, and no Republic counter-invasion to unify the Sith against. Vitiate never performs the Ritual of Nathema, so no Sith Emperor rises on Dromund Kaas, and with Sadow never exiled to Yavin 4 the whole Nadd–Kun lineage of later Sith never forms.",
+    "basis": [
+      { "text": "The Fall of the Sith Empire shows the Coruscant defence failing until Gav Daragon's confrontation at Primus Goluud disrupts Sadow's battle meditation.", "source": "https://starwars.fandom.com/wiki/Battle_of_Coruscant_(Great_Hyperspace_War)" },
+      { "text": "Sadow's own goal, per the Golden Age of the Sith, was conquest of the whole Republic rather than a raid.", "source": "https://starwars.fandom.com/wiki/Naga_Sadow" },
+      { "text": "Vitiate's ritual was a reaction to the Republic's invasion of Sith space; without that invasion the Sith Emperor's origin story does not happen.", "source": "https://starwars.fandom.com/wiki/Ritual_of_Nathema" },
+      { "text": "Ludo Kressh survived Khar Delba and returned to contest Korriban; a victorious Sadow would still have faced him.", "source": "https://starwars.fandom.com/wiki/Ludo_Kressh" }
+    ],
+    "source": "https://starwars.fandom.com/wiki/Great_Hyperspace_War",
+    "horizon": -4800,
+    "branch": {
+      "remove": [
+        { "event": "republic-holds-coruscant", "reason": "The divergence: Sadow's battle meditation holds and the Massassi overrun the capital." }
+      ],
+      "keep": [
+        { "event": "great-library-of-ossus", "reason": "Odan-Urr survived Kirrek in both timelines; a Jedi retreat to Ossus makes the library more likely, not less." }
+      ],
+      "uncertain": [
+        { "event": "marka-ragnos-reign", "reason": "Not affected, but the Sith succession struggle after Ragnos plays out very differently under a victorious Sadow." }
+      ],
+      "add": [
+        {
+          "id": "spec-sadow-takes-koros",
+          "name": "The Sith overrun the Koros system",
+          "type": "siege",
+          "date": -5000,
+          "location": { "system": "empress-teta" },
+          "factions": ["old-sith-empire", "tetan-monarchy"],
+          "summary": "With no Republic victory at Coruscant to pull Sadow back, the Massassi legions already on Kirrek finish the conquest of Empress Teta's seven worlds. The carbonite mines of the Deep Core become the Sith Empire's forward base.",
+          "source": "https://starwars.fandom.com/wiki/Battle_of_Kirrek",
+          "continuity": "legends",
+          "importance": 4,
+          "speculative": true,
+          "basis": "Kirrek was held only because Sadow's illusions collapsed; Tales of the Jedi shows the Tetan defenders outnumbered once the deception became real.",
+          "links": { "requires": ["battle-of-kirrek"] },
+          "tags": ["speculative", "ghw"]
+        },
+        {
+          "id": "spec-republic-flees-to-alsakan",
+          "name": "The Republic government flees to Alsakan and Corellia",
+          "type": "political",
+          "date": -4999.5,
+          "location": { "system": "alsakan" },
+          "factions": ["galactic-republic"],
+          "summary": "Driven from Coruscant, the surviving Senate reconvenes at Alsakan, Coruscant's ancient rival, while Corellia's shipyards become the Republic Navy's last anchor. The Jedi withdraw to Ossus and Tython to protect what they can.",
+          "source": "https://starwars.fandom.com/wiki/Alsakan/Legends",
+          "continuity": "legends",
+          "importance": 3,
+          "speculative": true,
+          "basis": "Alsakan contested leadership of the Republic with Coruscant throughout the Alsakan Conflicts and is the natural seat for a government in exile.",
+          "links": { "requires": ["sith-occupation-of-coruscant"] },
+          "tags": ["speculative", "ghw"]
+        },
+        {
+          "id": "spec-sadow-kressh-succession-war",
+          "name": "Sadow and Kressh tear the Sith Empire apart",
+          "type": "war",
+          "date": { "start": -4990, "end": -4950, "approx": true },
+          "location": { "system": "korriban" },
+          "factions": ["old-sith-empire"],
+          "summary": "Ludo Kressh, alive and commanding the loyalist lords at Korriban, refuses to recognise the conqueror of Coruscant. The Sith Empire splits between Sadow's new Core holdings and Kressh's old worlds, and the two halves spend a generation fighting each other instead of the Republic.",
+          "source": "https://starwars.fandom.com/wiki/Ludo_Kressh",
+          "continuity": "legends",
+          "importance": 4,
+          "speculative": true,
+          "basis": "Kressh survived Khar Delba and ambushed Sadow at Korriban in real history; Sith lore from Ajunta Pall to Bane records that Sith empires fall to their own infighting.",
+          "links": { "requires": ["sith-occupation-of-coruscant"] },
+          "tags": ["speculative", "ghw"]
+        },
+        {
+          "id": "spec-republic-reconquest-begins",
+          "name": "The Republic in exile begins the reconquest of the Core",
+          "type": "campaign",
+          "date": { "start": -4900, "approx": true },
+          "location": { "system": "corellia" },
+          "factions": ["galactic-republic", "jedi-order", "old-sith-empire"],
+          "summary": "A century on, with the Sith split and the Massassi dying out, Corellian fleets and a Jedi Order hardened by exile push back toward Coruscant. Whether the capital is retaken, and when, is beyond what this branch claims.",
+          "source": "https://starwars.fandom.com/wiki/Galactic_Republic/Legends",
+          "continuity": "legends",
+          "importance": 3,
+          "speculative": true,
+          "basis": "The Republic survived every later Sith conquest of the Core, from Ulic's assault to the Sacking of Coruscant, by regrouping in the Core's other shipyard worlds.",
+          "links": { "requires": ["spec-republic-flees-to-alsakan", "spec-sadow-kressh-succession-war"] },
+          "tags": ["speculative", "ghw"]
+        }
+      ],
+      "territory": [
+        { "date": -5000, "note": "Speculation: the Sith take Coruscant and the Koros system", "source": "https://starwars.fandom.com/wiki/Great_Hyperspace_War",
+          "control": { "old-sith-empire": ["coruscant", "empress-teta", "kirrek", "primus-goluud"] } },
+        { "date": -4999.5, "note": "Speculation: the Sith Empire absorbs the Core while the Republic holds on at Alsakan, Corellia and the Perlemian", "source": "https://starwars.fandom.com/wiki/Naga_Sadow",
+          "control": { "old-sith-empire": { "regions": ["deep-core", "core-worlds"], "except": ["alsakan", "corellia", "duro", "kuat", "abregado-rae", "vultar"], "systems": ["korriban", "ziost", "khar-delba", "rhelg", "chhodos", "ashas-ree", "thule", "nathema", "dromund-kaas"] }, "galactic-republic": ["alsakan", "corellia", "duro", "kuat", "abregado-rae", "ossus"] } },
+        { "date": -4980, "note": "Speculation: no Sith exodus; Dromund Kaas stays a backwater of Sadow's empire", "source": "https://starwars.fandom.com/wiki/Dromund_Kaas",
+          "release": ["dromund-kaas"], "suppress": ["reconstituted-sith-empire"], "control": { "old-sith-empire": ["dromund-kaas"] } }
+      ],
+      "fates": [
+        { "system": "nathema", "fate": null, "reason": "Vitiate never performs the Ritual of Nathema, so Medriaas is never drained of the Force." }
+      ]
+    },
+    "conflicts": [
+      { "pivot": "exar-kun-never-falls", "reason": "With Sadow never exiled to Yavin 4, Freedon Nadd never learns from his spirit and Exar Kun never reaches the tomb that turned him. Kun's fall cannot be prevented in a timeline where it never happens." }
+    ]
+  }
+]

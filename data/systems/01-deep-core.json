@@ -1,0 +1,100 @@
+[
+  {
+    "id": "tython",
+    "name": "Tython",
+    "grid": "L-10",
+    "region": "deep-core",
+    "importance": 4,
+    "summary": "A temperate Deep Core world where the Tho Yor pyramids gathered the first Force philosophers around 36,000 BBY. The Je'daii Order and later the Jedi Order were born here, and the Jedi returned to rebuild on Tython after the Sacking of Coruscant.",
+    "source": "https://starwars.fandom.com/wiki/Tython/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "empress-teta",
+    "name": "Empress Teta",
+    "aliases": ["Koros Major", "Cinnagar"],
+    "grid": "L-10",
+    "gridUncertain": true,
+    "region": "deep-core",
+    "importance": 4,
+    "summary": "The carbonite-mining capital of the Koros system in the Deep Core, renamed for the empress who unified its seven worlds. It was the first Republic target of Naga Sadow's invasion and, a thousand years later, the seat of the Krath after the Keto cousins seized its throne.",
+    "source": "https://starwars.fandom.com/wiki/Empress_Teta/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "kirrek",
+    "name": "Kirrek",
+    "grid": "L-10",
+    "gridUncertain": true,
+    "region": "deep-core",
+    "importance": 2,
+    "summary": "The last of the Koros system's worlds to fall to Empress Teta's unification campaign, and later the planet where Jedi Odan-Urr and Memit Nadill rallied Tetan forces against the Sith landings of the Great Hyperspace War.",
+    "source": "https://starwars.fandom.com/wiki/Kirrek",
+    "continuity": "legends"
+  },
+  {
+    "id": "primus-goluud",
+    "name": "Primus Goluud",
+    "grid": "L-10",
+    "gridUncertain": true,
+    "region": "deep-core",
+    "importance": 1,
+    "summary": "A dying red giant near the Koros system where Naga Sadow hid his meditation sphere during the invasion. The star went supernova when Sadow detonated it to cover his retreat from the pursuing Republic fleet.",
+    "source": "https://starwars.fandom.com/wiki/Primus_Goluud",
+    "continuity": "legends"
+  },
+  {
+    "id": "byss",
+    "name": "Byss",
+    "grid": "J-13",
+    "region": "deep-core",
+    "importance": 3,
+    "summary": "A Deep Core world bathed in a strange blue light that Palpatine later made his hidden throneworld. Its population was slowly drained by the dark side to feed the reborn Emperor's experiments.",
+    "source": "https://starwars.fandom.com/wiki/Byss/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "prakith",
+    "name": "Prakith",
+    "grid": "K-11",
+    "gridUncertain": true,
+    "region": "deep-core",
+    "importance": 2,
+    "summary": "A fortress world of the Deep Core long associated with the Inquisitorius and with pre-Republic Sith relics. Its position deep in the Core's gravity maze made it a refuge for anyone who wished to be unreachable.",
+    "source": "https://starwars.fandom.com/wiki/Prakith",
+    "continuity": "legends"
+  },
+  {
+    "id": "had-abbadon",
+    "name": "Had Abbadon",
+    "grid": "K-10",
+    "gridUncertain": true,
+    "region": "deep-core",
+    "importance": 1,
+    "summary": "A dark-side nexus in the Deep Core said to have been seeded with Sith energies in the earliest days of the galaxy. Jedi lore remembered it as one of the places where the first students of the Force were tempted.",
+    "source": "https://starwars.fandom.com/wiki/Had_Abbadon",
+    "continuity": "legends"
+  },
+  {
+    "id": "vulpter",
+    "name": "Vulpter",
+    "grid": "K-10",
+    "gridUncertain": true,
+    "region": "deep-core",
+    "importance": 1,
+    "summary": "An industrial Deep Core planet whose factories were polluted into a toxic wasteland by the Trade Federation era. It stands in for the many Deep Core worlds settled during the Republic's long inward expansion.",
+    "source": "https://starwars.fandom.com/wiki/Vulpter",
+    "continuity": "legends"
+  },
+  {
+    "id": "khomm",
+    "name": "Khomm",
+    "grid": "K-12",
+    "gridUncertain": true,
+    "region": "deep-core",
+    "importance": 1,
+    "summary": "A Deep Core world whose cloned population valued stability above all. It was a quiet backwater for most of history and a target of the reborn Emperor's forces in the New Republic era.",
+    "source": "https://starwars.fandom.com/wiki/Khomm",
+    "continuity": "legends"
+  }
+]

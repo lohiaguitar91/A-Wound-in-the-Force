@@ -1,0 +1,356 @@
+[
+  {
+    "id": "rakatan-infinite-empire",
+    "name": "Rakatan Infinite Empire",
+    "short": "Infinite Empire",
+    "color": "#2ec4b6",
+    "era": {
+      "start": -35000,
+      "end": -25200,
+      "approx": true
+    },
+    "kind": "state",
+    "territorial": true,
+    "summary": "The first galaxy-spanning power, built by the Rakata on dark-side-fuelled hyperdrive technology and slave labour drawn from hundreds of worlds. Its Star Forge over Lehon churned out fleets until plague, slave revolts and the loss of their Force sensitivity shattered the empire around 25,200 BBY.",
+    "source": "https://starwars.fandom.com/wiki/Infinite_Empire",
+    "continuity": "legends"
+  },
+  {
+    "id": "galactic-republic",
+    "name": "Galactic Republic",
+    "short": "Republic",
+    "color": "#4f8fd6",
+    "era": {
+      "start": -25053,
+      "end": -19
+    },
+    "kind": "state",
+    "territorial": true,
+    "summary": "The democratic union of star systems founded on Coruscant in 25,053 BBY after the Core Worlds were linked by the first stable hyperlanes. It grew outward along the Perlemian and Corellian Run for twenty-five millennia, survived repeated Sith wars, and was finally reshaped into the Galactic Empire in 19 BBY.",
+    "source": "https://starwars.fandom.com/wiki/Galactic_Republic/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "jedi-order",
+    "name": "Jedi Order",
+    "short": "Jedi",
+    "color": "#7fd1b9",
+    "era": {
+      "start": -25783,
+      "end": -19
+    },
+    "kind": "order",
+    "territorial": false,
+    "summary": "An order of Force-users formed on Tython after the Force Wars, later headquartered on Ossus and then Coruscant. The Jedi served the Republic as peacekeepers and generals for most of its history, and their strongholds and academies are marked on the map even though they held no territory of their own.",
+    "source": "https://starwars.fandom.com/wiki/Jedi_Order/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "exiles",
+    "name": "Dark Jedi Exiles",
+    "short": "Exiles",
+    "color": "#9b5de5",
+    "era": {
+      "start": -7000,
+      "end": -6900
+    },
+    "kind": "movement",
+    "territorial": false,
+    "summary": "The faction of Jedi who embraced alchemy and the dark side during the Hundred-Year Darkness. Defeated at Corbos in 6,900 BBY, the survivors were banished beyond Republic space and stumbled onto Korriban, where they made themselves lords of the native Sith.",
+    "source": "https://starwars.fandom.com/wiki/Exiles",
+    "continuity": "legends"
+  },
+  {
+    "id": "old-sith-empire",
+    "name": "Sith Empire",
+    "short": "Sith Empire",
+    "color": "#d6453c",
+    "era": {
+      "start": -6900,
+      "end": -4990,
+      "approx": true
+    },
+    "kind": "state",
+    "territorial": true,
+    "summary": "The empire the Dark Jedi exiles built over the Sith species of Korriban and Ziost. Isolated for two thousand years, it reached its height under Marka Ragnos, then overreached when Naga Sadow invaded the Republic in the Great Hyperspace War and was broken by the Republic's counter-invasion.",
+    "source": "https://starwars.fandom.com/wiki/Sith_Empire",
+    "continuity": "legends"
+  },
+  {
+    "id": "tetan-monarchy",
+    "name": "Empress Teta's monarchy (Koros system)",
+    "short": "Koros / Teta",
+    "color": "#e0a63a",
+    "era": {
+      "start": -5010,
+      "end": -3990,
+      "approx": true
+    },
+    "kind": "state",
+    "territorial": true,
+    "summary": "The carbonite-rich Koros system in the Deep Core, unified by Empress Teta shortly before the Great Hyperspace War and renamed in her honour. A loyal Republic ally against Naga Sadow, it was later seized from within by the Krath cult led by Teta's own descendants.",
+    "source": "https://starwars.fandom.com/wiki/Empress_Teta/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "krath",
+    "name": "Krath",
+    "short": "Krath",
+    "color": "#c97b2a",
+    "era": {
+      "start": -3997,
+      "end": -3996
+    },
+    "kind": "sect",
+    "territorial": true,
+    "summary": "A dark-side secret society founded by the Tetan heirs Satal and Aleema Keto after they learned Sith sorcery on Onderon. The Krath toppled the Tetan monarchy, launched a holy crusade into the Deep Core, and became the junior partners in Exar Kun's Great Sith War.",
+    "source": "https://starwars.fandom.com/wiki/Krath",
+    "continuity": "legends"
+  },
+  {
+    "id": "onderon-kingdom",
+    "name": "Kingdom of Onderon",
+    "short": "Onderon",
+    "color": "#6b8e23",
+    "era": {
+      "start": -4400,
+      "end": -3950,
+      "approx": true
+    },
+    "kind": "state",
+    "territorial": true,
+    "summary": "The walled kingdom of Iziz, ruled for centuries by a dynasty steeped in the Sith teachings of Freedon Nadd. It fought the Beast Riders of Dxun, hosted the Naddist uprising, and in the Mandalorian Wars era was torn between Queen Talia and the Mandalorian-backed General Vaklu.",
+    "source": "https://starwars.fandom.com/wiki/Onderon/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "brotherhood-of-the-sith",
+    "name": "Brotherhood of the Sith",
+    "short": "Kun's Brotherhood",
+    "color": "#8b1e3f",
+    "era": {
+      "start": -3997,
+      "end": -3996
+    },
+    "kind": "sect",
+    "territorial": true,
+    "summary": "Exar Kun's reborn Sith movement, proclaimed on Yavin 4 and swelled by Jedi he turned to his cause. With Ulic Qel-Droma as his apprentice, it allied with the Krath and the Mandalorian Crusaders to wage the Great Sith War against the Republic and the Jedi.",
+    "source": "https://starwars.fandom.com/wiki/Brotherhood_of_the_Sith",
+    "continuity": "legends"
+  },
+  {
+    "id": "mandalorians",
+    "name": "Mandalorians",
+    "short": "Mandalorians",
+    "color": "#8d99ae",
+    "era": {
+      "start": -7000,
+      "end": 140,
+      "approx": true
+    },
+    "kind": "coalition",
+    "territorial": true,
+    "summary": "The warrior culture of Mandalore and its clans, who swept across the Rim as Crusaders in the Great Sith War and as Neo-Crusaders in the Mandalorian Wars. Broken at Malachor V, they survived as scattered clans, mercenaries and, under later Mandalores, a regional power.",
+    "source": "https://starwars.fandom.com/wiki/Mandalorian/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "revan-sith-empire",
+    "name": "Darth Revan's Sith Empire",
+    "short": "Revan's Sith",
+    "color": "#b03060",
+    "era": {
+      "start": -3959,
+      "end": -3956
+    },
+    "kind": "state",
+    "territorial": true,
+    "summary": "The empire Revan and Malak forged from the Republic veterans who followed them into the Unknown Regions, armed with warships from the Rakatan Star Forge. It conquered a swath of the Outer and Mid Rim in the Jedi Civil War before collapsing when the Star Forge was destroyed.",
+    "source": "https://starwars.fandom.com/wiki/Darth_Revan's_Sith_Empire",
+    "continuity": "legends"
+  },
+  {
+    "id": "sith-triumvirate",
+    "name": "Sith Triumvirate",
+    "short": "Triumvirate",
+    "color": "#6a0dad",
+    "era": {
+      "start": -3955,
+      "end": -3951
+    },
+    "kind": "sect",
+    "territorial": true,
+    "summary": "The remnant Sith led from the Trayus Academy on Malachor V by Darth Traya, Darth Nihilus and Darth Sion after Revan's empire fell apart. It hunted the surviving Jedi to near-extinction during the First Jedi Purge until the Jedi Exile destroyed it in 3,951 BBY.",
+    "source": "https://starwars.fandom.com/wiki/Sith_Triumvirate",
+    "continuity": "legends"
+  },
+  {
+    "id": "reconstituted-sith-empire",
+    "name": "Sith Empire (reconstituted)",
+    "short": "Vitiate's Sith",
+    "color": "#e4572e",
+    "era": {
+      "start": -4980,
+      "end": -3630,
+      "approx": true
+    },
+    "kind": "state",
+    "territorial": true,
+    "summary": "The empire rebuilt on Dromund Kaas by the immortal Sith Emperor after the Great Hyperspace War. It hid for thirteen centuries, returned in 3,681 BBY to wage the Great Galactic War, sacked Coruscant, and shared a cold war with the Republic until both were overrun by Zakuul.",
+    "source": "https://starwars.fandom.com/wiki/Sith_Empire_(Post%E2%80%93Great_Hyperspace_War)",
+    "continuity": "legends-swtor"
+  },
+  {
+    "id": "eternal-empire",
+    "name": "Eternal Empire of Zakuul",
+    "short": "Zakuul",
+    "color": "#f2e394",
+    "era": {
+      "start": -3637,
+      "end": -3630,
+      "approx": true
+    },
+    "kind": "state",
+    "territorial": true,
+    "summary": "A hidden Wild Space civilisation shaped by the Sith Emperor in another guise, armed with the droid Eternal Fleet. Its invasion in 3,632 BBY defeated the Republic and the Sith Empire in months and forced both to pay tribute until the Outlander's alliance broke it.",
+    "source": "https://starwars.fandom.com/wiki/Eternal_Empire",
+    "continuity": "legends-swtor"
+  },
+  {
+    "id": "hutts",
+    "name": "Hutts (Hutt Space)",
+    "short": "Hutts",
+    "color": "#7cb342",
+    "era": {
+      "start": -25000,
+      "end": 140,
+      "approx": true
+    },
+    "kind": "coalition",
+    "territorial": true,
+    "summary": "The Hutt clans of Nal Hutta and Nar Shaddaa, heirs to an ancient empire that once rivalled Xim the Despot. Hutt Space stayed outside Republic law for the whole of recorded history, trading with every side and offering refuge to smugglers, exiles and Sith alike.",
+    "source": "https://starwars.fandom.com/wiki/Hutt_Space/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "tion-hegemony",
+    "name": "Tionese (Honorable Union of Desevro and Tion)",
+    "short": "Tion",
+    "color": "#9c6b98",
+    "era": {
+      "start": -25100,
+      "end": -23900,
+      "approx": true
+    },
+    "kind": "state",
+    "territorial": true,
+    "summary": "The successor states of Xim the Despot's empire in the Tion Cluster at the far end of the Perlemian. Their war with the young Republic in 24,000 BBY ended with the Tionese worlds absorbed into the Republic after the Hutts were turned against them.",
+    "source": "https://starwars.fandom.com/wiki/Tion_Cluster",
+    "continuity": "legends"
+  },
+  {
+    "id": "new-sith-empire",
+    "name": "New Sith Empire / Brotherhood of Darkness",
+    "short": "New Sith",
+    "color": "#ff6f61",
+    "era": {
+      "start": -2000,
+      "end": -1000
+    },
+    "kind": "state",
+    "territorial": true,
+    "summary": "The Sith power founded by Darth Ruin in 2,000 BBY that fought the Republic for a thousand years of New Sith Wars. Fractured into feuding lords, it was reunified as Lord Kaan's Brotherhood of Darkness and annihilated by its own thought bomb on Ruusan.",
+    "source": "https://starwars.fandom.com/wiki/New_Sith_Empire",
+    "continuity": "legends"
+  },
+  {
+    "id": "banite-sith",
+    "name": "Order of the Sith Lords (Rule of Two)",
+    "short": "Banite Sith",
+    "color": "#ff2e63",
+    "era": {
+      "start": -1000,
+      "end": 4
+    },
+    "kind": "order",
+    "territorial": false,
+    "summary": "The hidden lineage Darth Bane founded after Ruusan: one master and one apprentice, passing power by murder and plotting in secret for a thousand years. It ended in Darth Sidious, who destroyed the Jedi with Order 66 and ruled the galaxy as Emperor.",
+    "source": "https://starwars.fandom.com/wiki/Order_of_the_Sith_Lords",
+    "continuity": "legends"
+  },
+  {
+    "id": "galactic-empire",
+    "name": "Galactic Empire (incl. Imperial Remnant and Fel Empire)",
+    "short": "Empire",
+    "color": "#9e9e9e",
+    "era": {
+      "start": -19,
+      "end": 140
+    },
+    "kind": "state",
+    "territorial": true,
+    "summary": "The autocracy Palpatine proclaimed from the ashes of the Republic in 19 BBY, ruling almost the whole galaxy from Imperial Center. After Endor it splintered into warlord fiefs and an Imperial Remnant that finally made peace with the New Republic.",
+    "source": "https://starwars.fandom.com/wiki/Galactic_Empire/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "rebel-alliance",
+    "name": "Alliance to Restore the Republic",
+    "short": "Rebellion",
+    "color": "#e76f51",
+    "era": {
+      "start": -2,
+      "end": 4
+    },
+    "kind": "coalition",
+    "territorial": false,
+    "summary": "The rebel coalition formed by the Corellian Treaty that fought the Empire from hidden bases such as Yavin 4 and Hoth. Its victories at Yavin and Endor opened the way for the New Republic.",
+    "source": "https://starwars.fandom.com/wiki/Alliance_to_Restore_the_Republic",
+    "continuity": "legends"
+  },
+  {
+    "id": "new-republic",
+    "name": "New Republic / Galactic Alliance",
+    "short": "New Republic",
+    "color": "#5dade2",
+    "era": {
+      "start": 4,
+      "end": 130
+    },
+    "kind": "state",
+    "territorial": true,
+    "summary": "The democratic government the Rebel Alliance built after Endor, which retook Coruscant in 7 ABY and later became the Galactic Federation of Free Alliances during the Yuuzhan Vong War. It endured, diminished, until the Sith–Imperial War of 130 ABY.",
+    "source": "https://starwars.fandom.com/wiki/New_Republic/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "yuuzhan-vong",
+    "name": "Yuuzhan Vong",
+    "short": "Yuuzhan Vong",
+    "color": "#a4c639",
+    "era": {
+      "start": 25,
+      "end": 29
+    },
+    "kind": "species",
+    "territorial": true,
+    "summary": "Extragalactic invaders who could not be felt in the Force and who waged a war of conquest and conversion from 25 to 29 ABY, conquering Coruscant and remaking it before being defeated at the living world Zonama Sekot.",
+    "source": "https://starwars.fandom.com/wiki/Yuuzhan_Vong",
+    "continuity": "legends"
+  },
+  {
+    "id": "krayt-sith-empire",
+    "name": "Darth Krayt's Galactic Empire (One Sith)",
+    "short": "Krayt's Empire",
+    "color": "#ff2e2e",
+    "era": {
+      "start": 130,
+      "end": 138
+    },
+    "kind": "state",
+    "territorial": true,
+    "summary": "The Sith order Darth Krayt rebuilt in secret on Korriban, which seized the Fel Empire's throne in 130 ABY and ruled the galaxy from Coruscant until the One Sith were overthrown at the end of the Second Imperial Civil War.",
+    "source": "https://starwars.fandom.com/wiki/Darth_Krayt's_Galactic_Empire",
+    "continuity": "legends"
+  }
+]

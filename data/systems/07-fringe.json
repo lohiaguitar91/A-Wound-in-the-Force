@@ -1,0 +1,67 @@
+[
+  {
+    "id": "lehon",
+    "name": "Lehon (Rakata Prime)",
+    "aliases": ["Rakata Prime"],
+    "grid": "F-9",
+    "gridUncertain": true,
+    "region": "unknown-regions",
+    "importance": 5,
+    "summary": "The Rakatan homeworld in the Unknown Regions, ringed by a disruptor field that wrecked every ship that approached. The Star Forge in its orbit armed Revan's Sith Empire until the Republic destroyed it in 3,956 BBY.",
+    "source": "https://starwars.fandom.com/wiki/Lehon",
+    "continuity": "legends"
+  },
+  {
+    "id": "ilum",
+    "name": "Ilum",
+    "grid": "G-7",
+    "region": "unknown-regions",
+    "importance": 3,
+    "summary": "A frozen world of the Unknown Regions whose caves held the kyber-like Adegan crystals the Jedi used for their lightsabers. The Sith Empire fought the Republic over it in 3,640 BBY.",
+    "source": "https://starwars.fandom.com/wiki/Ilum/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "csilla",
+    "name": "Csilla",
+    "grid": "K-5",
+    "gridUncertain": true,
+    "region": "unknown-regions",
+    "importance": 2,
+    "summary": "The glacial capital of the Chiss Ascendancy, a disciplined and secretive civilisation of the Unknown Regions that kept the wider galaxy at arm's length for millennia.",
+    "source": "https://starwars.fandom.com/wiki/Csilla",
+    "continuity": "legends"
+  },
+  {
+    "id": "kamino",
+    "name": "Kamino",
+    "grid": "S-15",
+    "region": "wild-space",
+    "importance": 2,
+    "summary": "A storm-lashed ocean world beyond the Rishi Maze whose cloners built the Grand Army of the Republic in secret during the decade before the Clone Wars.",
+    "source": "https://starwars.fandom.com/wiki/Kamino/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "zakuul",
+    "name": "Zakuul",
+    "grid": "F-13",
+    "gridUncertain": true,
+    "region": "wild-space",
+    "importance": 3,
+    "summary": "A Wild Space world where the Sith Emperor, as Valkorion, raised a gleaming civilisation and the Eternal Fleet. Its Eternal Empire conquered the known galaxy in 3,632 BBY.",
+    "source": "https://starwars.fandom.com/wiki/Zakuul",
+    "continuity": "legends-swtor"
+  },
+  {
+    "id": "odessen",
+    "name": "Odessen",
+    "grid": "E-12",
+    "gridUncertain": true,
+    "region": "wild-space",
+    "importance": 1,
+    "summary": "A hidden, Force-balanced world in Wild Space where the Outlander built the base of the Eternal Alliance that overthrew Zakuul.",
+    "source": "https://starwars.fandom.com/wiki/Odessen",
+    "continuity": "legends-swtor"
+  }
+]

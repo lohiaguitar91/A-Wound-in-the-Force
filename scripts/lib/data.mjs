@@ -197,6 +197,9 @@ export function validate(raw) {
         if (!ok) {
           const where = allSpecIds.has(t) ? 'a speculative event of another pivot' : 'nothing';
           errors.push(`[links] ${e.id}.${kind} -> "${t}" points at ${where}`);
+        } else if (kind === 'prevents') {
+          const target = events.get(t);
+          if (target && !target.latent) errors.push(`[links] ${e.id}.prevents -> "${t}" must point at a latent event (one that real history prevented)`);
         }
       }
     }

@@ -1,0 +1,119 @@
+[
+  {
+    "id": "malak-betrayal-fails",
+    "number": 5,
+    "name": "Malak's betrayal of Revan fails",
+    "question": "What if Malak's guns had missed, or Revan had seen the shot coming?",
+    "divergence": { "date": -3957, "event": "malak-betrays-revan" },
+    "premise": "Everything that followed in the Jedi Civil War turned on one treacherous broadside: Revan captured, mind-wiped and retrained; Malak's reign of annihilation; Taris and Dantooine bombed; the Republic's desperate strike on the Star Forge. This branch assumes Revan anticipated his apprentice. Bastila's strike team is repelled, Malak is executed for treason, and Revan, undivided and still armed with the Star Forge, continues the campaign he actually wanted: a quick conquest that leaves the Republic's infrastructure intact for the war he foresaw against the true Sith. The Jedi Order is not exterminated but driven underground, and within a few years Darth Revan turns his new empire toward Dromund Kaas.",
+    "basis": [
+      { "text": "Kreia and the novel Revan both say Revan deliberately preserved the Republic's infrastructure, intending to rule rather than ruin it.", "source": "https://starwars.fandom.com/wiki/Revan" },
+      { "text": "Malak's escalation to bombardment and terror began only after he seized the title of Dark Lord.", "source": "https://starwars.fandom.com/wiki/Darth_Malak" },
+      { "text": "Revan knew of Malak's ambition and had already punished him once, taking his jaw; the betrayal was a known risk.", "source": "https://starwars.fandom.com/wiki/Darth_Malak" },
+      { "text": "The Republic's attack on the Star Forge depended on the redeemed Revan's knowledge of its location and defences.", "source": "https://starwars.fandom.com/wiki/Battle_of_Rakata_Prime" }
+    ],
+    "source": "https://starwars.fandom.com/wiki/Jedi_Civil_War",
+    "horizon": -3930,
+    "branch": {
+      "remove": [
+        { "event": "malak-betrays-revan", "reason": "The divergence: Revan is ready for Malak's treachery and the broadside never lands." }
+      ],
+      "keep": [
+        { "event": "kreia-exiled", "reason": "Kreia's expulsion for training Revan happened at the war's start, before the betrayal." }
+      ],
+      "uncertain": [
+        { "event": "great-galactic-war-begins", "reason": "Revan never becomes the Emperor's prisoner, so the Sith Emperor's timetable is unknown; Revan may bring the war to him first." }
+      ],
+      "add": [
+        {
+          "id": "spec-revan-executes-malak",
+          "name": "Revan executes Malak for treason",
+          "type": "assassination",
+          "date": -3957,
+          "location": { "system": "korriban" },
+          "factions": ["revan-sith-empire"],
+          "summary": "Having foreseen the shot, Revan returns Malak's broadside and then has his old friend brought to Korriban in chains. The execution in the Valley of the Dark Lords settles the question of succession for a generation.",
+          "source": "https://starwars.fandom.com/wiki/Darth_Malak",
+          "continuity": "legends",
+          "importance": 4,
+          "speculative": true,
+          "basis": "Revan had already maimed Malak for insubordination; Sith tradition from Sadow to Bane treats a failed apprentice as a dead one.",
+          "links": { "requires": ["sith-take-taris"] },
+          "tags": ["speculative", "jcw"]
+        },
+        {
+          "id": "spec-bastila-strike-team-repelled",
+          "name": "Bastila Shan's strike team is captured",
+          "type": "battle",
+          "date": -3957,
+          "location": { "region": "outer-rim", "note": "aboard Revan's flagship" },
+          "factions": ["revan-sith-empire", "jedi-order"],
+          "summary": "With no friendly fire to cover their retreat, the Jedi boarding party is overwhelmed on Revan's bridge. Bastila, whose battle meditation Revan prizes, is taken alive and turned, as Malak later managed in our history.",
+          "source": "https://starwars.fandom.com/wiki/Bastila_Shan",
+          "continuity": "legends",
+          "importance": 4,
+          "speculative": true,
+          "basis": "Malak succeeded in turning Bastila within weeks in real history; Revan, her future bond-mate, would have found it easier.",
+          "links": { "requires": ["spec-revan-executes-malak"] },
+          "tags": ["speculative", "jcw"]
+        },
+        {
+          "id": "spec-republic-surrenders-3956",
+          "name": "The Republic sues for peace after the fall of Coruscant",
+          "type": "treaty",
+          "date": -3956,
+          "location": { "system": "coruscant" },
+          "factions": ["revan-sith-empire", "galactic-republic"],
+          "summary": "Revan's fleets, now with Bastila's battle meditation behind them, break the Republic Navy and blockade the capital. The Senate capitulates in exchange for the sparing of its worlds, and Darth Revan takes Coruscant without burning it.",
+          "source": "https://starwars.fandom.com/wiki/Darth_Revan's_Sith_Empire",
+          "continuity": "legends",
+          "importance": 5,
+          "speculative": true,
+          "basis": "Carth and Admiral Dodonna both say the Republic was losing badly before Malak's betrayal split the Sith; Revan's doctrine was conquest without devastation.",
+          "links": { "requires": ["revan-conquers-the-republic", "spec-bastila-strike-team-repelled"] },
+          "tags": ["speculative", "jcw"]
+        },
+        {
+          "id": "spec-jedi-driven-underground",
+          "name": "The Jedi Council is dissolved and the Order goes underground",
+          "type": "political",
+          "date": -3955,
+          "location": { "system": "dantooine" },
+          "factions": ["revan-sith-empire", "jedi-order"],
+          "summary": "Revan offers surviving Jedi a place in his order and hunts those who refuse, but does not raze Dantooine. The Masters scatter to Nar Shaddaa, Onderon and the Rim much as they did in our history, for different reasons.",
+          "source": "https://starwars.fandom.com/wiki/Jedi_Order/Legends",
+          "continuity": "legends",
+          "importance": 4,
+          "speculative": true,
+          "basis": "Revan turned Jedi to his cause throughout the war rather than exterminating them; Malak was the one who bombed Dantooine.",
+          "links": { "requires": ["spec-republic-surrenders-3956"] },
+          "tags": ["speculative", "jcw"]
+        },
+        {
+          "id": "spec-revan-marches-on-dromund-kaas",
+          "name": "Darth Revan turns his empire against the Sith Emperor",
+          "type": "war",
+          "date": { "start": -3950, "approx": true },
+          "location": { "system": "dromund-kaas" },
+          "factions": ["revan-sith-empire", "reconstituted-sith-empire"],
+          "summary": "With the Republic's shipyards working for him, Revan does what he had planned all along: takes a galaxy's worth of fleets into the Unknown Regions to destroy the Emperor who once enslaved him. The outcome is beyond this branch.",
+          "source": "https://starwars.fandom.com/wiki/Revan_(novel)",
+          "continuity": "legends-swtor",
+          "importance": 5,
+          "speculative": true,
+          "basis": "The novel Revan and Kreia's testimony agree that Revan's conquest was preparation for war with the true Sith.",
+          "links": { "requires": ["spec-jedi-driven-underground"] },
+          "tags": ["speculative", "vitiate"]
+        }
+      ],
+      "territory": [
+        { "date": -3956, "note": "Speculation: Darth Revan's Sith Empire rules an intact galaxy", "source": "https://starwars.fandom.com/wiki/Darth_Revan's_Sith_Empire",
+          "suppress": ["galactic-republic", "sith-triumvirate"], "control": { "revan-sith-empire": { "regions": ["deep-core", "core-worlds", "colonies", "inner-rim", "expansion-region", "mid-rim"], "except": ["nal-hutta", "nar-shaddaa", "varl", "sleheyron", "manaan", "hapes", "onderon", "dxun"], "systems": ["taris", "telos-iv", "dantooine", "belsavis", "felucia", "mygeeto", "bandomeer", "bonadan", "quermia", "cathar", "dathomir", "yavin-4", "korriban", "lehon", "malachor-v", "ziost", "thule", "khar-delba", "rhelg", "chhodos", "ashas-ree", "nespis-viii", "tatooine", "ryloth", "sullust", "eriadu", "sluis-van", "dac", "desevro", "lianna", "raxus-prime"] } } }
+      ],
+      "fates": []
+    },
+    "conflicts": [
+      { "pivot": "revan-never-redeemed", "reason": "This pivot assumes the betrayal fails and Revan is never captured; the other assumes it succeeds and Revan is captured but never turns back to the light. Both cannot be true of the same moment." }
+    ]
+  }
+]

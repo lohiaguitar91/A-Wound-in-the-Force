@@ -1,0 +1,409 @@
+[
+  {
+    "id": "korriban",
+    "name": "Korriban",
+    "grid": "R-5",
+    "region": "outer-rim",
+    "importance": 5,
+    "summary": "The red tomb-world of the Sith species and the spiritual home of every Sith order that followed. The Dark Jedi exiles crowned themselves here in 6,900 BBY; Revan's and later the Sith Emperor's academies trained apprentices in the shadow of the Valley of the Dark Lords.",
+    "source": "https://starwars.fandom.com/wiki/Korriban/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "ziost",
+    "name": "Ziost",
+    "grid": "R-4",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 3,
+    "summary": "A cold forest world that served as the Sith Empire's administrative capital under the exile lords, when Korriban became a world of tombs. The reconstituted Empire kept it as a seat of power until the Sith Emperor consumed all life on it in 3,630 BBY.",
+    "source": "https://starwars.fandom.com/wiki/Ziost",
+    "continuity": "legends",
+    "fate": {
+      "event": "ziost-devoured",
+      "state": "dead"
+    }
+  },
+  {
+    "id": "dromund-kaas",
+    "name": "Dromund Kaas",
+    "grid": "R-4",
+    "region": "outer-rim",
+    "importance": 4,
+    "summary": "A storm-wracked jungle world where the Sith Emperor rebuilt his empire in secret after the Great Hyperspace War. Kaas City and the Dark Temple were the heart of the reconstituted Sith Empire for thirteen centuries.",
+    "source": "https://starwars.fandom.com/wiki/Dromund_Kaas",
+    "continuity": "legends"
+  },
+  {
+    "id": "khar-delba",
+    "name": "Khar Delba",
+    "grid": "R-5",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "Naga Sadow's ice-bound fortress world, with his true citadel hidden on its moon Khar Shian. Ludo Kressh's fleet attacked the decoy fortress here in the civil strife before the Great Hyperspace War.",
+    "source": "https://starwars.fandom.com/wiki/Khar_Delba",
+    "continuity": "legends"
+  },
+  {
+    "id": "rhelg",
+    "name": "Rhelg",
+    "grid": "R-4",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "Ludo Kressh's stronghold in the old Sith Empire, from which he contested Naga Sadow's claim to the title of Dark Lord after the death of Marka Ragnos.",
+    "source": "https://starwars.fandom.com/wiki/Rhelg",
+    "continuity": "legends"
+  },
+  {
+    "id": "chhodos",
+    "name": "Ch'hodos",
+    "grid": "R-5",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "A desert world of the Sith Empire ruled by the Sith lord Shar Dakhan, one of the worlds that mustered warriors for Naga Sadow's invasion of the Republic.",
+    "source": "https://starwars.fandom.com/wiki/Ch%27hodos",
+    "continuity": "legends"
+  },
+  {
+    "id": "ashas-ree",
+    "name": "Ashas Ree",
+    "grid": "R-5",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "A Sith world where the Dark Jedi exile Ajunta Pall is said to have built his final sanctuary, remembered among the Sith as a place of alchemical experiments.",
+    "source": "https://starwars.fandom.com/wiki/Ashas_Ree",
+    "continuity": "legends"
+  },
+  {
+    "id": "thule",
+    "name": "Thule",
+    "grid": "R-4",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "A Sith stronghold world fortified under Naga Sadow's rule, which held out as an outpost of the dark side long after the Empire's collapse and was fought over again in the Clone Wars.",
+    "source": "https://starwars.fandom.com/wiki/Thule",
+    "continuity": "legends"
+  },
+  {
+    "id": "nathema",
+    "name": "Nathema",
+    "aliases": [
+      "Medriaas"
+    ],
+    "grid": "D-7",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 3,
+    "summary": "Once the agriworld Medriaas, where the future Sith Emperor was born. In 4,999 BBY he gathered eight thousand Sith lords there and drained every living thing on the planet into himself, leaving a world without the Force.",
+    "source": "https://starwars.fandom.com/wiki/Nathema",
+    "continuity": "legends",
+    "fate": {
+      "event": "ritual-of-nathema",
+      "state": "dead"
+    }
+  },
+  {
+    "id": "malachor-v",
+    "name": "Malachor V",
+    "grid": "D-7",
+    "region": "outer-rim",
+    "importance": 5,
+    "summary": "A forbidden Sith world in the Chorlian sector where Revan ended the Mandalorian Wars in 3,960 BBY. The Mass Shadow Generator crushed both fleets into the surface and left a wound in the Force; the Trayus Academy in its ruins became the seat of the Sith Triumvirate.",
+    "source": "https://starwars.fandom.com/wiki/Malachor_V",
+    "continuity": "legends",
+    "fate": {
+      "event": "mass-shadow-generator-fires",
+      "state": "devastated"
+    }
+  },
+  {
+    "id": "ossus",
+    "name": "Ossus",
+    "grid": "R-7",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 5,
+    "summary": "The Jedi Order's great library world and training centre for over twenty thousand years. When Exar Kun triggered the Cron Cluster supernova in 3,996 BBY the Jedi evacuated what they could, and Ossus was scoured into a wasteland.",
+    "source": "https://starwars.fandom.com/wiki/Ossus",
+    "continuity": "legends",
+    "fate": {
+      "event": "cron-supernova",
+      "state": "devastated"
+    }
+  },
+  {
+    "id": "nespis-viii",
+    "name": "Nespis VIII",
+    "grid": "R-8",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "A space city in the Auril sector near Ossus that housed a secret Jedi library. Ulic Qel-Droma crossed paths with it on his long road to redemption after the Great Sith War.",
+    "source": "https://starwars.fandom.com/wiki/Nespis_VIII",
+    "continuity": "legends"
+  },
+  {
+    "id": "yavin-4",
+    "name": "Yavin 4",
+    "grid": "P-6",
+    "region": "outer-rim",
+    "importance": 5,
+    "summary": "A jungle moon of the gas giant Yavin where Naga Sadow fled after the Great Hyperspace War and where his Massassi raised great temples. Exar Kun made it his throne in the Great Sith War, and the Rebel Alliance launched the attack on the Death Star from its ruins.",
+    "source": "https://starwars.fandom.com/wiki/Yavin_4/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "dantooine",
+    "name": "Dantooine",
+    "grid": "L-4",
+    "region": "outer-rim",
+    "importance": 5,
+    "summary": "A grassland world in the northern Outer Rim that hosted a Jedi Enclave for centuries. Revan was retrained here after his capture; Malak bombed the Enclave in 3,956 BBY, and the Khoonda settlers rebuilt in the ruins during the Dark Wars.",
+    "source": "https://starwars.fandom.com/wiki/Dantooine/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "taris",
+    "name": "Taris",
+    "grid": "L-4",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 5,
+    "summary": "A once-glorious ecumenopolis of the northern Outer Rim, divided between gleaming upper city and the lawless Undercity. The Mandalorians seized it in 3,963 BBY, and Darth Malak bombarded it to rubble in 3,956 BBY to prevent Bastila Shan's escape.",
+    "source": "https://starwars.fandom.com/wiki/Taris",
+    "continuity": "legends",
+    "fate": {
+      "event": "bombardment-of-taris",
+      "state": "devastated"
+    }
+  },
+  {
+    "id": "jebble",
+    "name": "Jebble",
+    "grid": "L-5",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "An ice world near Taris that the Mandalorians took early in their war. A rakghoul plague outbreak among the occupying Neo-Crusaders ended with the planet being nuked from orbit.",
+    "source": "https://starwars.fandom.com/wiki/Jebble",
+    "continuity": "legends"
+  },
+  {
+    "id": "vanquo",
+    "name": "Vanquo",
+    "grid": "L-5",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "A mining world in the Taris neighbourhood where the Republic's forward line broke in 3,963 BBY, opening the way for the Mandalorian assault on Taris itself.",
+    "source": "https://starwars.fandom.com/wiki/Vanquo",
+    "continuity": "legends"
+  },
+  {
+    "id": "suurja",
+    "name": "Suurja",
+    "grid": "M-5",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "An agricultural world near Taris where four inconclusive battles between the Republic and the Mandalorians were fought in the opening phase of the Mandalorian Wars.",
+    "source": "https://starwars.fandom.com/wiki/Suurja",
+    "continuity": "legends"
+  },
+  {
+    "id": "telos-iv",
+    "name": "Telos IV",
+    "grid": "L-6",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 4,
+    "summary": "A garden world that Saul Karath's fleet reduced to a wasteland on Malak's orders in 3,958 BBY. The Telosian Restoration Project under Ithorian guidance was reviving it when the Jedi Exile arrived in 3,951 BBY, and Darth Nihilus died in its orbit.",
+    "source": "https://starwars.fandom.com/wiki/Telos_IV",
+    "continuity": "legends",
+    "fate": {
+      "event": "bombardment-of-telos-iv",
+      "state": "devastated",
+      "until": -3940
+    }
+  },
+  {
+    "id": "peragus-ii",
+    "name": "Peragus II",
+    "grid": "L-6",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "A fuel-mining colony on a planet already cracked by an earlier accident. Its asteroid mining facility was where the Jedi Exile awoke in 3,951 BBY, and Darth Sion's pursuit ended with the entire asteroid field detonating.",
+    "source": "https://starwars.fandom.com/wiki/Peragus_II",
+    "continuity": "legends",
+    "fate": {
+      "event": "destruction-of-peragus",
+      "state": "destroyed"
+    }
+  },
+  {
+    "id": "katarr",
+    "name": "Katarr",
+    "grid": "K-4",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "A Miraluka colony where the surviving Jedi Masters gathered in secret conclave in 3,952 BBY. Darth Nihilus descended on the gathering and devoured every living thing on the planet; only Visas Marr survived.",
+    "source": "https://starwars.fandom.com/wiki/Katarr",
+    "continuity": "legends",
+    "fate": {
+      "event": "massacre-of-katarr",
+      "state": "dead"
+    }
+  },
+  {
+    "id": "rhen-var",
+    "name": "Rhen Var",
+    "grid": "K-5",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "A frozen world where the redeemed Ulic Qel-Droma lived out his exile and died, and where his remains were entombed. Its ancient citadel later hid secrets from the Sith wars.",
+    "source": "https://starwars.fandom.com/wiki/Rhen_Var",
+    "continuity": "legends"
+  },
+  {
+    "id": "belsavis",
+    "name": "Belsavis",
+    "grid": "L-5",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "An ice world hiding a Rakatan prison complex in volcanic rifts, which the Republic reused as a secret penal colony. The Sith Empire's assault on it in the Cold War freed ancient horrors.",
+    "source": "https://starwars.fandom.com/wiki/Belsavis",
+    "continuity": "legends"
+  },
+  {
+    "id": "cathar",
+    "name": "Cathar",
+    "grid": "R-7",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 3,
+    "summary": "Homeworld of the feline Cathar, whose tree-cities the Mandalorians burned in 3,973 BBY, slaughtering most of the species. The discovery of that massacre a decade later drove Revan's followers into the war.",
+    "source": "https://starwars.fandom.com/wiki/Cathar",
+    "continuity": "legends",
+    "fate": {
+      "event": "battle-of-cathar",
+      "state": "devastated",
+      "until": -3800
+    }
+  },
+  {
+    "id": "mandalore",
+    "name": "Mandalore",
+    "grid": "O-7",
+    "region": "outer-rim",
+    "importance": 4,
+    "summary": "The adopted homeworld of the Mandalorian clans, conquered by Mandalore the First from the native Mythosaurs. From here the Crusaders and Neo-Crusaders launched their wars on the Republic.",
+    "source": "https://starwars.fandom.com/wiki/Mandalore/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "honoghr",
+    "name": "Honoghr",
+    "grid": "L-5",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "Homeworld of the Noghri, a former Rakatan slave world. Its ecology was poisoned in the Clone Wars and its people bound into the Empire's service by a lie.",
+    "source": "https://starwars.fandom.com/wiki/Honoghr",
+    "continuity": "legends"
+  },
+  {
+    "id": "basilisk",
+    "name": "Basilisk",
+    "grid": "P-5",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "Homeworld of the Basiliskans, the beast-engineers whose war droids the Mandalorian Crusaders seized in 4,017 BBY. The droids became the Mandalorians' signature mounts for the next thousand years.",
+    "source": "https://starwars.fandom.com/wiki/Basilisk_(planet)",
+    "continuity": "legends"
+  },
+  {
+    "id": "dathomir",
+    "name": "Dathomir",
+    "grid": "O-5",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "A wild world where the Jedi exiled the renegade Allya in 600 BBY, founding the Witches of Dathomir. Its rancors and Nightsisters made it a byword for danger on the northern Rim.",
+    "source": "https://starwars.fandom.com/wiki/Dathomir/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "felucia",
+    "name": "Felucia",
+    "grid": "R-6",
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "A humid fungal jungle world in the eastern Outer Rim, a Separatist holdout in the Clone Wars and the place where Jedi Master Aayla Secura was killed by her own troops under Order 66.",
+    "source": "https://starwars.fandom.com/wiki/Felucia/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "mygeeto",
+    "name": "Mygeeto",
+    "grid": "K-6",
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "A frozen crystal world controlled by the InterGalactic Banking Clan, besieged by clone forces at the end of the Clone Wars.",
+    "source": "https://starwars.fandom.com/wiki/Mygeeto/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "bandomeer",
+    "name": "Bandomeer",
+    "grid": "Q-4",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "A mining world on the Hydian Way's north-eastern stretch, long disputed between corporate interests and the Offworld Mining Corporation, and the place where Obi-Wan Kenobi became Qui-Gon Jinn's apprentice.",
+    "source": "https://starwars.fandom.com/wiki/Bandomeer",
+    "continuity": "legends"
+  },
+  {
+    "id": "bonadan",
+    "name": "Bonadan",
+    "grid": "S-4",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "The polluted factory capital of the Corporate Sector at the northern terminus of the Hydian Way, an industrial world where profit always outranked people.",
+    "source": "https://starwars.fandom.com/wiki/Bonadan",
+    "continuity": "legends"
+  },
+  {
+    "id": "quermia",
+    "name": "Quermia",
+    "grid": "T-4",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "Homeworld of the long-necked Quermians at the far north-eastern end of the Perlemian Trade Route, the last stop on the galaxy's oldest hyperlane.",
+    "source": "https://starwars.fandom.com/wiki/Quermia",
+    "continuity": "legends"
+  },
+  {
+    "id": "bastion",
+    "name": "Bastion",
+    "grid": "P-5",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "A fortress world of the northern Outer Rim that became the capital of the Imperial Remnant after Palpatine's fall and of the Fel Empire in the Legacy era.",
+    "source": "https://starwars.fandom.com/wiki/Bastion",
+    "continuity": "legends"
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "revan-stays-home",
+    "number": 3,
+    "name": "Revan and Malak never go to the Mandalorian Wars",
+    "question": "What if the Revanchists had obeyed the Council in 3,963 BBY?",
+    "divergence": { "date": -3963, "event": "revanchists-join-the-war" },
+    "premise": "In our history Revan defied the Jedi Council and led a third of the Order's Knights into the Mandalorian Wars, won them, and came back as a Sith Lord. This branch assumes the Cathar evidence never pushed Revan over the edge: the Revanchists stay home, the Republic fights on alone, and the Mandalorians keep winning. There is no Malachor V, no Mass Shadow Generator, no wound in the Force, no Star Forge fleet and no Jedi Civil War. The Republic eventually buys a hard peace, the clans keep the northern Rim, and the Sith Emperor, who in the novel Revan was held back for three centuries by Revan's captive mind, has nothing to delay him.",
+    "basis": [
+      { "text": "Canderous Ordo tells Revan the Mandalorians were winning until he took command.", "source": "https://starwars.fandom.com/wiki/Mandalorian_Wars" },
+      { "text": "The Jedi Council's refusal to intervene was its settled position; without Revan's defiance no Jedi joined the war.", "source": "https://starwars.fandom.com/wiki/Revanchist" },
+      { "text": "Mandalore the Ultimate was goaded into the war by the Sith Emperor, who wanted the Republic weakened before his own invasion.", "source": "https://starwars.fandom.com/wiki/Mandalore_the_Ultimate" },
+      { "text": "The novel Revan has the Emperor delayed for three hundred years by Revan's resistance from captivity; without Revan there is no delay.", "source": "https://starwars.fandom.com/wiki/Revan_(novel)" }
+    ],
+    "source": "https://starwars.fandom.com/wiki/Mandalorian_Wars",
+    "horizon": -3850,
+    "branch": {
+      "remove": [
+        { "event": "revanchists-join-the-war", "reason": "The divergence: Revan and Malak accept the Council's ruling and stay out of the war." }
+      ],
+      "keep": [],
+      "uncertain": [
+        { "event": "great-galactic-war-begins", "reason": "The Sith Emperor's invasion still comes, but without Revan's three-century delay it could come far earlier than 3,681 BBY." }
+      ],
+      "add": [
+        {
+          "id": "spec-mandalorians-take-duro-and-the-colonies",
+          "name": "The Mandalorians push past Duro toward the Colonies",
+          "type": "campaign",
+          "date": -3961,
+          "location": { "system": "duro" },
+          "factions": ["mandalorians", "galactic-republic"],
+          "summary": "After Serroco and Duro the Republic Navy has no commander able to stop the Neo-Crusaders. Mandalore's fleets raid down the Hydian Way into the Colonies while the Senate debates and the Jedi watch.",
+          "source": "https://starwars.fandom.com/wiki/Battle_of_Duro_(Mandalorian_Wars)",
+          "continuity": "legends",
+          "importance": 4,
+          "speculative": true,
+          "basis": "The real Republic lost every major engagement between Vanquo and Revan's arrival.",
+          "links": { "requires": ["mandalorians-break-through-to-the-core"] },
+          "tags": ["speculative", "mandalorian-wars"]
+        },
+        {
+          "id": "spec-council-commits-jedi-late",
+          "name": "The Jedi Council finally commits the Order",
+          "type": "political",
+          "date": -3960,
+          "location": { "system": "coruscant" },
+          "factions": ["jedi-order", "galactic-republic"],
+          "summary": "With Mandalorian raiders within a few jumps of the Core, the Council abandons its waiting game and sends the Order to war under its own Masters, three years later and without Revan's genius for strategy.",
+          "source": "https://starwars.fandom.com/wiki/Mandalorian_Wars",
+          "continuity": "legends",
+          "importance": 3,
+          "speculative": true,
+          "basis": "Masters Kavar and Vrook both admitted in Knights of the Old Republic II that they expected to fight eventually; they objected to Revan's timing, not to the war.",
+          "links": { "requires": ["spec-mandalorians-take-duro-and-the-colonies"] },
+          "tags": ["speculative", "mandalorian-wars"]
+        },
+        {
+          "id": "spec-mandalorian-peace-3957",
+          "name": "A negotiated peace leaves the Mandalorians the northern Rim",
+          "type": "treaty",
+          "date": -3957,
+          "location": { "system": "taris" },
+          "factions": ["mandalorians", "galactic-republic", "jedi-order"],
+          "summary": "Neither side can finish the other. Mandalore the Ultimate, who wanted glory more than ruin, accepts a treaty that leaves the clans ruling Taris, Dxun and the worlds they took, and the Republic turns inward to rebuild.",
+          "source": "https://starwars.fandom.com/wiki/Mandalore_the_Ultimate",
+          "continuity": "legends",
+          "importance": 4,
+          "speculative": true,
+          "basis": "Mandalore the Ultimate's stated goal was a war worthy of the clans; Mandalorian codes of honour allowed peace with a worthy enemy.",
+          "links": { "requires": ["spec-council-commits-jedi-late"] },
+          "tags": ["speculative", "mandalorian-wars"]
+        },
+        {
+          "id": "spec-emperor-invades-early",
+          "name": "The Sith Emperor invades a Republic with no Revan to delay him",
+          "type": "war",
+          "date": { "start": -3900, "approx": true, "uncertainty": 50 },
+          "location": { "system": "dromund-kaas" },
+          "factions": ["reconstituted-sith-empire", "galactic-republic"],
+          "summary": "With no Revan to find him, resist him and sow doubt in his mind for three centuries, the Emperor launches the Great Galactic War generations early against a Republic that has just lost a war and half of its northern Rim.",
+          "source": "https://starwars.fandom.com/wiki/Revan_(novel)",
+          "continuity": "legends-swtor",
+          "importance": 5,
+          "speculative": true,
+          "basis": "The Emperor states in the novel Revan that Revan's imprisoned mind delayed his invasion by centuries. The date here is a guess; the branch stops before it.",
+          "links": { "requires": ["spec-mandalorian-peace-3957"] },
+          "tags": ["speculative", "vitiate"]
+        }
+      ],
+      "territory": [
+        { "date": -3961, "note": "Speculation: the Mandalorians hold the north and raid the Colonies", "source": "https://starwars.fandom.com/wiki/Mandalorian_Wars",
+          "control": { "mandalorians": ["taris", "vanquo", "suurja", "jebble", "dxun", "cathar", "duro", "serroco", "kuar"] } },
+        { "date": -3960, "note": "Speculation: no Malachor; the clans keep their homeworlds", "source": "https://starwars.fandom.com/wiki/Battle_of_Malachor_V",
+          "control": { "mandalorians": ["mandalore", "basilisk", "cathar"] } },
+        { "date": -3959, "note": "Speculation: no Jedi Civil War; the Sith worlds stay empty", "source": "https://starwars.fandom.com/wiki/Jedi_Civil_War",
+          "suppress": ["revan-sith-empire"], "release": ["korriban", "lehon", "malachor-v", "ziost", "thule", "khar-delba", "rhelg", "chhodos", "ashas-ree", "nespis-viii"], "control": { "galactic-republic": ["felucia", "mygeeto", "bandomeer", "bonadan", "quermia"] } },
+        { "date": -3957, "note": "Speculation: a negotiated peace; the Republic recovers Duro, the clans keep Taris and Dxun", "source": "https://starwars.fandom.com/wiki/Mandalore_the_Ultimate",
+          "control": { "galactic-republic": ["duro", "serroco", "kuar"], "mandalorians": ["taris", "vanquo", "suurja", "jebble", "dxun", "cathar", "mandalore", "basilisk"] } },
+        { "date": -3955, "note": "Speculation: no Sith Triumvirate", "source": "https://starwars.fandom.com/wiki/Sith_Triumvirate",
+          "suppress": ["sith-triumvirate"], "control": {} }
+      ],
+      "fates": []
+    },
+    "conflicts": []
+  }
+]

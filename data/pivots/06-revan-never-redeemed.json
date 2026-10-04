@@ -1,0 +1,103 @@
+[
+  {
+    "id": "revan-never-redeemed",
+    "number": 6,
+    "name": "Revan is never redeemed and stays Darth Revan",
+    "question": "What if Revan had accepted Bastila's offer at the Temple of the Ancients?",
+    "divergence": { "date": -3956.3, "event": "revan-redeemed" },
+    "premise": "Captured, mind-wiped and retrained, Revan learned who he was aboard the Leviathan and then, on Lehon, chose the light. This branch takes the other path, the one the game itself offers: Revan accepts Bastila's offer, reclaims the dark side with his memories, kills Malak aboard the Star Forge and is hailed as Dark Lord by the Sith fleet. The Republic armada at Lehon is destroyed instead of victorious, the Star Forge keeps turning out warships, and Darth Revan returns to the conquest Malak interrupted. There is no collapse of the Sith Empire, no Sith Triumvirate scavenging its ruins, and no Dark Wars; the Exile returns to a galaxy ruled by her old commander.",
+    "basis": [
+      { "text": "The dark-side ending of Knights of the Old Republic has Revan kill Malak on the Star Forge and take the Sith fleet as its Dark Lord.", "source": "https://starwars.fandom.com/wiki/Revan" },
+      { "text": "Bastila's offer on Lehon is explicitly to rule the galaxy together with Revan reinstated as Dark Lord.", "source": "https://starwars.fandom.com/wiki/Bastila_Shan" },
+      { "text": "The Sith Triumvirate formed from the wreckage of Revan's empire after the Star Forge was destroyed.", "source": "https://starwars.fandom.com/wiki/Sith_Triumvirate" },
+      { "text": "The Exile's return in 3,951 BBY was triggered by the Triumvirate's hunt for the last Jedi.", "source": "https://starwars.fandom.com/wiki/Meetra_Surik" }
+    ],
+    "source": "https://starwars.fandom.com/wiki/Jedi_Civil_War",
+    "horizon": -3930,
+    "branch": {
+      "remove": [
+        { "event": "revan-redeemed", "reason": "The divergence: Revan accepts Bastila's offer and reclaims the dark side." }
+      ],
+      "keep": [
+        { "event": "exile-returns", "reason": "The Exile is drawn back to Republic space regardless, though by Revan's Sith rather than the Triumvirate's assassins." }
+      ],
+      "uncertain": [
+        { "event": "revan-departs", "reason": "Darth Revan may still march on the Sith Emperor, but as a conqueror with a fleet rather than a lone Jedi." }
+      ],
+      "add": [
+        {
+          "id": "spec-revan-kills-malak-dark",
+          "name": "Darth Revan kills Malak and reclaims the Star Forge",
+          "type": "duel",
+          "date": -3956.2,
+          "location": { "system": "lehon" },
+          "factions": ["revan-sith-empire"],
+          "summary": "Revan and a fallen Bastila storm the Star Forge not to destroy it but to take it. Malak dies at his old master's feet, and the Sith fleet that watches hails Revan as Dark Lord for the second time.",
+          "source": "https://starwars.fandom.com/wiki/Star_Forge",
+          "continuity": "legends",
+          "importance": 5,
+          "speculative": true,
+          "basis": "This is the game's dark-side ending.",
+          "links": { "requires": ["darth-revan-returns-to-the-star-forge"] },
+          "tags": ["speculative", "jcw", "star-forge"]
+        },
+        {
+          "id": "spec-republic-fleet-destroyed-at-lehon",
+          "name": "The Republic armada is destroyed at Lehon",
+          "type": "battle",
+          "date": -3956.1,
+          "location": { "system": "lehon" },
+          "factions": ["revan-sith-empire", "galactic-republic"],
+          "summary": "With Bastila's battle meditation turned against it and the Star Forge's defences intact, Admiral Dodonna's fleet is annihilated in the Lehon system. The Republic loses most of its remaining navy in an afternoon.",
+          "source": "https://starwars.fandom.com/wiki/Battle_of_Rakata_Prime",
+          "continuity": "legends",
+          "importance": 5,
+          "speculative": true,
+          "basis": "The dark-side ending shows the Republic fleet broken as Revan's ships emerge from the Star Forge.",
+          "links": { "requires": ["spec-revan-kills-malak-dark"] },
+          "tags": ["speculative", "jcw"]
+        },
+        {
+          "id": "spec-darth-revan-conquers-the-core",
+          "name": "Darth Revan's second conquest reaches the Core",
+          "type": "campaign",
+          "date": { "start": -3955, "end": -3953 },
+          "location": { "system": "coruscant" },
+          "factions": ["revan-sith-empire", "galactic-republic", "jedi-order"],
+          "summary": "Returning to his own doctrine of conquest without devastation, Revan takes the Core within three years. The Jedi who sent a strike team for him are hunted; those who will kneel are retrained in his academies.",
+          "source": "https://starwars.fandom.com/wiki/Darth_Revan's_Sith_Empire",
+          "continuity": "legends",
+          "importance": 5,
+          "speculative": true,
+          "basis": "Revan's war aim throughout the Jedi Civil War was an intact Republic under Sith rule.",
+          "links": { "requires": ["spec-republic-fleet-destroyed-at-lehon"] },
+          "tags": ["speculative", "jcw"]
+        },
+        {
+          "id": "spec-exile-returns-to-revans-galaxy",
+          "name": "The Exile returns to a galaxy ruled by Darth Revan",
+          "type": "political",
+          "date": -3951,
+          "location": { "system": "peragus-ii" },
+          "factions": ["jedi-order", "revan-sith-empire"],
+          "summary": "The last of the Jedi Council's exiles comes back not to a Sith remnant hunting scattered Masters but to a Sith Empire with her old commander on its throne. Whether she joins him, fights him or vanishes again is beyond this branch.",
+          "source": "https://starwars.fandom.com/wiki/Meetra_Surik",
+          "continuity": "legends",
+          "importance": 3,
+          "speculative": true,
+          "basis": "Kreia says the Exile would have followed Revan if she could; Revan's regard for his old General is attested in the novel Revan.",
+          "links": { "requires": ["exile-returns", "spec-darth-revan-conquers-the-core"] },
+          "tags": ["speculative", "exile"]
+        }
+      ],
+      "territory": [
+        { "date": -3956.1, "note": "Speculation: the Star Forge survives; Revan's Sith keep the Rim", "source": "https://starwars.fandom.com/wiki/Star_Forge",
+          "suppress": ["sith-triumvirate"], "control": { "revan-sith-empire": ["korriban", "lehon", "malachor-v", "ziost", "thule", "khar-delba", "rhelg", "chhodos", "ashas-ree", "felucia", "mygeeto", "dathomir", "bandomeer", "bonadan", "quermia", "cathar", "nespis-viii", "tatooine", "dantooine", "telos-iv"] } },
+        { "date": -3953, "note": "Speculation: Darth Revan's second conquest takes the Core", "source": "https://starwars.fandom.com/wiki/Darth_Revan's_Sith_Empire",
+          "suppress": ["galactic-republic"], "control": { "revan-sith-empire": { "regions": ["deep-core", "core-worlds", "colonies", "inner-rim", "expansion-region", "mid-rim"], "except": ["nal-hutta", "nar-shaddaa", "varl", "sleheyron", "manaan", "hapes", "onderon", "dxun", "vultar"], "systems": ["belsavis", "yavin-4", "ryloth", "sullust", "eriadu", "sluis-van", "dac", "desevro", "lianna", "raxus-prime"] } } }
+      ],
+      "fates": []
+    },
+    "conflicts": []
+  }
+]

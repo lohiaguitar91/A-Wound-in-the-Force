@@ -1,0 +1,47 @@
+[
+  {
+    "id": "perlemian-trade-route",
+    "name": "Perlemian Trade Route",
+    "short": "Perlemian",
+    "major": true,
+    "systems": ["coruscant", "brentaal-iv", "ralltiir", "esseles", "taanab", "lantillies", "ossus", "quermia"],
+    "summary": "The oldest of the great hyperlanes, running from Coruscant north-east past Brentaal and Taanab to Ossus and the far Rim at Quermia. It and the Corellian Run frame the Slice, the Republic's ancient heartland. Waypoints here are approximate.",
+    "source": "https://starwars.fandom.com/wiki/Perlemian_Trade_Route"
+  },
+  {
+    "id": "corellian-run",
+    "name": "Corellian Run",
+    "short": "Corellian Run",
+    "major": true,
+    "systems": ["coruscant", "corellia", "denon", "christophsis", "rodia", "ryloth"],
+    "summary": "The second great route, blazed by Corellian scouts from Coruscant through Corellia and Denon south-east to the Outer Rim near Ryloth. Waypoints shown are a simplified selection.",
+    "source": "https://starwars.fandom.com/wiki/Corellian_Run"
+  },
+  {
+    "id": "corellian-trade-spine",
+    "name": "Corellian Trade Spine",
+    "short": "Trade Spine",
+    "major": true,
+    "systems": ["corellia", "duro", "bestine-iv", "yag-dhul", "bespin", "terminus"],
+    "summary": "A route branching from Corellia and Duro down the galaxy's western side through Yag'Dhul and the Anoat sector toward Terminus. The Bespin leg follows the Ison Corridor branch; waypoints are approximate.",
+    "source": "https://starwars.fandom.com/wiki/Corellian_Trade_Spine"
+  },
+  {
+    "id": "rimma-trade-route",
+    "name": "Rimma Trade Route",
+    "short": "Rimma",
+    "major": true,
+    "systems": ["abregado-rae", "thyferra", "yag-dhul", "sullust", "eriadu", "sluis-van"],
+    "summary": "The southern artery from Abregado-rae in the Core through Thyferra and Yag'Dhul down to Sullust, Eriadu and Sluis Van. Waypoints shown are a simplified selection.",
+    "source": "https://starwars.fandom.com/wiki/Rimma_Trade_Route"
+  },
+  {
+    "id": "hydian-way",
+    "name": "Hydian Way",
+    "short": "Hydian",
+    "major": true,
+    "systems": ["bonadan", "bandomeer", "telos-iv", "brentaal-iv", "denon", "eriadu"],
+    "summary": "The newest and longest of the five great routes, crossing the whole galaxy from Bonadan in the north-east through Telos, Brentaal and Denon to Eriadu in the south. Waypoints shown are a simplified selection.",
+    "source": "https://starwars.fandom.com/wiki/Hydian_Way"
+  }
+]

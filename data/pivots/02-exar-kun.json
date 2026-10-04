@@ -1,0 +1,102 @@
+[
+  {
+    "id": "exar-kun-never-falls",
+    "number": 2,
+    "name": "Exar Kun never falls",
+    "question": "What if Kun had refused Freedon Nadd's bargain in the Valley of the Dark Lords?",
+    "divergence": { "date": -3997, "event": "exar-kun-falls" },
+    "premise": "Buried alive on Korriban, Exar Kun accepted the dark side to save his life. This branch assumes he refused and was dug out by his own stubbornness or by the Jedi who followed him, returning to Vodo-Siosk Baas chastened and ambitious but still a Jedi. The Krath still rise on Empress Teta, Ulic Qel-Droma still falls to Aleema's poison, and the Republic still fights the Krath at Koros Major, but there is no Brotherhood of the Sith, no stolen Foerost fleet, no assault on Coruscant and no Cron supernova. Ossus survives as the Jedi Order's heart, which means the Order never moves to Coruscant. The Mandalorian Crusaders may still follow Ulic, which is why the Mandalorian Wars a generation later are marked uncertain rather than removed.",
+    "basis": [
+      { "text": "Dark Lords of the Sith frames Kun's fall as a single choice under a cave-in on Korriban; before it he was arrogant and curious rather than evil.", "source": "https://starwars.fandom.com/wiki/Exar_Kun" },
+      { "text": "The Krath coup and Ulic's infiltration happened before Kun reached Empress Teta and did not depend on him.", "source": "https://starwars.fandom.com/wiki/Krath" },
+      { "text": "The Republic had already engaged the Krath in fleet action at Koros Major before the Brotherhood formed.", "source": "https://starwars.fandom.com/wiki/Battle_of_Koros_Major" },
+      { "text": "The Cron supernova that devastated Ossus was Kun and Aleema's operation; without it the Great Library stands.", "source": "https://starwars.fandom.com/wiki/Cron_Supernova" }
+    ],
+    "source": "https://starwars.fandom.com/wiki/Great_Sith_War",
+    "horizon": -3950,
+    "branch": {
+      "remove": [
+        { "event": "exar-kun-falls", "reason": "The divergence: Kun refuses Nadd's offer and leaves Korriban as a Jedi." }
+      ],
+      "keep": [],
+      "uncertain": [
+        { "event": "ulic-defeats-mandalore-kuar", "reason": "Ulic still rules the Krath, so Mandalore the Indomitable may still seek him out, but without Kun's plan the timing and outcome are uncertain." },
+        { "event": "jedi-covenant-formed", "reason": "Founded in reaction to Kun's seduction of Jedi students; a Krath-only war might not have frightened Krynda Draay into forming it." }
+      ],
+      "add": [
+        {
+          "id": "spec-kun-returns-to-baas",
+          "name": "Exar Kun returns to Vodo-Siosk Baas",
+          "type": "political",
+          "date": -3997,
+          "location": { "system": "dantooine" },
+          "factions": ["jedi-order"],
+          "summary": "Kun limps back to Dantooine with Nadd's scrolls and a healthy fear of what he nearly became. Master Baas puts him to work translating the Sith records for the Order instead of expelling him.",
+          "source": "https://starwars.fandom.com/wiki/Vodo-Siosk_Baas",
+          "continuity": "legends",
+          "importance": 3,
+          "speculative": true,
+          "basis": "Baas tolerated Kun's forbidden studies in real history and continued to hope for his return even after the fall.",
+          "links": { "requires": ["kun-visits-dxun"] },
+          "tags": ["speculative", "gsw"]
+        },
+        {
+          "id": "spec-jedi-krath-campaign",
+          "name": "The Jedi lead the campaign against the Krath",
+          "type": "campaign",
+          "date": -3996,
+          "location": { "system": "empress-teta" },
+          "factions": ["jedi-order", "galactic-republic", "krath"],
+          "summary": "Nomi Sunrider, Cay Qel-Droma and a reformed Exar Kun lead the Jedi who join the Republic's second push into the Koros system. Without Sith sorcery beyond Aleema's illusions, the Krath fleet is broken in orbit over Empress Teta.",
+          "source": "https://starwars.fandom.com/wiki/Battle_of_Koros_Major",
+          "continuity": "legends",
+          "importance": 4,
+          "speculative": true,
+          "basis": "The real Republic–Jedi campaign of 3,996 BBY ended the war once Kun's power was removed from the equation.",
+          "links": { "requires": ["jedi-crush-the-krath", "spec-kun-returns-to-baas"] },
+          "tags": ["speculative", "gsw"]
+        },
+        {
+          "id": "spec-nomi-captures-ulic",
+          "name": "Nomi Sunrider captures Ulic Qel-Droma at Cinnagar",
+          "type": "duel",
+          "date": -3996,
+          "location": { "system": "empress-teta" },
+          "factions": ["jedi-order", "krath"],
+          "summary": "Cornered in the Tetan palace, Ulic faces Nomi and his brother Cay. Whether she severs him from the Force as she did in our history, or he surrenders unbroken, he is taken alive and the Krath collapse with him.",
+          "source": "https://starwars.fandom.com/wiki/Nomi_Sunrider",
+          "continuity": "legends",
+          "importance": 3,
+          "speculative": true,
+          "basis": "Nomi captured Ulic in real history too, on Coruscant; the location and his state of mind change, the outcome does not.",
+          "links": { "requires": ["spec-jedi-krath-campaign"] },
+          "tags": ["speculative", "gsw"]
+        },
+        {
+          "id": "spec-ossus-remains-jedi-heart",
+          "name": "Ossus remains the heart of the Jedi Order",
+          "type": "founding",
+          "date": -3990,
+          "location": { "system": "ossus" },
+          "factions": ["jedi-order"],
+          "summary": "With the Cron Cluster intact, the Great Library and the praxeum on Ossus are never lost. The Coruscant Temple stays a diplomatic outpost, and the Order that faces the Mandalorians a generation later is larger, older and better read.",
+          "source": "https://starwars.fandom.com/wiki/Ossus",
+          "continuity": "legends",
+          "importance": 4,
+          "speculative": true,
+          "basis": "The Order's move to Coruscant followed directly from the devastation of Ossus.",
+          "links": { "requires": ["spec-jedi-krath-campaign"] },
+          "tags": ["speculative", "gsw"]
+        }
+      ],
+      "territory": [
+        { "date": -3996.9, "note": "Speculation: no Brotherhood; Yavin 4 stays empty and the Mandalorians stay home", "source": "https://starwars.fandom.com/wiki/Brotherhood_of_the_Sith",
+          "release": ["yavin-4", "kuar"], "control": {} },
+        { "date": -3996, "note": "Speculation: the Republic retakes the Koros system and Ossus is never devastated", "source": "https://starwars.fandom.com/wiki/Ossus",
+          "control": { "galactic-republic": ["empress-teta", "kirrek", "primus-goluud", "ossus"] } }
+      ],
+      "fates": []
+    },
+    "conflicts": []
+  }
+]

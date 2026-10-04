@@ -1,0 +1,103 @@
+[
+  {
+    "id": "bane-dies-on-ruusan",
+    "number": 7,
+    "name": "Darth Bane dies on Ruusan; the Rule of Two is never founded",
+    "question": "What if Bane had been caught in the thought bomb with the rest of the Brotherhood?",
+    "divergence": { "date": -1000, "event": "bane-escapes-ruusan" },
+    "premise": "Bane engineered the Brotherhood of Darkness's destruction and walked away from Ruusan as the only living Sith Lord. This branch assumes he did not get clear in time: the thought bomb takes him with Kaan and Hoth, and the Jedi belief that the Sith died at Ruusan is, for once, true. No Zannah, no Rule of Two, no Plagueis, no Sidious. The Ruusan Reformation still demilitarises the Republic, but there is no hidden hand steering it toward collapse a thousand years later, so the Naboo crisis, the Clone Wars, Order 66 and the Galactic Empire never happen as we know them. The branch claims nothing about what replaces them beyond the Republic continuing; the Yuuzhan Vong still come, into a very different galaxy, and are marked uncertain.",
+    "basis": [
+      { "text": "Path of Destruction makes Bane the sole Sith survivor of Ruusan and ties the Rule of Two entirely to his survival.", "source": "https://starwars.fandom.com/wiki/Darth_Bane" },
+      { "text": "The Jedi and the Republic formally declared the Sith extinct after Ruusan; the Reformation was built on that belief.", "source": "https://starwars.fandom.com/wiki/Ruusan_Reformation" },
+      { "text": "Every later Sith Lord from Zannah to Sidious belonged to Bane's lineage.", "source": "https://starwars.fandom.com/wiki/Order_of_the_Sith_Lords" },
+      { "text": "The Clone Wars and the Empire were engineered by Sidious; without the Banite line there is no architect for them.", "source": "https://starwars.fandom.com/wiki/Palpatine" }
+    ],
+    "source": "https://starwars.fandom.com/wiki/Darth_Bane",
+    "horizon": 20,
+    "branch": {
+      "remove": [
+        { "event": "bane-escapes-ruusan", "reason": "The divergence: Bane is caught in the thought bomb's radius." }
+      ],
+      "keep": [],
+      "uncertain": [
+        { "event": "yuuzhan-vong-invasion", "reason": "The Vong invasion did not depend on the Sith, but they would meet a Republic that never became an Empire; the war's course is unknown." }
+      ],
+      "add": [
+        {
+          "id": "spec-bane-killed-by-thought-bomb",
+          "name": "Bane dies in the thought bomb",
+          "type": "assassination",
+          "date": -1000,
+          "location": { "system": "ruusan" },
+          "factions": ["new-sith-empire", "jedi-order"],
+          "summary": "Delayed by a last confrontation with Kaan's lieutenants, Bane is still within the thought bomb's reach when it detonates. His spirit joins the hundred Jedi and Sith trapped in the cave, and the Sith line ends with him.",
+          "source": "https://starwars.fandom.com/wiki/Thought_bomb",
+          "continuity": "legends",
+          "importance": 5,
+          "speculative": true,
+          "basis": "Bane escaped the blast by a narrow margin in Path of Destruction; the bomb killed every Force-user in range without regard for allegiance.",
+          "links": { "requires": ["sith-extinction-at-ruusan"] },
+          "tags": ["speculative", "ruusan"]
+        },
+        {
+          "id": "spec-zannah-found-by-jedi",
+          "name": "The Jedi find Zannah on Ruusan",
+          "type": "political",
+          "date": -1000,
+          "location": { "system": "ruusan" },
+          "factions": ["jedi-order"],
+          "summary": "With no Sith Lord to claim her, the grieving child who killed two Jedi on Ruusan is found by the survivors of the Army of Light. Whether she is trained, imprisoned or simply sent home, she never becomes Darth Zannah.",
+          "source": "https://starwars.fandom.com/wiki/Darth_Zannah",
+          "continuity": "legends",
+          "importance": 2,
+          "speculative": true,
+          "basis": "Zannah was a ten-year-old Jedi recruit on Ruusan when Bane found her; the Jedi were combing the planet for survivors.",
+          "links": { "requires": ["spec-bane-killed-by-thought-bomb"] },
+          "tags": ["speculative", "ruusan"]
+        },
+        {
+          "id": "spec-republic-decline-without-sith",
+          "name": "The Republic decays without a Sith hand on the scales",
+          "type": "political",
+          "date": { "start": -100, "end": -19, "approx": true },
+          "location": { "system": "coruscant" },
+          "factions": ["galactic-republic", "jedi-order"],
+          "summary": "The corruption, corporate power and Senate paralysis of the late Republic were real, but the crises that turned them into a dictatorship were manufactured. Without Sidious the Republic limps on, troubled and unreformed, with the Jedi still its guardians.",
+          "source": "https://starwars.fandom.com/wiki/Galactic_Republic/Legends",
+          "continuity": "legends",
+          "importance": 4,
+          "speculative": true,
+          "basis": "The Naboo blockade, the Separatist movement, the clone army and the Clone Wars were each engineered by Sidious or Plagueis.",
+          "links": { "requires": ["spec-bane-killed-by-thought-bomb"] },
+          "tags": ["speculative", "anchor"]
+        },
+        {
+          "id": "spec-republic-faces-the-vong",
+          "name": "A Republic that never fell meets the Yuuzhan Vong",
+          "type": "war",
+          "date": 25,
+          "location": { "region": "outer-rim" },
+          "factions": ["galactic-republic", "jedi-order", "yuuzhan-vong"],
+          "summary": "The extragalactic invaders arrive on schedule, but they meet a demilitarised Republic with ten thousand Jedi and no Imperial fleet, no Death Stars and no Rebellion-hardened New Republic. This branch does not predict the outcome.",
+          "source": "https://starwars.fandom.com/wiki/Yuuzhan_Vong_War",
+          "continuity": "legends",
+          "importance": 3,
+          "speculative": true,
+          "basis": "The Vong's route to the galaxy was set long before Ruusan; what they found on arrival was not.",
+          "links": { "requires": ["spec-republic-decline-without-sith", "yuuzhan-vong-invasion"] },
+          "tags": ["speculative", "anchor"]
+        }
+      ],
+      "territory": [
+        { "date": -19, "note": "Speculation: no Galactic Empire; the Republic endures", "source": "https://starwars.fandom.com/wiki/Galactic_Empire/Legends",
+          "suppress": ["galactic-empire", "rebel-alliance", "new-republic", "krayt-sith-empire"], "control": { "galactic-republic": { "regions": ["deep-core", "core-worlds", "colonies", "inner-rim", "expansion-region", "mid-rim"], "except": ["nal-hutta", "nar-shaddaa", "varl", "sleheyron", "hapes", "vultar", "dxun"], "systems": ["ryloth", "rodia", "christophsis", "utapau", "sullust", "eriadu", "sluis-van", "dantooine", "telos-iv", "bandomeer", "bonadan", "quermia", "dac", "bastion", "felucia", "mygeeto", "desevro", "lianna", "raxus-prime", "belsavis", "cato-neimoidia", "saleucami", "geonosis", "mustafar", "yavin-4", "kashyyyk", "kessel"] } } }
+      ],
+      "fates": [
+        { "system": "alderaan", "fate": null, "reason": "No Empire builds a Death Star; Alderaan is never destroyed." },
+        { "system": "caamas", "fate": null, "reason": "The Caamas firestorm was an Imperial atrocity that never happens." },
+        { "system": "carida", "fate": null, "reason": "No Imperial academy, no Maw installation and no Sun Crusher." }
+      ]
+    },
+    "conflicts": []
+  }
+]

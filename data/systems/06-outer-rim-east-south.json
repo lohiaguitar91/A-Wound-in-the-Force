@@ -1,0 +1,297 @@
+[
+  {
+    "id": "voss",
+    "name": "Voss",
+    "grid": "S-7",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "A neutral world in the Allied Tion sector whose Mystics saw the future with unsettling accuracy. Both the Republic and the Sith Empire courted it during the Cold War, and the Sith Emperor's spirit hid in its Dark Heart.",
+    "source": "https://starwars.fandom.com/wiki/Voss",
+    "continuity": "legends-swtor"
+  },
+  {
+    "id": "desevro",
+    "name": "Desevro",
+    "grid": "S-6",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "The proud, backward-looking capital of the Tion Cluster, seat of the states that fought the Republic in the Tionese War and still clung to memories of Xim the Despot's empire thousands of years later.",
+    "source": "https://starwars.fandom.com/wiki/Desevro",
+    "continuity": "legends"
+  },
+  {
+    "id": "lianna",
+    "name": "Lianna",
+    "grid": "S-6",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "An industrial world of the Allied Tion, home of Santhe/Sienar Technologies' shipyards and the richest planet in the old Tionese sphere.",
+    "source": "https://starwars.fandom.com/wiki/Lianna",
+    "continuity": "legends"
+  },
+  {
+    "id": "raxus-prime",
+    "name": "Raxus Prime",
+    "grid": "U-5",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "A junk world of the Tion Hegemony buried under millennia of scrap, which served as a Separatist capital in the Clone Wars and hid a Sith temple beneath its garbage.",
+    "source": "https://starwars.fandom.com/wiki/Raxus_Prime",
+    "continuity": "legends"
+  },
+  {
+    "id": "corbos",
+    "name": "Corbos",
+    "grid": "T-6",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "A mining world in the eastern Outer Rim where the Jedi finally crushed the Dark Jedi of the Hundred-Year Darkness in 6,900 BBY. The surviving Exiles were banished from here into the unknown and found Korriban.",
+    "source": "https://starwars.fandom.com/wiki/Corbos",
+    "continuity": "legends"
+  },
+  {
+    "id": "tund",
+    "name": "Tund",
+    "grid": "U-6",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "A remote world settled by Sith purebloods who fled the Great Hyperspace War and became the Sorcerers of Tund, a Force tradition that outlived the Sith Empire itself.",
+    "source": "https://starwars.fandom.com/wiki/Tund",
+    "continuity": "legends"
+  },
+  {
+    "id": "dac",
+    "name": "Dac (Mon Calamari)",
+    "aliases": ["Mon Calamari"],
+    "grid": "U-6",
+    "region": "outer-rim",
+    "importance": 3,
+    "summary": "The ocean world of the Mon Calamari and the Quarren, whose shipwrights built the Rebel Alliance's star cruisers and whose waters became the New Republic's capital for a time.",
+    "source": "https://starwars.fandom.com/wiki/Dac",
+    "continuity": "legends"
+  },
+  {
+    "id": "kessel",
+    "name": "Kessel",
+    "grid": "T-10",
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "A barren world of glitterstim spice mines beside the Maw black-hole cluster, a Hutt-dominated prison and smuggling destination from the Old Republic onward.",
+    "source": "https://starwars.fandom.com/wiki/Kessel/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "makeb",
+    "name": "Makeb",
+    "grid": "T-12",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "A wealthy Hutt Space world of mesas and isotope-5 mines, which the Hutt Cartel tried to turn into the seed of a new Hutt empire in 3,638 BBY until Republic and Sith intervention.",
+    "source": "https://starwars.fandom.com/wiki/Makeb",
+    "continuity": "legends-swtor"
+  },
+  {
+    "id": "tatooine",
+    "name": "Tatooine",
+    "grid": "R-16",
+    "region": "outer-rim",
+    "importance": 4,
+    "summary": "A twin-sunned desert world settled by the Rakata, then the Czerka Corporation, then the Hutts. Revan found a Star Map in its Eastern Dune Sea, and it later raised both Anakin and Luke Skywalker.",
+    "source": "https://starwars.fandom.com/wiki/Tatooine/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "geonosis",
+    "name": "Geonosis",
+    "grid": "R-16",
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "A red rock world of hive-dwelling Geonosians whose droid foundries armed the Separatists. The Clone Wars began here in 22 BBY.",
+    "source": "https://starwars.fandom.com/wiki/Geonosis/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "ryloth",
+    "name": "Ryloth",
+    "grid": "R-17",
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "The tidally locked homeworld of the Twi'leks on the Corellian Run, a world of slavers and ryll spice that passed between Hutt, Republic and Imperial influence over the centuries.",
+    "source": "https://starwars.fandom.com/wiki/Ryloth/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "rodia",
+    "name": "Rodia",
+    "grid": "R-16",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "The humid jungle homeworld of the Rodians, famous for its bounty-hunting culture and its position on the Corellian Run's southern stretch.",
+    "source": "https://starwars.fandom.com/wiki/Rodia/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "christophsis",
+    "name": "Christophsis",
+    "grid": "Q-16",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "A crystalline world on the Corellian Run whose cities were built from the planet's own giant crystals, a prize fought over early in the Clone Wars.",
+    "source": "https://starwars.fandom.com/wiki/Christophsis/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "saleucami",
+    "name": "Saleucami",
+    "grid": "R-18",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "A dry world of the southern Outer Rim where clone forces fought a long siege late in the Clone Wars, one of the worlds of the Outer Rim Sieges.",
+    "source": "https://starwars.fandom.com/wiki/Saleucami/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "rishi",
+    "name": "Rishi",
+    "grid": "R-18",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "A remote tropical world on the galaxy's southern edge, a pirate haven where the Revanites gathered their fleet before their strike on Yavin 4 in 3,637 BBY.",
+    "source": "https://starwars.fandom.com/wiki/Rishi",
+    "continuity": "legends"
+  },
+  {
+    "id": "mustafar",
+    "name": "Mustafar",
+    "grid": "L-19",
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "A volcanic world torn between two gas giants, mined for its metals by the Techno Union and remembered as the place where Anakin Skywalker fell to Obi-Wan Kenobi in 19 BBY.",
+    "source": "https://starwars.fandom.com/wiki/Mustafar/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "utapau",
+    "name": "Utapau",
+    "grid": "N-19",
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "A windswept world of enormous sinkhole cities where General Grievous made his last stand against Obi-Wan Kenobi in 19 BBY.",
+    "source": "https://starwars.fandom.com/wiki/Utapau/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "sullust",
+    "name": "Sullust",
+    "grid": "M-17",
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "A volcanic world on the Rimma Trade Route whose Sullustans lived in vast caverns. The SoroSuub Corporation ran it under the Empire, and the Rebel fleet mustered here before Endor.",
+    "source": "https://starwars.fandom.com/wiki/Sullust/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "eriadu",
+    "name": "Eriadu",
+    "grid": "M-18",
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "The industrial capital of the Seswenna sector where the Rimma and the Hydian Way cross, powerbase of the Tarkin family and the Empire's gateway to the southern Rim.",
+    "source": "https://starwars.fandom.com/wiki/Eriadu/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "sluis-van",
+    "name": "Sluis Van",
+    "grid": "M-19",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "A major shipyard system on the Rimma's southern stretch, attacked by the Sith Empire in the Great Galactic War and raided by Grand Admiral Thrawn in 9 ABY.",
+    "source": "https://starwars.fandom.com/wiki/Sluis_Van",
+    "continuity": "legends"
+  },
+  {
+    "id": "dagobah",
+    "name": "Dagobah",
+    "grid": "M-19",
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "A swamp world near the end of the Rimma, saturated with the living Force and clouded by a dark-side cave. Yoda hid here for two decades after Order 66.",
+    "source": "https://starwars.fandom.com/wiki/Dagobah/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "hoth",
+    "name": "Hoth",
+    "grid": "K-18",
+    "region": "outer-rim",
+    "importance": 3,
+    "summary": "An ice world off the Corellian Trade Spine where a Republic–Sith fleet battle in 3,665 BBY left a graveyard of wrecks. The Rebel Alliance's Echo Base fell here in 3 ABY.",
+    "source": "https://starwars.fandom.com/wiki/Hoth/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "bespin",
+    "name": "Bespin",
+    "grid": "K-18",
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "A gas giant of the Anoat sector whose floating Cloud City mined tibanna gas. Lando Calrissian administered it when the Empire arrived in 3 ABY.",
+    "source": "https://starwars.fandom.com/wiki/Bespin/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "terminus",
+    "name": "Terminus",
+    "grid": "K-20",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 1,
+    "summary": "The southern end of the Corellian Trade Spine, a frontier trade world where the great Core routes finally gave out at the edge of the galactic disc.",
+    "source": "https://starwars.fandom.com/wiki/Terminus",
+    "continuity": "legends"
+  },
+  {
+    "id": "apatros",
+    "name": "Apatros",
+    "grid": "K-20",
+    "gridUncertain": true,
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "A poor cortosis-mining colony on the Outer Rim where Dessel, the miner who became Darth Bane, grew up in debt to the Outer Rim Oreworks before fleeing into the Sith army.",
+    "source": "https://starwars.fandom.com/wiki/Apatros",
+    "continuity": "legends"
+  },
+  {
+    "id": "endor",
+    "name": "Endor",
+    "grid": "H-16",
+    "region": "outer-rim",
+    "importance": 3,
+    "summary": "A forest moon in the remote Moddell sector where the Empire built its second Death Star. The Rebel victory here in 4 ABY killed Palpatine and broke the Empire.",
+    "source": "https://starwars.fandom.com/wiki/Endor/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "bakura",
+    "name": "Bakura",
+    "grid": "G-16",
+    "region": "outer-rim",
+    "importance": 2,
+    "summary": "An isolated repulsorlift-manufacturing colony on the far western edge of the Rim, invaded by the Ssi-ruuk days after Endor and defended by a brief Rebel–Imperial truce.",
+    "source": "https://starwars.fandom.com/wiki/Bakura",
+    "continuity": "legends"
+  }
+]

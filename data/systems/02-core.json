@@ -1,0 +1,193 @@
+[
+  {
+    "id": "coruscant",
+    "name": "Coruscant",
+    "aliases": ["Imperial Center"],
+    "grid": "L-9",
+    "region": "core-worlds",
+    "importance": 5,
+    "summary": "The city-covered capital of the galaxy and the zero point of its coordinate system. Seat of the Republic from 25,053 BBY, then of the Empire, the New Republic and the Galactic Alliance; it was besieged by Naga Sadow, stormed by Ulic Qel-Droma, sacked by the Sith Emperor and conquered by the Yuuzhan Vong.",
+    "source": "https://starwars.fandom.com/wiki/Coruscant/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "corellia",
+    "name": "Corellia",
+    "grid": "M-11",
+    "region": "core-worlds",
+    "importance": 5,
+    "summary": "Shipbuilding capital of the Core and head of the Corellian Run. Fiercely independent, Corellia helped found the Republic, hosted the treaty that created the Rebel Alliance, and was a battleground in the Galactic War of 3,640 BBY.",
+    "source": "https://starwars.fandom.com/wiki/Corellia/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "alderaan",
+    "name": "Alderaan",
+    "grid": "M-10",
+    "region": "core-worlds",
+    "importance": 4,
+    "summary": "A peaceful Core World of mountains and grasslands whose nobility helped shape Republic politics for millennia. It was invaded by the Sith Empire in 3,667 BBY, torn by civil war in the Cold War, and destroyed by the Death Star in 0 BBY.",
+    "source": "https://starwars.fandom.com/wiki/Alderaan/Legends",
+    "continuity": "legends",
+    "fate": { "event": "destruction-of-alderaan", "state": "destroyed" }
+  },
+  {
+    "id": "kuat",
+    "name": "Kuat",
+    "grid": "M-10",
+    "region": "core-worlds",
+    "importance": 3,
+    "summary": "Home of Kuat Drive Yards, the orbital shipyard ring that built the Republic's and later the Empire's heaviest warships. Its aristocratic merchant houses made it one of the wealthiest systems in the Core.",
+    "source": "https://starwars.fandom.com/wiki/Kuat/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "chandrila",
+    "name": "Chandrila",
+    "grid": "L-9",
+    "region": "core-worlds",
+    "importance": 3,
+    "summary": "An agricultural Core World famous for its direct democracy and its senators, among them Mon Mothma. It sits on the Perlemian Trade Route a short jump from Coruscant.",
+    "source": "https://starwars.fandom.com/wiki/Chandrila/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "brentaal-iv",
+    "name": "Brentaal IV",
+    "grid": "L-9",
+    "region": "core-worlds",
+    "importance": 3,
+    "summary": "The trade nexus where the Perlemian Trade Route meets the Hydian Way, ruled by merchant houses since the founding of the Republic. Control of Brentaal was decisive in several wars, including the Great Galactic War.",
+    "source": "https://starwars.fandom.com/wiki/Brentaal_IV",
+    "continuity": "legends"
+  },
+  {
+    "id": "ralltiir",
+    "name": "Ralltiir",
+    "grid": "L-9",
+    "region": "core-worlds",
+    "importance": 2,
+    "summary": "A banking and trade world on the Perlemian whose financial houses funded Core expansion. The Empire's brutal occupation of Ralltiir shortly before Yavin pushed many Core citizens toward the Rebellion.",
+    "source": "https://starwars.fandom.com/wiki/Ralltiir/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "esseles",
+    "name": "Esseles",
+    "grid": "L-9",
+    "region": "core-worlds",
+    "importance": 2,
+    "summary": "An early Core colony on the Perlemian Trade Route, remembered for its ancient Essel dynasties and as one of the worlds whose links to Coruscant made the Republic possible.",
+    "source": "https://starwars.fandom.com/wiki/Esseles",
+    "continuity": "legends"
+  },
+  {
+    "id": "duro",
+    "name": "Duro",
+    "grid": "M-11",
+    "region": "core-worlds",
+    "importance": 3,
+    "summary": "Homeworld of the Duros, pioneering hyperspace explorers who helped blaze the first Core routes. The Mandalorian Neo-Crusaders smashed a Republic fleet here in 3,963 BBY, and the planet was later ruined by Imperial industry.",
+    "source": "https://starwars.fandom.com/wiki/Duro/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "anaxes",
+    "name": "Anaxes",
+    "grid": "L-9",
+    "region": "core-worlds",
+    "importance": 2,
+    "summary": "The Defender of the Core, a naval world whose Anaxes Citadel trained Republic fleet officers for thousands of years and anchored the Azure sector's defences.",
+    "source": "https://starwars.fandom.com/wiki/Anaxes/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "alsakan",
+    "name": "Alsakan",
+    "grid": "L-9",
+    "gridUncertain": true,
+    "region": "core-worlds",
+    "importance": 2,
+    "summary": "Coruscant's great rival in the early Republic, settled from the first Perlemian expeditions. Seventeen Alsakan Conflicts over fourteen millennia pitted its colonies against Coruscant's without ever breaking the Republic.",
+    "source": "https://starwars.fandom.com/wiki/Alsakan/Legends",
+    "continuity": "legends"
+  },
+  {
+    "id": "abregado-rae",
+    "name": "Abregado-rae",
+    "grid": "K-13",
+    "region": "core-worlds",
+    "importance": 2,
+    "summary": "A Core spaceport world at the head of the Rimma Trade Route, long notorious for its smuggling trade and for the Imperial-era regime that starved its own hill clans.",
+    "source": "https://starwars.fandom.com/wiki/Abregado-rae",
+    "continuity": "legends"
+  },
+  {
+    "id": "caamas",
+    "name": "Caamas",
+    "grid": "N-12",
+    "gridUncertain": true,
+    "region": "core-worlds",
+    "importance": 2,
+    "summary": "Home of the pacifist Caamasi, a people who had counselled the Jedi since the Order's youth. Its surface was burned to ash early in the Imperial era in an atrocity that still poisoned galactic politics decades later.",
+    "source": "https://starwars.fandom.com/wiki/Caamas",
+    "continuity": "legends",
+    "fate": { "event": "caamas-firestorm", "state": "devastated" }
+  },
+  {
+    "id": "foerost",
+    "name": "Foerost",
+    "grid": "L-10",
+    "gridUncertain": true,
+    "region": "core-worlds",
+    "importance": 2,
+    "summary": "Site of the Foerost Shipyards, among the oldest naval yards in the Core. Exar Kun's Jedi converts stole a fleet from here during the Great Sith War, a blow the Republic Navy took centuries to forget.",
+    "source": "https://starwars.fandom.com/wiki/Foerost",
+    "continuity": "legends"
+  },
+  {
+    "id": "vultar",
+    "name": "Vultar",
+    "grid": "K-9",
+    "gridUncertain": true,
+    "region": "core-worlds",
+    "importance": 1,
+    "summary": "A Core system shattered in 4,250 BBY when Dark Jedi tried to work the ancient Cosmic Turbine machinery they found there. The Vultar Cataclysm destroyed the system and the Jedi faction that caused it.",
+    "source": "https://starwars.fandom.com/wiki/Vultar_system",
+    "continuity": "legends",
+    "fate": { "event": "vultar-cataclysm", "state": "destroyed" }
+  },
+  {
+    "id": "rendili",
+    "name": "Rendili",
+    "grid": "L-9",
+    "gridUncertain": true,
+    "region": "core-worlds",
+    "importance": 2,
+    "summary": "A Core shipbuilding world whose Rendili StarDrive yards produced Republic capital ships from the Old Republic through the Clone Wars, rivalling Kuat for naval contracts.",
+    "source": "https://starwars.fandom.com/wiki/Rendili",
+    "continuity": "legends"
+  },
+  {
+    "id": "corulag",
+    "name": "Corulag",
+    "grid": "L-9",
+    "gridUncertain": true,
+    "region": "core-worlds",
+    "importance": 1,
+    "summary": "A loyal, conservative Core World a short hop from Coruscant, known for its academies and, under the Empire, for the officers it sent into Palpatine's navy.",
+    "source": "https://starwars.fandom.com/wiki/Corulag",
+    "continuity": "legends"
+  },
+  {
+    "id": "humbarine",
+    "name": "Humbarine",
+    "grid": "L-10",
+    "gridUncertain": true,
+    "region": "core-worlds",
+    "importance": 1,
+    "summary": "One of the founding worlds of the Republic, a Core planet whose ancient prestige outlasted its influence. It was later flattened by Separatist bombardment during the Clone Wars.",
+    "source": "https://starwars.fandom.com/wiki/Humbarine",
+    "continuity": "legends"
+  }
+]

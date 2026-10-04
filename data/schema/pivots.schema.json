@@ -4,71 +4,170 @@
   "type": "array",
   "items": {
     "type": "object",
-    "required": ["id", "number", "name", "question", "divergence", "premise", "basis", "source", "horizon", "branch"],
+    "required": [
+      "id",
+      "number",
+      "name",
+      "question",
+      "divergence",
+      "premise",
+      "basis",
+      "source",
+      "horizon",
+      "branch"
+    ],
     "additionalProperties": false,
     "properties": {
-      "id": { "$ref": "defs.json#/definitions/id" },
-      "number": { "type": "integer", "minimum": 1, "maximum": 10 },
-      "name": { "type": "string", "minLength": 4 },
-      "question": { "type": "string", "minLength": 8 },
+      "id": {
+        "$ref": "defs.json#/definitions/id"
+      },
+      "number": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 10
+      },
+      "name": {
+        "type": "string",
+        "minLength": 4
+      },
+      "question": {
+        "type": "string",
+        "minLength": 8
+      },
       "divergence": {
         "type": "object",
-        "required": ["date", "event"],
+        "required": [
+          "date",
+          "event"
+        ],
         "additionalProperties": false,
         "properties": {
-          "date": { "$ref": "defs.json#/definitions/year" },
-          "event": { "$ref": "defs.json#/definitions/id" }
+          "date": {
+            "$ref": "defs.json#/definitions/year"
+          },
+          "event": {
+            "$ref": "defs.json#/definitions/id"
+          }
         }
       },
-      "premise": { "type": "string", "minLength": 80 },
+      "premise": {
+        "type": "string",
+        "minLength": 80
+      },
       "basis": {
         "type": "array",
         "minItems": 1,
         "items": {
           "type": "object",
-          "required": ["text", "source"],
+          "required": [
+            "text",
+            "source"
+          ],
           "additionalProperties": false,
           "properties": {
-            "text": { "type": "string", "minLength": 10 },
-            "source": { "$ref": "defs.json#/definitions/url" }
+            "text": {
+              "type": "string",
+              "minLength": 10
+            },
+            "source": {
+              "$ref": "defs.json#/definitions/url"
+            }
           }
         }
       },
-      "source": { "$ref": "defs.json#/definitions/wookieeUrl" },
-      "horizon": { "$ref": "defs.json#/definitions/year" },
+      "source": {
+        "$ref": "defs.json#/definitions/wookieeUrl"
+      },
+      "horizon": {
+        "$ref": "defs.json#/definitions/year"
+      },
       "branch": {
         "type": "object",
-        "required": ["remove", "add", "territory"],
+        "required": [
+          "remove",
+          "add",
+          "territory"
+        ],
         "additionalProperties": false,
         "properties": {
-          "remove": { "type": "array", "items": { "$ref": "#/definitions/eventRef" } },
-          "keep": { "type": "array", "items": { "$ref": "#/definitions/eventRef" } },
-          "uncertain": { "type": "array", "items": { "$ref": "#/definitions/eventRef" } },
-          "add": { "type": "array", "items": { "$ref": "defs.json#/definitions/event" } },
-          "territory": { "type": "array", "items": { "$ref": "defs.json#/definitions/keyframe" } },
+          "remove": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/eventRef"
+            }
+          },
+          "keep": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/eventRef"
+            }
+          },
+          "uncertain": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/eventRef"
+            }
+          },
+          "add": {
+            "type": "array",
+            "items": {
+              "$ref": "defs.json#/definitions/event"
+            }
+          },
+          "territory": {
+            "type": "array",
+            "items": {
+              "$ref": "defs.json#/definitions/keyframe"
+            }
+          },
           "fates": {
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["system", "reason"],
+              "required": [
+                "system",
+                "reason"
+              ],
               "additionalProperties": false,
               "properties": {
-                "system": { "$ref": "defs.json#/definitions/id" },
+                "system": {
+                  "$ref": "defs.json#/definitions/id"
+                },
                 "fate": {
                   "oneOf": [
-                    { "type": "null" },
+                    {
+                      "type": "null"
+                    },
                     {
                       "type": "object",
-                      "required": ["event", "state"],
+                      "required": [
+                        "event",
+                        "state"
+                      ],
                       "additionalProperties": false,
                       "properties": {
-                        "event": { "$ref": "defs.json#/definitions/id" },
-                        "state": { "type": "string", "enum": ["destroyed", "devastated", "abandoned", "dead"] }
+                        "event": {
+                          "$ref": "defs.json#/definitions/id"
+                        },
+                        "state": {
+                          "type": "string",
+                          "enum": [
+                            "destroyed",
+                            "devastated",
+                            "abandoned",
+                            "dead"
+                          ]
+                        },
+                        "until": {
+                          "$ref": "defs.json#/definitions/year"
+                        }
                       }
                     }
                   ]
                 },
-                "reason": { "type": "string" }
+                "reason": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -78,11 +177,19 @@
         "type": "array",
         "items": {
           "type": "object",
-          "required": ["pivot", "reason"],
+          "required": [
+            "pivot",
+            "reason"
+          ],
           "additionalProperties": false,
           "properties": {
-            "pivot": { "$ref": "defs.json#/definitions/id" },
-            "reason": { "type": "string", "minLength": 10 }
+            "pivot": {
+              "$ref": "defs.json#/definitions/id"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 10
+            }
           }
         }
       }
@@ -91,11 +198,19 @@
   "definitions": {
     "eventRef": {
       "type": "object",
-      "required": ["event", "reason"],
+      "required": [
+        "event",
+        "reason"
+      ],
       "additionalProperties": false,
       "properties": {
-        "event": { "$ref": "defs.json#/definitions/id" },
-        "reason": { "type": "string", "minLength": 6 }
+        "event": {
+          "$ref": "defs.json#/definitions/id"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 6
+        }
       }
     }
   }
